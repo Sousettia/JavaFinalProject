@@ -1,25 +1,14 @@
+package BACKEND;
+
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.text.MessageFormat;
 import java.util.Scanner;
 
-public class BankStarter {
+public class HomePage {
     static Scanner scan = new Scanner(System.in);
-    public static void main(String[] args){
-        try {
-            run();
-        } catch (Exception e) {
-            e.toString();
-        }
-    }
-    public static void run() throws IOException {
-        loginandregister();
-        homepage();
-    }
-    public static void loginandregister() throws IOException {
+    public void loginandregister() throws IOException {
         Customer customer = new Customer();
 
         boolean loop = false;
@@ -54,7 +43,7 @@ public class BankStarter {
             }
         } while (loop);
     }
-    public static void homepage() throws IOException {
+    public void homepage() throws IOException {
         while(true){
             System.out.println("HOME PAGE" + 
                             "\n------------------------------------\n1. HomePage\n2. BookBank\n3. Transfer\n4. Currency\n");
@@ -80,20 +69,21 @@ public class BankStarter {
             }
         }
     }
-    public static void Bookbank() throws IOException {
+    public void Bookbank() throws IOException {
         BufferedReader read = new BufferedReader(new FileReader("src/DataStorage/CustomerData.sqlite"));
         String temp = "";
         while((temp = read.readLine()) != null){
             String[] data = temp.split("\\|");
             System.out.println(MessageFormat.format(
-                "Customer Detail : \nName : {0}\nAddress : {1}\nEmail : {2}"
-                , (data[2] + data[3]),data[5],data[0]));
+                "Customer Detail : \nName : {0}\nAddress : {1}\nEmail : {2}\n"
+                ,(data[2] + " " + data[3]),data[5],data[0]));
         }
+        read.close();
     }
-    public static void Transfer() {
+    public void Transfer() {
 
     }
-    public static void Currency() {
+    public void Currency() {
         
     }
 }

@@ -6,11 +6,12 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import java.awt.CardLayout;
 import javax.swing.JLabel;
-import javax.swing.JCheckBox;
 import javax.swing.SwingConstants;
+
+import BACKEND.Customer;
+import BACKEND.HintTextField;
+
 import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JTextField;
@@ -25,10 +26,10 @@ public class Login implements ActionListener  {
 	JButton btnRegister = new JButton("REGISTER");
 	
 	//create a frame
-	public Login() {
+	public void loginPage() {
 		
 		//logo image
-		ImageIcon image = new ImageIcon("bank.png");
+		ImageIcon image = new ImageIcon("src/icon/bank.png");
 		frame.setIconImage(image.getImage());
 		
 		//email 
@@ -44,7 +45,7 @@ public class Login implements ActionListener  {
 		frame.getContentPane().add(lblPassword);
 		
 		//swan image
-		ImageIcon icon = new ImageIcon("137852811086 (1).png");
+		ImageIcon icon = new ImageIcon("src/icon/137852811086 (1).png");
 		JLabel Icon = new JLabel();
 		Icon.setBounds(5,5,0,0);
 		Icon.setIcon(icon);
@@ -75,7 +76,7 @@ public class Login implements ActionListener  {
 		frame.getContentPane().add(btnRegister);
 		
 		//input email
-		tfEmail = new JTextField();
+		tfEmail = new HintTextField("Enter gmail or hotmail");
 		tfEmail.setFont(new Font("Alice", Font.PLAIN, 15));
 		tfEmail.setBackground(new Color(255, 238, 247));
 		tfEmail.setBounds(290, 316, 261, 29);
@@ -101,23 +102,24 @@ public class Login implements ActionListener  {
 		frame.setBounds(400, 120, 754, 605);
 		frame.setResizable(false);
 		frame.getContentPane().setLayout(null);
-		
+
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		String email;
-		String password;
+		Customer customer = new Customer();
+
 		if(e.getSource()==btnRegister) {
 			frame.dispose();
 			Register register = new Register();
-			
+			register.registerPage();
 		}
 		
 		if(e.getSource()==btnLogin) {
 			frame.dispose();
-			email = tfEmail.getText();
-			password = passwordField.getText();
+			customer.setEmail(tfEmail.getText());
+			customer.setPassword(new String(passwordField.getPassword()));
 			Homepage homepage = new Homepage();
+			homepage.homepagePage();
 		}
 	}
 	
