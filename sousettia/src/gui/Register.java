@@ -40,14 +40,14 @@ public class Register implements ActionListener  {
 		
 		//Input Email
 		tfEmail = new JTextField();
-		tfEmail.setBackground(new Color(255, 255, 255));
+		tfEmail.setBackground(new Color(255, 238, 247));
 		tfEmail.setBounds(73, 109, 388, 29);
 		frame.getContentPane().add(tfEmail);
 		tfEmail.setColumns(10);
 		
 		//Input password
 		passwordField = new JPasswordField();
-		passwordField.setBackground(new Color(255, 255, 255));
+		passwordField.setBackground(new Color(255, 238, 247));
 		passwordField.setBounds(73, 188, 388, 29);
 		passwordField.setColumns(10);
 		frame.getContentPane().add(passwordField);
@@ -67,7 +67,7 @@ public class Register implements ActionListener  {
 		//Input confirm password
 		passwordFieldCF = new JPasswordField();
 		passwordFieldCF.setColumns(10);
-		passwordFieldCF.setBackground(Color.WHITE);
+		passwordFieldCF.setBackground(new Color(255, 238, 247));
 		passwordFieldCF.setBounds(73, 263, 388, 29);
 		frame.getContentPane().add(passwordFieldCF);
 		
