@@ -1,0 +1,6 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Users\\aceof\\Desktop\\ETC\\Code\\JavaFinalProject\\sousettia\\gson-2.10.1.jar"
+    ]
+}

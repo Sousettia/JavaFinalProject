@@ -21,7 +21,7 @@ public class infoRegister implements ActionListener {
 	private JTextField tfAddress;
 	
 	public void infoRegisterPage() {
-		ImageIcon image = new ImageIcon("bank.png");
+		ImageIcon image = new ImageIcon("icon/bank.png");
 		frame.setIconImage(image.getImage());
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

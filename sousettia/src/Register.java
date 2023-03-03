@@ -19,7 +19,7 @@ public class Register implements ActionListener  {
 	JButton btnNext = new JButton("Next");
 	JButton btnCancel = new JButton("Cancel");
 	public void registerPage() {
-		ImageIcon image = new ImageIcon("bank.png");
+		ImageIcon image = new ImageIcon("icon/bank.png");
 		frame.setIconImage(image.getImage());
 		
 		//lblregister

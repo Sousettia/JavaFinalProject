@@ -13,11 +13,11 @@ public class HomePage {
 
 	JFrame frame = new JFrame();
 
-	ImageIcon imageButton1 = new ImageIcon("Home Icon.png");
-	ImageIcon imageButton2 = new ImageIcon("R_1.png");
-	ImageIcon imageButton3 = new ImageIcon("R.png");
-	ImageIcon imageButton4 = new ImageIcon("OIP.png");
-	ImageIcon imageButton5 = new ImageIcon("menu.png");
+	ImageIcon imageButton1 = new ImageIcon("icon/Home Icon.png");
+	ImageIcon imageButton2 = new ImageIcon("icon/R_1.png");
+	ImageIcon imageButton3 = new ImageIcon("icon/R.png");
+	ImageIcon imageButton4 = new ImageIcon("icon/OIP.png");
+	ImageIcon imageButton5 = new ImageIcon("icon/menu.png");
 	JButton btnHome = new JButton(imageButton1);
 	JButton btnBookbank = new JButton(imageButton2);
 	JButton btnTransfer = new JButton(imageButton3);
@@ -29,7 +29,7 @@ public class HomePage {
 	private final JPanel jp4 = new JPanel();
 	public void homepagePage() {
 		//icon
-		ImageIcon image = new ImageIcon("bank.png");
+		ImageIcon image = new ImageIcon("icon/bank.png");
 		frame.setIconImage(image.getImage());
 		
 		
@@ -103,7 +103,7 @@ public class HomePage {
 		btnCurrency.setBounds(0, 389, 65, 65);
 		menu2.add(btnCurrency);
 		
-		ImageIcon icon = new ImageIcon("Re.png");
+		ImageIcon icon = new ImageIcon("icon/Re.png");
 		JLabel Icon = new JLabel();
 		Icon.setBounds(5,5,0,0);
 		Icon.setIcon(icon);

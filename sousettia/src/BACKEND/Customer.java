@@ -1,8 +1,9 @@
 package BACKEND;
 
 import java.io.*;
-import java.text.MessageFormat;
 import java.util.*;
+
+import com.google.gson.Gson;
 
 public class Customer {
     //#region attributes
@@ -13,6 +14,8 @@ public class Customer {
     private String firstName;
     private String lastName;
     private String address;
+    private int account_no;
+
     //#endregion
     //#region Constructors
     public Customer() {
@@ -30,8 +33,25 @@ public class Customer {
         this.password = password;
         this.confirmPassword = confirmPassword;
     }
+    public Customer(int account_no,String email, String password, String firstName, String lastName,String identificationID,
+            String address) {
+        this.account_no = account_no;
+        this.email = email;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.identificationID = identificationID;
+        this.address = address;
+    }
     //#endregion
     //#region setters and getters
+    public int getAccount_no() {
+        return account_no;
+    }
+
+    public void setAccount_no(int account_no) {
+        this.account_no = account_no;
+    }
     public String getidentificationID() {
         return identificationID;
     }
@@ -90,14 +110,9 @@ public class Customer {
 
     //#endregion
     static Scanner scan = new Scanner(System.in);
-    public boolean login() throws IOException{
-        Header("LOGIN");
-
-        System.out.print("Email : ");
-        setEmail(scan.next());
-        System.out.print("Password : ");
-        setPassword(scan.next());
-
+    public boolean login(String email,String password) throws IOException{
+        setEmail(email);
+        setPassword(password);
         BufferedReader read = new BufferedReader(new FileReader("src/DataStorage/CustomerData.sqlite"));
         String temp = "";
         while((temp = read.readLine()) != null){
@@ -110,7 +125,7 @@ public class Customer {
         }
         read.close();
         return false;
-                
+
     }
     public boolean register2() throws IOException{
         Header("REGISTER");
@@ -158,14 +173,11 @@ public class Customer {
         scan.nextLine();
         setAddress(scan.nextLine());
         System.out.println();
-        try (PrintWriter write = new PrintWriter(new FileWriter("src/DataStorage/Account.json", true))){
-
-        }catch(IOException e) {e.toString();}
+  
         return false;
     }
     public boolean register() throws IOException{
         Header("REGISTER");
-        PrintWriter write = new PrintWriter(new FileWriter("src/DataStorage/CustomerData.sqlite", true));
         boolean check = false;
         do{
             System.out.print("Email : ");
@@ -210,9 +222,18 @@ public class Customer {
         scan.nextLine();
         setAddress(scan.nextLine());
         System.out.println();
-        
-        write.println(MessageFormat.format("{0}|{1}|{2}|{3}|{4}|{5}", email,password,firstName,lastName,identificationID,address));
-        write.close();
+    
+        try {
+            File theFile = new File("DataStorage/Account.json");
+            FileWriter write = new FileWriter(theFile);
+            Gson writegson = new Gson();
+            ArrayList<Customer> theList = new ArrayList<>();
+            theList.add(new Customer(getAccount_no(),getEmail(),getPassword(),getFirstName(),getLastName(),getidentificationID(),getAddress()));
+            writegson.toJson(theList, write);
+            write.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         if(check){
             return true;
         }

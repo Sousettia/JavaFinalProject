@@ -6,6 +6,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry excluding="gui/" kind="src" path="sousettia/src"/>
-	<classpathentry kind="lib" path="sousettia/src/json-simple-4.0.1.jar"/>
+	<classpathentry kind="lib" path="sousettia/gson-2.10.1.jar"/>
 	<classpathentry kind="output" path="sousettia/bin"/>
 </classpath>
