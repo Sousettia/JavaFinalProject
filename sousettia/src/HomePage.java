@@ -9,7 +9,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 
-public class Homepage {
+public class HomePage {
 
 	JFrame frame = new JFrame();
 

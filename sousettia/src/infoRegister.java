@@ -60,7 +60,7 @@ public class infoRegister implements ActionListener {
 		//Input Lname
 		tfLname = new JTextField();
 		tfLname.setColumns(10);
-		tfLname.setBackground(Color.WHITE);
+		tfLname.setBackground(new Color(255, 238, 247));
 		tfLname.setBounds(73, 188, 388, 29);
 		frame.getContentPane().add(tfLname);
 		
@@ -73,7 +73,7 @@ public class infoRegister implements ActionListener {
 		//input Identification ID
 		tfID = new JTextField();
 		tfID.setColumns(10);
-		tfID.setBackground(Color.WHITE);
+		tfID.setBackground(new Color(255, 238, 247));
 		tfID.setBounds(73, 262, 388, 29);
 		frame.getContentPane().add(tfID);
 		
@@ -86,7 +86,7 @@ public class infoRegister implements ActionListener {
 		//input address
 		tfAddress = new JTextField();
 		tfAddress.setColumns(10);
-		tfAddress.setBackground(Color.WHITE);
+		tfAddress.setBackground(new Color(255, 238, 247));
 		tfAddress.setBounds(73, 341, 388, 29);
 		frame.getContentPane().add(tfAddress);
 		

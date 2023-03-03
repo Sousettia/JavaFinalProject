@@ -29,7 +29,7 @@ public class Login implements ActionListener  {
 	public void loginPage() {
 		
 		//logo image
-		ImageIcon image = new ImageIcon("src/icon/bank.png");
+		ImageIcon image = new ImageIcon("icon/bank.png");
 		frame.setIconImage(image.getImage());
 		
 		//email 
@@ -45,7 +45,7 @@ public class Login implements ActionListener  {
 		frame.getContentPane().add(lblPassword);
 		
 		//swan image
-		ImageIcon icon = new ImageIcon("src/icon/137852811086 (1).png");
+		ImageIcon icon = new ImageIcon("icon/137852811086 (1).png");
 		JLabel Icon = new JLabel();
 		Icon.setBounds(5,5,0,0);
 		Icon.setIcon(icon);
@@ -118,7 +118,7 @@ public class Login implements ActionListener  {
 			frame.dispose();
 			customer.setEmail(tfEmail.getText());
 			customer.setPassword(new String(passwordField.getPassword()));
-			Homepage homepage = new Homepage();
+			HomePage homepage = new HomePage();
 			homepage.homepagePage();
 		}
 	}
