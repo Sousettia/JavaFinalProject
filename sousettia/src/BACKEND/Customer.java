@@ -112,6 +112,57 @@ public class Customer {
         return false;
                 
     }
+    public boolean register2() throws IOException{
+        Header("REGISTER");
+        boolean check = false;
+        do{
+            System.out.print("Email : ");
+            setEmail(scan.next());
+            System.out.print("Password : ");
+            setPassword(scan.next());
+            System.out.print("Confirm password : ");
+            setConfirmPassword(scan.next());
+            
+            if(checkEmail() && checkPassword()){
+                check = true;
+            }else{
+                System.out.println("Email or Password or ConfirmPassword is incorrect");
+            }
+            System.out.println();
+        }while(!check);
+
+        boolean IDcheck = false;
+        do {
+            System.out.print("FirstName : ");
+            setFirstName(scan.next());
+            System.out.print("LastName : ");
+            setLastName(scan.next());
+    
+            System.out.print("Identification ID : ");
+            setidentificationID(scan.next());
+    
+            String IDtemp = getidentificationID();
+            if(IDtemp.length() == 13){
+                for(int i = 0 ; i < IDtemp.length(); i++){
+                    if(Character.isDigit(IDtemp.charAt(i))){
+                        IDcheck = true;
+                    }else{
+                        IDcheck = false;
+                        System.out.println("ID is incorrect format");
+                        break;
+                    }
+                }
+            }   
+        } while (IDcheck == false);
+        System.out.print("Address : ");
+        scan.nextLine();
+        setAddress(scan.nextLine());
+        System.out.println();
+        try (PrintWriter write = new PrintWriter(new FileWriter("src/DataStorage/Account.json", true))){
+
+        }catch(IOException e) {e.toString();}
+        return false;
+    }
     public boolean register() throws IOException{
         Header("REGISTER");
         PrintWriter write = new PrintWriter(new FileWriter("src/DataStorage/CustomerData.sqlite", true));
