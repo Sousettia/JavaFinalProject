@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Font;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -7,6 +8,8 @@ import javax.swing.JPanel;
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 
 public class HomePage {
@@ -29,7 +32,7 @@ public class HomePage {
 	private final JPanel jp4 = new JPanel();
 	public void homepagePage() {
 		//icon
-		ImageIcon image = new ImageIcon("icon/bank.png");
+		ImageIcon image = new ImageIcon("bank.png");
 		frame.setIconImage(image.getImage());
 		
 		
@@ -53,10 +56,14 @@ public class HomePage {
 				jp2.setVisible(false);
 				jp3.setVisible(false);
 				jp4.setVisible(false);
+				btnHome.setBackground(new Color(255, 232, 243));
+				btnBookbank.setBackground(new Color(255, 196, 225));
+				btnTransfer.setBackground(new Color(255, 196, 225));
+				btnCurrency.setBackground(new Color(255, 196, 225));
 			}
 		});
 		
-		btnHome.setBackground(new Color(255, 196, 225));
+		btnHome.setBackground(new Color(255, 232, 243));
 		btnHome.setForeground(new Color(255, 255, 255));
 		btnHome.setBounds(0, 118, 65, 65);
 		menu2.add(btnHome);
@@ -67,6 +74,10 @@ public class HomePage {
 				jp2.setVisible(true);
 				jp3.setVisible(false);
 				jp4.setVisible(false);
+				btnHome.setBackground(new Color(255, 196, 225));
+				btnBookbank.setBackground(new Color(255, 232, 243));
+				btnTransfer.setBackground(new Color(255, 196, 225));
+				btnCurrency.setBackground(new Color(255, 196, 225));
 			}
 		});
 		
@@ -81,6 +92,10 @@ public class HomePage {
 				jp2.setVisible(false);
 				jp3.setVisible(true);
 				jp4.setVisible(false);
+				btnHome.setBackground(new Color(255, 196, 225));
+				btnBookbank.setBackground(new Color(255, 196, 225));
+				btnTransfer.setBackground(new Color(255, 232, 243));
+				btnCurrency.setBackground(new Color(255, 196, 225));
 			}
 		});
 		
@@ -95,6 +110,10 @@ public class HomePage {
 				jp2.setVisible(false);
 				jp3.setVisible(false);
 				jp4.setVisible(true);
+				btnHome.setBackground(new Color(255, 196, 225));
+				btnBookbank.setBackground(new Color(255, 196, 225));
+				btnTransfer.setBackground(new Color(255, 196, 225));
+				btnCurrency.setBackground(new Color(255, 232, 243));
 			}
 		});
 		
@@ -103,7 +122,7 @@ public class HomePage {
 		btnCurrency.setBounds(0, 389, 65, 65);
 		menu2.add(btnCurrency);
 		
-		ImageIcon icon = new ImageIcon("icon/Re.png");
+		ImageIcon icon = new ImageIcon("Re.png");
 		JLabel Icon = new JLabel();
 		Icon.setBounds(5,5,0,0);
 		Icon.setIcon(icon);
@@ -121,6 +140,30 @@ public class HomePage {
 		menu1.setBackground(new Color(255, 196, 225));
 		menu1.setBounds(63, 0, 1243, 67);
 		frame.getContentPane().add(menu1);
+		
+		JButton btnLogin = new JButton("Login");
+		btnLogin.setFont(new Font("Alice", Font.BOLD, 15));
+		btnLogin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//frame.dispose();
+				Login login = new Login();
+				login.loginPage();
+			}
+		});
+		btnLogin.setBackground(new Color(255, 255, 255));
+		btnLogin.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				btnLogin.setBackground(new Color(226, 226, 226));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				btnLogin.setBackground(new Color(255, 255, 255));
+			}
+		});
+		btnLogin.setBounds(1118, 10, 115, 45);
+		menu1.add(btnLogin);
+		
 		
 		panel_1.setBounds(63, 65, 1243, 618);
 		
@@ -142,9 +185,6 @@ public class HomePage {
 		jp4.setBounds(0, 0, 1243, 618);
 		
 		panel_1.add(jp4);
-		
-		
-		
 	}
 
 }

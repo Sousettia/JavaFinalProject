@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class HomePage {
     static Scanner scan = new Scanner(System.in);
-    /* 
+    
     public void loginandregister() throws IOException {
         Customer customer = new Customer();
 
@@ -24,7 +24,7 @@ public class HomePage {
             System.out.println();
             switch(select){
                 case "1" :
-                    if(customer.login()){
+                    if(customer.login(customer.getEmail(),customer.getPassword())){
                         System.out.println("LOGIN SUCCEED\n");
                     }else{
                         System.out.println("LOGIN FAILED\n");
@@ -87,5 +87,5 @@ public class HomePage {
     public void Currency() {
         
     }
-    */
+    
 }

@@ -3,6 +3,10 @@ import javax.swing.ImageIcon;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 import java.io.IOException;
 
 import javax.swing.JFrame;
@@ -11,7 +15,6 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
 import BACKEND.Customer;
-import BACKEND.HintTextField;
 
 import java.awt.Font;
 import javax.swing.JButton;
@@ -28,6 +31,13 @@ public class Login implements ActionListener  {
 	
 	//create a frame
 	public void loginPage() {
+		
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setBackground(new Color(255, 196, 225));
+		frame.setVisible(true);
+		frame.setBounds(400, 120, 754, 605);
+		frame.setResizable(false);
+		frame.getContentPane().setLayout(null);
 		
 		//logo image
 		ImageIcon image = new ImageIcon("icon/bank.png");
@@ -58,6 +68,16 @@ public class Login implements ActionListener  {
 		panel.add(Icon);
 		frame.getContentPane().add(panel);
 		
+		btnLogin.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				btnLogin.setBackground(new Color(255, 227, 233));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				btnLogin.setBackground(Color.WHITE);
+			}
+		});
 		//loginbtn
 		btnLogin.setFocusable(false);
 		btnLogin.addActionListener(this);
@@ -65,8 +85,17 @@ public class Login implements ActionListener  {
 		btnLogin.setBackground(new Color(255, 255, 255));
 		btnLogin.setFont(new Font("Alice", Font.BOLD, 27));
 		btnLogin.setBounds(205, 488, 133, 38);
-		frame.getContentPane().add(btnLogin);
-		
+		frame.getContentPane().add(btnLogin);	
+		btnRegister.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				btnRegister.setBackground(new Color(255, 227, 233));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				btnRegister.setBackground(Color.WHITE);
+			}
+		});
 		//registerbtn
 		btnRegister.setFocusable(false);
 		btnRegister.addActionListener(this);
@@ -77,7 +106,28 @@ public class Login implements ActionListener  {
 		frame.getContentPane().add(btnRegister);
 		
 		//input email
-		tfEmail = new HintTextField("Enter gmail or hotmail");
+		tfEmail = new JTextField();
+		tfEmail.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				if(tfEmail.getText().equals("Enter gmail or hotmail")) {
+					tfEmail.setText(null);
+					tfEmail.requestFocus();
+					tfEmail.setFont(new Font("Alice", Font.PLAIN, 15));
+					tfEmail.setForeground(Color.black);	
+				}
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				if(tfEmail.getText().length()==0) {
+					tfEmail.setFont(new Font("Alice", Font.ITALIC, 12));
+					tfEmail.setForeground(Color.gray);
+					tfEmail.setText("Enter gmail or hotmail");
+				}
+			}
+		});
+		tfEmail.setText("Enter gmail or hotmail");
+		tfEmail.setForeground(Color.gray);
 		tfEmail.setFont(new Font("Alice", Font.PLAIN, 15));
 		tfEmail.setBackground(new Color(255, 238, 247));
 		tfEmail.setBounds(290, 316, 261, 29);
@@ -86,6 +136,29 @@ public class Login implements ActionListener  {
 		
 		//input password
 		passwordField = new JPasswordField();
+		passwordField.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				String password = new String(passwordField.getPassword());
+				if(password.equals("Enter password")) {
+					passwordField.setText(null);
+					passwordField.requestFocus();
+					passwordField.setFont(new Font("Alice", Font.PLAIN, 15));
+					passwordField.setForeground(Color.black);
+				}
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				String password = new String(passwordField.getPassword());
+				if(password.length()==0) {
+					passwordField.setFont(new Font("Alice", Font.ITALIC, 12));
+					passwordField.setForeground(Color.gray);
+					passwordField.setText("Enter password");
+				}
+			}
+		});
+		passwordField.setText("Enter password");
+		passwordField.setForeground(Color.gray);
 		passwordField.setBackground(new Color(255, 238, 247));
 		passwordField.setBounds(290, 391, 261, 29);
 		passwordField.setColumns(10);
@@ -96,15 +169,8 @@ public class Login implements ActionListener  {
 		lblWe.setBounds(169, 449, 394, 30);
 		frame.getContentPane().add(lblWe);
 		
-		
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setBackground(new Color(255, 196, 225));
-		frame.setVisible(true);
-		frame.setBounds(400, 120, 754, 605);
-		frame.setResizable(false);
-		frame.getContentPane().setLayout(null);
-
 	}
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		Customer customer = new Customer();

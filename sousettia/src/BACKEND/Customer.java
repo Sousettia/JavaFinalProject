@@ -113,7 +113,7 @@ public class Customer {
     public boolean login(String email,String password) throws IOException{
         setEmail(email);
         setPassword(password);
-        BufferedReader read = new BufferedReader(new FileReader("src/DataStorage/CustomerData.sqlite"));
+        BufferedReader read = new BufferedReader(new FileReader("DataStorage/CustomerData.sqlite"));
         String temp = "";
         while((temp = read.readLine()) != null){
             String[] data = temp.split("\\|");
@@ -127,6 +127,7 @@ public class Customer {
         return false;
 
     }
+    /* 
     public boolean register2() throws IOException{
         Header("REGISTER");
         boolean check = false;
@@ -176,6 +177,7 @@ public class Customer {
   
         return false;
     }
+    */
     public boolean register() throws IOException{
         Header("REGISTER");
         boolean check = false;

@@ -2,7 +2,10 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -21,15 +24,16 @@ public class infoRegister implements ActionListener {
 	private JTextField tfAddress;
 	
 	public void infoRegisterPage() {
-		ImageIcon image = new ImageIcon("icon/bank.png");
-		frame.setIconImage(image.getImage());
-		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.getContentPane().setBackground(new Color(255, 215, 235));
 		frame.setVisible(true);
 		frame.setResizable(false);
 		frame.setBounds(500, 120, 553, 538);
+		
+		ImageIcon image = new ImageIcon("bank.png");
+		frame.setIconImage(image.getImage());
+		
 		
 		//lblregister
 		JLabel lblRegister = new JLabel("Register");
@@ -45,7 +49,28 @@ public class infoRegister implements ActionListener {
 				
 		//Input Fname
 		tfFname = new JTextField();
-		tfFname.setBackground(new Color(255, 255, 255));
+		tfFname.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				if(tfFname.getText().equals("Enter Firstname")) {
+					tfFname.setText(null);
+					tfFname.requestFocus();
+					tfFname.setFont(new Font("Alice", Font.PLAIN, 15));
+					tfFname.setForeground(Color.black);	
+				}
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				if(tfFname.getText().length()==0) {
+					tfFname.setFont(new Font("Alice", Font.ITALIC, 12));
+					tfFname.setForeground(Color.gray);
+					tfFname.setText("Enter Firstname");
+				}
+			}
+		});
+		tfFname.setText("Enter Firstname");
+		tfFname.setForeground(Color.gray);
+		tfFname.setBackground(new Color(255, 238, 247));
 		tfFname.setBounds(73, 109, 388, 29);
 		frame.getContentPane().add(tfFname);
 		tfFname.setColumns(10);
@@ -59,6 +84,27 @@ public class infoRegister implements ActionListener {
 		
 		//Input Lname
 		tfLname = new JTextField();
+		tfLname.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				if(tfLname.getText().equals("Enter Lastname")) {
+					tfLname.setText(null);
+					tfLname.requestFocus();
+					tfLname.setFont(new Font("Alice", Font.PLAIN, 15));
+					tfLname.setForeground(Color.black);	
+				}
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				if(tfLname.getText().length()==0) {
+					tfLname.setFont(new Font("Alice", Font.ITALIC, 12));
+					tfLname.setForeground(Color.gray);
+					tfLname.setText("Enter Lastname");
+				}
+			}
+		});
+		tfLname.setText("Enter Lastname");
+		tfLname.setForeground(Color.gray);
 		tfLname.setColumns(10);
 		tfLname.setBackground(new Color(255, 238, 247));
 		tfLname.setBounds(73, 188, 388, 29);
@@ -72,6 +118,27 @@ public class infoRegister implements ActionListener {
 		
 		//input Identification ID
 		tfID = new JTextField();
+		tfID.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				if(tfID.getText().equals("Enter Identification ID")) {
+					tfID.setText(null);
+					tfID.requestFocus();
+					tfID.setFont(new Font("Alice", Font.PLAIN, 15));
+					tfID.setForeground(Color.black);	
+				}
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				if(tfID.getText().length()==0) {
+					tfID.setFont(new Font("Alice", Font.ITALIC, 12));
+					tfID.setForeground(Color.gray);
+					tfID.setText("Enter Identification ID");
+				}
+			}
+		});
+		tfID.setText("Enter Identification ID");
+		tfID.setForeground(Color.gray);
 		tfID.setColumns(10);
 		tfID.setBackground(new Color(255, 238, 247));
 		tfID.setBounds(73, 262, 388, 29);
@@ -85,10 +152,41 @@ public class infoRegister implements ActionListener {
 		
 		//input address
 		tfAddress = new JTextField();
+		tfAddress.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				if(tfAddress.getText().equals("Enter Address")) {
+					tfAddress.setText(null);
+					tfAddress.requestFocus();
+					tfAddress.setFont(new Font("Alice", Font.PLAIN, 15));
+					tfAddress.setForeground(Color.black);	
+				}
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				if(tfAddress.getText().length()==0) {
+					tfAddress.setFont(new Font("Alice", Font.ITALIC, 12));
+					tfAddress.setForeground(Color.gray);
+					tfAddress.setText("Enter Address");
+				}
+			}
+		});
+		tfAddress.setText("Enter Address");
+		tfAddress.setForeground(Color.gray);
 		tfAddress.setColumns(10);
 		tfAddress.setBackground(new Color(255, 238, 247));
 		tfAddress.setBounds(73, 341, 388, 29);
 		frame.getContentPane().add(tfAddress);
+		btnConfirm.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				btnConfirm.setBackground(new Color(255, 227, 233));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				btnConfirm.setBackground(Color.WHITE);
+			}
+		});
 		
 		//buttonConfirm
 		btnConfirm.setFocusable(false);
@@ -98,7 +196,17 @@ public class infoRegister implements ActionListener {
 		btnConfirm.setFont(new Font("Alice", Font.BOLD, 25));
 		btnConfirm.setBounds(122, 442, 141, 30);
 		frame.getContentPane().add(btnConfirm);
-				
+		
+		btnBack.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				btnBack.setBackground(new Color(255, 227, 233));
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				btnBack.setBackground(Color.WHITE);
+			}
+		});
 		//buttonBack
 		btnBack.setFocusable(false);
 		btnBack.addActionListener(this);

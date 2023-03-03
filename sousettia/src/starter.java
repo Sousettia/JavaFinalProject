@@ -1,6 +1,6 @@
 public class starter {
 	public static void main(String[] args) {
-		Login login = new Login();
-		login.loginPage();
+		HomePage homePage = new HomePage();
+		homePage.homepagePage();
 	}
 }
