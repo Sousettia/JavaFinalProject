@@ -217,7 +217,7 @@ public class Customer {
                     }
                 }
             }   
-        } while (IDcheck == false);
+        } while (!IDcheck);
         System.out.print("Address : ");
         scan.nextLine();
         setAddress(scan.nextLine());

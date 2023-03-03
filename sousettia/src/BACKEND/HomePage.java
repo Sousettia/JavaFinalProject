@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 public class HomePage {
     static Scanner scan = new Scanner(System.in);
+    /* 
     public void loginandregister() throws IOException {
         Customer customer = new Customer();
 
@@ -86,4 +87,5 @@ public class HomePage {
     public void Currency() {
         
     }
+    */
 }

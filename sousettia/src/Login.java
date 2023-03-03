@@ -3,6 +3,7 @@ import javax.swing.ImageIcon;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -116,10 +117,18 @@ public class Login implements ActionListener  {
 		
 		if(e.getSource()==btnLogin) {
 			frame.dispose();
-			customer.setEmail(tfEmail.getText());
-			customer.setPassword(new String(passwordField.getPassword()));
-			HomePage homepage = new HomePage();
-			homepage.homepagePage();
+			String email = tfEmail.getText();
+			String password = new String(passwordField.getPassword());
+			try {
+				if(customer.login(email,password)){
+					HomePage homepage = new HomePage();
+					homepage.homepagePage();
+				}else{
+					//เตือนข้อผิดพลาด
+				}
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
 		}
 	}
 	
