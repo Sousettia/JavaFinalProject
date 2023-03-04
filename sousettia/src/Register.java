@@ -10,10 +10,13 @@ import javax.swing.JLabel;
 import java.awt.Color;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+
+import BACKEND.Customer;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
-public class Register implements ActionListener  {
+public class Register implements ActionListener{
 	
 	private JTextField tfEmail;
 	private JPasswordField passwordField;
@@ -185,6 +188,8 @@ public class Register implements ActionListener  {
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		Customer customer = new Customer();
+		
 		if(e.getSource()==btnCancel) {
 			frame.dispose();
 			Login login = new Login();
@@ -192,8 +197,13 @@ public class Register implements ActionListener  {
 		}
 		if(e.getSource()==btnNext) {
 			frame.dispose();
-			infoRegister inRegister = new infoRegister();
-			inRegister.infoRegisterPage();
+
+			if(customer.register_enpcheck(tfEmail.getText(),new String(passwordField.getPassword()),new String(passwordFieldCF.getPassword()))){
+				infoRegister inRegister = new infoRegister(tfEmail.getText(),new String(passwordField.getPassword()));
+				inRegister.infoRegisterPage();
+			}else{
+				//เตือนข้อผิดพลาด
+			}
 		}
 	}
 }

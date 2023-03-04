@@ -1,9 +1,11 @@
 package BACKEND;
 
 import java.io.*;
+import java.lang.reflect.Type;
 import java.util.*;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 public class Customer {
     //#region attributes
@@ -19,8 +21,7 @@ public class Customer {
     //#endregion
     //#region Constructors
     public Customer() {
-        this.email = this.password = this.confirmPassword = null;
-        this.identificationID = this.firstName = this.lastName = this.address = null;
+        this(0,null,null, null, null, null, null);
     }
 
     public Customer(String email, String password) {
@@ -33,15 +34,18 @@ public class Customer {
         this.password = password;
         this.confirmPassword = confirmPassword;
     }
-    public Customer(int account_no,String email, String password, String firstName, String lastName,String identificationID,
+    public Customer(String email, String password, String firstName, String lastName,String identificationID,
             String address) {
-        this.account_no = account_no;
-        this.email = email;
-        this.password = password;
+        this(email, password);
         this.firstName = firstName;
         this.lastName = lastName;
         this.identificationID = identificationID;
         this.address = address;
+    }
+    public Customer(int account_no,String email, String password, String firstName, String lastName,String identificationID,
+            String address) {
+        this(email, password, firstName, lastName, identificationID, address);
+        this.account_no = account_no;
     }
     //#endregion
     //#region setters and getters
@@ -107,12 +111,20 @@ public class Customer {
     public void setAddress(String address) {
         this.address = address;
     }
+    public void setString(String email, String password, String fName, String lName, String id, String address){
+        this.email = email;
+        this.password = password;
+        this.firstName = fName;
+        this.lastName = lName;
+        this.identificationID = id;
+        this.address = address;
+    }
 
     //#endregion
     static Scanner scan = new Scanner(System.in);
+
     public boolean login(String email,String password) throws IOException{
-        setEmail(email);
-        setPassword(password);
+        setEmail(email); setPassword(password);
         BufferedReader read = new BufferedReader(new FileReader("DataStorage/CustomerData.sqlite"));
         String temp = "";
         while((temp = read.readLine()) != null){
@@ -127,131 +139,19 @@ public class Customer {
         return false;
 
     }
-    /* 
-    public boolean register2() throws IOException{
-        Header("REGISTER");
+    public boolean register_enpcheck(String email,String password,String confirmpassword){
+        setEmail(email); setPassword(password); setConfirmPassword(confirmpassword);
         boolean check = false;
-        do{
-            System.out.print("Email : ");
-            setEmail(scan.next());
-            System.out.print("Password : ");
-            setPassword(scan.next());
-            System.out.print("Confirm password : ");
-            setConfirmPassword(scan.next());
-            
-            if(checkEmail() && checkPassword()){
-                check = true;
-            }else{
-                System.out.println("Email or Password or ConfirmPassword is incorrect");
-            }
-            System.out.println();
-        }while(!check);
-
-        boolean IDcheck = false;
-        do {
-            System.out.print("FirstName : ");
-            setFirstName(scan.next());
-            System.out.print("LastName : ");
-            setLastName(scan.next());
-    
-            System.out.print("Identification ID : ");
-            setidentificationID(scan.next());
-    
-            String IDtemp = getidentificationID();
-            if(IDtemp.length() == 13){
-                for(int i = 0 ; i < IDtemp.length(); i++){
-                    if(Character.isDigit(IDtemp.charAt(i))){
-                        IDcheck = true;
-                    }else{
-                        IDcheck = false;
-                        System.out.println("ID is incorrect format");
-                        break;
-                    }
-                }
-            }   
-        } while (IDcheck == false);
-        System.out.print("Address : ");
-        scan.nextLine();
-        setAddress(scan.nextLine());
-        System.out.println();
-  
-        return false;
-    }
-    */
-    public boolean register() throws IOException{
-        Header("REGISTER");
-        boolean check = false;
-        do{
-            System.out.print("Email : ");
-            setEmail(scan.next());
-            System.out.print("Password : ");
-            setPassword(scan.next());
-            System.out.print("Confirm password : ");
-            setConfirmPassword(scan.next());
-            
-            if(checkEmail() && checkPassword()){
-                check = true;
-            }else{
-                System.out.println("Email or Password or ConfirmPassword is incorrect");
-            }
-            System.out.println();
-        }while(!check);
-
-        boolean IDcheck = false;
-        do {
-            System.out.print("FirstName : ");
-            setFirstName(scan.next());
-            System.out.print("LastName : ");
-            setLastName(scan.next());
-    
-            System.out.print("Identification ID : ");
-            setidentificationID(scan.next());
-    
-            String IDtemp = getidentificationID();
-            if(IDtemp.length() == 13){
-                for(int i = 0 ; i < IDtemp.length(); i++){
-                    if(Character.isDigit(IDtemp.charAt(i))){
-                        IDcheck = true;
-                    }else{
-                        IDcheck = false;
-                        System.out.println("ID is incorrect format");
-                        break;
-                    }
-                }
-            }   
-        } while (!IDcheck);
-        System.out.print("Address : ");
-        scan.nextLine();
-        setAddress(scan.nextLine());
-        System.out.println();
-    
-        try {
-            File theFile = new File("DataStorage/Account.json");
-            FileWriter write = new FileWriter(theFile);
-            Gson writegson = new Gson();
-            ArrayList<Customer> theList = new ArrayList<>();
-            theList.add(new Customer(getAccount_no(),getEmail(),getPassword(),getFirstName(),getLastName(),getidentificationID(),getAddress()));
-            writegson.toJson(theList, write);
-            write.close();
-        } catch (Exception e) {
-            e.printStackTrace();
+        if(checkEmail() && checkPassword()){
+            check = true;
         }
         if(check){
             return true;
         }
         return false;
     }
-    
-    public void Header(String msg){
-        System.out.println("\t\t" + msg);
-        for(int i = 1; i <= 49; i++){
-            System.out.print("*");
-        }
-        System.out.println();
-    }
-
     public boolean checkEmail() {
-        if(this.email.endsWith("@gmail.com")){
+        if(this.email.endsWith("@gmail.com") || this.email.endsWith("@hotmail.com")){
             return true;
         }
         else{
@@ -266,5 +166,67 @@ public class Customer {
             return false;
         }
     }
+    public boolean idcheck(String id){
+        boolean IDcheck = false;
+        if(id.length() == 13){
+            for(int i = 0 ; i < id.length(); i++){
+                if(Character.isDigit(id.charAt(i))){
+                    IDcheck = true;
+                }else{
+                    IDcheck = false;
+                    break;
+                }
+            }
+        }   
+        return IDcheck;
+    }
+    public void register(String email, String password, String fName, String lName, String id, String address) throws IOException{
+        File theFile = new File("DataStorage/Account.json");
+        ArrayList<Customer> theList;
+        setString(email, password, fName, lName, id, address);
+        if(theFile.exists()){
+            try {
+                FileReader fileReader = new FileReader(theFile);
+                Type type = new TypeToken<ArrayList<Customer>>(){}.getType();
+                Gson gson = new Gson();
+                theList = gson.fromJson(fileReader, type);
+                fileReader.close();
+
+                List<Integer> acc_list = new ArrayList<>();
+                for(Customer c : theList){
+                    acc_list.add(c.getAccount_no());
+                }
+                setAccount_no(Collections.max(acc_list)+1);
+                
+                FileWriter write = new FileWriter(theFile);
+                Gson writegson = new Gson();
+                theList.add(new Customer(getAccount_no(),getEmail(),getPassword(),getFirstName(),getLastName(),getidentificationID(),getAddress()));
+                writegson.toJson(theList, write);
+                write.close();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }else{
+            try {
+                FileWriter write = new FileWriter(theFile);
+                Gson gson = new Gson();
+                setAccount_no(1);
+                theList = new ArrayList<>();
+                theList.add(new Customer(getAccount_no(),getEmail(),getPassword(),getFirstName(),getLastName(),getidentificationID(),getAddress()));
+                gson.toJson(theList, write);
+                write.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
     
+    public void Header(String msg){
+        System.out.println("\t\t" + msg);
+        for(int i = 1; i <= 49; i++){
+            System.out.print("*");
+        }
+        System.out.println();
+    }
 }

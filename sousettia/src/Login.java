@@ -21,7 +21,7 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 
-public class Login implements ActionListener  {
+public class Login extends Customer implements ActionListener {
 
 	private JTextField tfEmail;
 	private JPasswordField passwordField;
@@ -173,7 +173,6 @@ public class Login implements ActionListener  {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		Customer customer = new Customer();
 
 		if(e.getSource()==btnRegister) {
 			frame.dispose();
@@ -183,10 +182,8 @@ public class Login implements ActionListener  {
 		
 		if(e.getSource()==btnLogin) {
 			frame.dispose();
-			String email = tfEmail.getText();
-			String password = new String(passwordField.getPassword());
 			try {
-				if(customer.login(email,password)){
+				if(super.login(tfEmail.getText(),new String(passwordField.getPassword()))){
 					HomePage homepage = new HomePage();
 					homepage.homepagePage();
 				}else{

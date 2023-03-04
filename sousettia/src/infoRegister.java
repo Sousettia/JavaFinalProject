@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import javax.swing.ImageIcon;
@@ -12,7 +13,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class infoRegister implements ActionListener {
+import BACKEND.Customer;
+
+public class infoRegister extends Customer implements ActionListener {
 
 
 	JFrame frame = new JFrame();
@@ -22,7 +25,14 @@ public class infoRegister implements ActionListener {
 	private JTextField tfLname;
 	private JTextField tfID;
 	private JTextField tfAddress;
+	private String email;
+	private String password;
 	
+	public infoRegister(String email, String password) {
+		this.email = email;
+		this.password = password;
+	}
+
 	public void infoRegisterPage() {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -221,8 +231,18 @@ public class infoRegister implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==btnConfirm) {
 			frame.dispose();
-			Login login = new Login();
-			login.loginPage();
+			
+			try {
+				if(super.idcheck(tfID.getText())){
+					super.register(email,password,tfFname.getText(),tfLname.getText(),tfID.getText(),tfAddress.getText());
+					Login login = new Login();
+					login.loginPage();
+				}else{
+					//เตือนข้อผิดพลาด รับค่าIDใหม่
+				}
+			} catch (IOException e1) {
+				e1.printStackTrace();
+			}
 		}
 		if(e.getSource()==btnBack) {
 			frame.dispose();
