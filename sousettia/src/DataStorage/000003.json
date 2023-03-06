@@ -1,0 +1,11 @@
+{
+    "account_no": 1.0,
+    "balance": 1000.0,
+    "account_type": "SavingAccount",
+    "transaction": [
+        {
+            "statement": "null",
+            "amount": 0.0
+        }
+    ]
+}

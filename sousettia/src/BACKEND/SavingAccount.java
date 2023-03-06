@@ -1,23 +1,23 @@
 package BACKEND;
 
 public class SavingAccount implements Interface_Account{
-    private String accountNumber;
+    private int accountNumber;
     private double balance;
     private double interestrate;
 
     public SavingAccount(){
-        interestrate = 0.5;
+        interestrate = 0.1;
         balance = 1000;
-        accountNumber = "000001";
+        accountNumber = 1;
     }
 
     //#region getter_setter
 
-    public String getAccountNumber() {
+    public int getAccountNumber() {
         return accountNumber;
     }
 
-    public void setAccountNumber(String accountNumber) {
+    public void setAccountNumber(int accountNumber) {
         this.accountNumber = accountNumber;
     }
 

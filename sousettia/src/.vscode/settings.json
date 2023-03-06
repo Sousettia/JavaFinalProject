@@ -1,6 +1,7 @@
 {
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "c:\\Users\\aceof\\Desktop\\ETC\\Code\\JavaFinalProject\\sousettia\\gson-2.10.1.jar"
+        "c:\\Users\\aceof\\Desktop\\ETC\\Code\\JavaFinalProject\\sousettia\\gson-2.10.1.jar",
+        "c:\\Users\\aceof\\Desktop\\ETC\\Code\\JavaFinalProject\\sousettia\\jcalendar-1.4.jar"
     ]
 }
