@@ -28,6 +28,7 @@ public class Login extends Customer implements ActionListener {
 	JFrame frame = new JFrame();
 	JButton btnLogin = new JButton("LOGIN");
 	JButton btnRegister = new JButton("REGISTER");
+	JLabel lblWe = new JLabel("Welcome!",SwingConstants.CENTER);
 	
 	//create a frame
 	public void loginPage() {
@@ -40,11 +41,11 @@ public class Login extends Customer implements ActionListener {
 		frame.getContentPane().setLayout(null);
 		
 		//logo image
-		ImageIcon image = new ImageIcon("bank.png");
+		ImageIcon image = new ImageIcon("icon/bank.png");
 		frame.setIconImage(image.getImage());
 		
 		//swan image
-		ImageIcon icon = new ImageIcon("137852811086 (1).png");
+		ImageIcon icon = new ImageIcon("icon/137852811086 (1).png");
 		
 		JPanel panelLogin = new JPanel();
 		panelLogin.setBackground(new Color(255, 196, 225));
@@ -133,12 +134,12 @@ public class Login extends Customer implements ActionListener {
 		passwordField.setBackground(new Color(255, 238, 247));
 		passwordField.setColumns(10);
 		
-		JLabel lblWe = new JLabel("Welcome!",SwingConstants.CENTER);
 		lblWe.setBounds(172, 449, 394, 30);
 		panelLogin.add(lblWe);
 		lblWe.setFont(new Font("Alice", Font.BOLD, 17));
 		btnLogin.setBounds(204, 489, 133, 38);
 		panelLogin.add(btnLogin);
+		
 		
 		btnLogin.addMouseListener(new MouseAdapter() {
 			@Override
@@ -186,13 +187,14 @@ public class Login extends Customer implements ActionListener {
 		}
 		
 		if(e.getSource()==btnLogin) {
-			frame.dispose();
 			try {
 				if(super.login(tfEmail.getText(),new String(passwordField.getPassword()))){
 					HomePage homepage = new HomePage();
 					homepage.homepagePage();
+					frame.dispose();
 				}else{
-					//เตือนข้อผิดพลาด
+					lblWe.setText("Sorry, but your password or email was incorrect.");
+                    lblWe.setForeground(Color.red);
 				}
 			} catch (IOException e1) {
 				e1.printStackTrace();

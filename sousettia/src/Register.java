@@ -7,6 +7,7 @@ import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+
 import java.awt.Color;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -24,6 +25,8 @@ public class Register implements ActionListener{
 	JFrame frame = new JFrame();
 	JButton btnNext = new JButton("Next");
 	JButton btnCancel = new JButton("Cancel");
+	JLabel lblChkemail = new JLabel();
+	JLabel lblChkpass = new JLabel();
 	public void registerPage() {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setBackground(new Color(255, 215, 235));
@@ -32,7 +35,7 @@ public class Register implements ActionListener{
 		frame.setResizable(false);
 		
 		frame.setBounds(500, 120, 553, 538);
-		ImageIcon image = new ImageIcon("bank.png");
+		ImageIcon image = new ImageIcon("icon/bank.png");
 		frame.setIconImage(image.getImage());
 		
 		//lblregister
@@ -196,13 +199,30 @@ public class Register implements ActionListener{
 			login.loginPage();
 		}
 		if(e.getSource()==btnNext) {
-			frame.dispose();
+			customer.setEmail(tfEmail.getText());
+			customer.setPassword(new String(passwordField.getPassword()));
+			customer.setConfirmPassword(new String(passwordFieldCF.getPassword()));
 
-			if(customer.register_enpcheck(tfEmail.getText(),new String(passwordField.getPassword()),new String(passwordFieldCF.getPassword()))){
-				infoRegister inRegister = new infoRegister(tfEmail.getText(),new String(passwordField.getPassword()));
+			if(customer.register_enpcheck(customer.getEmail(),customer.getPassword(),customer.getConfirmPassword())){
+				infoRegister inRegister = new infoRegister(customer.getEmail(),customer.getPassword());
 				inRegister.infoRegisterPage();
+				frame.dispose();
 			}else{
-				//เตือนข้อผิดพลาด
+				if(!customer.checkEmail()){
+					lblChkemail = new JLabel("Try again, the email doesn't correct.");
+					lblChkemail.setBounds(107, 392, 515, 30);
+					frame.getContentPane().add(lblChkemail);
+					lblChkemail.setFont(new Font("Alice", Font.BOLD, 17));
+					lblChkemail.setForeground(Color.red);
+					lblChkpass.setText(null);
+				}else if(!customer.checkPassword()){
+					lblChkpass = new JLabel("Try again, the passwords don't match.");
+					lblChkpass.setBounds(107, 392, 515, 30);
+					frame.getContentPane().add(lblChkpass);
+					lblChkpass.setFont(new Font("Alice", Font.BOLD, 17));
+					lblChkpass.setForeground(Color.red);
+					lblChkemail.setText(null);
+				}
 			}
 		}
 	}

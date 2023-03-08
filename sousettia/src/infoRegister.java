@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
+
+import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -16,6 +18,7 @@ import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 import com.toedter.calendar.JDateChooser;
 
@@ -39,6 +42,7 @@ public class infoRegister extends Customer implements ActionListener {
 	private String email;
 	private String password;
 	private String datestr;
+	private JDateChooser dateChooser = new JDateChooser(cld.getTime());
 	
 	public infoRegister(String email, String password){
 		this.email = email;
@@ -250,11 +254,9 @@ public class infoRegister extends Customer implements ActionListener {
 		lblBirth.setBounds(431, 148, 141, 30);
 		frame.getContentPane().add(lblBirth);
 		
-		JDateChooser dateChooser = new JDateChooser(cld.getTime());
 		dateChooser.setBackground(new Color(255, 255, 255));
 		dateChooser.setBounds(431, 188, 308, 29);
 		dateChooser.setDateFormatString("dd/MM/yyyy");
-		datestr = new SimpleDateFormat("dd-MMM-yyyy").format(dateChooser.getDate());
 		frame.getContentPane().add(dateChooser);
 		
 		JLabel lblPostalCode = new JLabel("Postal code");
@@ -335,24 +337,33 @@ public class infoRegister extends Customer implements ActionListener {
 		genderFemale.setFont(new Font("Alice", Font.PLAIN, 18));
 		genderFemale.setBounds(593, 109, 141, 29);
 		frame.getContentPane().add(genderFemale);
-		
+
+		ButtonGroup group = new ButtonGroup();
+        group.add(genderMale);
+        group.add(genderFemale);
+
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
 		if(e.getSource()==btnConfirm) {
 			frame.dispose();
-			
+			SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-YYYY");
+			Date date = dateChooser.getDate();
+			datestr = sdf.format(date);
+
+			String gender = "";
+			if(genderMale.isSelected()) gender = genderMale.getText();
+			if(genderFemale.isSelected()) gender = genderFemale.getText();
 			try {
 				if(super.idcheck(tfID.getText())){
-					
-					super.register(email,password,tfFname.getText(),tfLname.getText(),tfID.getText(),tfAddress.getText());
-					System.out.print(datestr);
+					super.register(email,password,tfFname.getText(),tfLname.getText(),tfID.getText(),tfAddress.getText(),
+									datestr,gender,tfPostCode.getText(),tfPhoneNumber.getText());
 					Login login = new Login();
 					login.loginPage();
 
 				}else{
-					//เตือนข้อผิดพลาด รับค่าIDใหม่
+					System.out.println("ID is not correct");
 				}
 			} catch (IOException e1) {
 				e1.printStackTrace();

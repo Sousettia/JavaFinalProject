@@ -18,7 +18,10 @@ public class Customer {
     private String firstName;
     private String lastName;
     private String address;
-    private int account_no;
+    private String dmy;
+    private String gender;
+    private String postal;
+    private String phone;
     private ArrayList<String> customer_account_data;
     private ArrayList<Object> transactionList;
 
@@ -46,25 +49,59 @@ public class Customer {
         this.identificationID = identificationID;
         this.address = address;
     }
-    public Customer(int account_no, String email, String password, String firstName, String lastName,String identificationID,
-            String address) {
-        this(email, password, firstName, lastName, identificationID, address);
-        this.account_no = account_no;
+
+    public Customer(String email, String password, String fName, String lName, 
+                            String id, String address, String dmy, String gender, String postal, String phone){
+        this(email, password, fName, lName, id, address);
+        this.dmy = dmy;
+        this.gender = gender;
+        this.postal = postal;
+        this.phone = phone;
     }
 
-    public Customer(int account_no) {
-        this.account_no = account_no;
-    }
+    // public Customer(int account_no) {
+    //     this.account_no = account_no;
+    // }
 
     //#endregion
     //#region setters and getters
-    public int getAccount_no() {
-        return account_no;
+    public String getGender() {
+        return gender;
     }
 
-    public void setAccount_no(int account_no) {
-        this.account_no = account_no;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
+
+    public String getPostal() {
+        return postal;
+    }
+
+    public void setPostal(String postal) {
+        this.postal = postal;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+    public String getDmy() {
+        return dmy;
+    }
+
+    public void setDmy(String dmy) {
+        this.dmy = dmy;
+    }
+    // public int getAccount_no() {
+    //     return account_no;
+    // }
+
+    // public void setAccount_no(int account_no) {
+    //     this.account_no = account_no;
+    // }
     public String getidentificationID() {
         return identificationID;
     }
@@ -120,13 +157,18 @@ public class Customer {
     public void setAddress(String address) {
         this.address = address;
     }
-    public void setString(String email, String password, String fName, String lName, String id, String address){
+    public void setString(String email, String password, String fName, String lName, 
+                            String id, String address, String dmy, String gender, String postal, String phone){
         this.email = email;
         this.password = password;
         this.firstName = fName;
         this.lastName = lName;
         this.identificationID = id;
         this.address = address;
+        this.dmy = dmy;
+        this.gender = gender;
+        this.postal = postal;
+        this.phone = phone;
     }
     public ArrayList<String> getCustomer_account_data() {
         return customer_account_data;
@@ -209,10 +251,11 @@ public class Customer {
         }   
         return IDcheck;
     }
-    public void register(String email, String password, String fName, String lName, String id, String address) throws IOException{
+    public void register(String email, String password, String fName, String lName, 
+                            String id, String address, String dmy, String gender, String postal, String phone) throws IOException{
         File theFile = new File("DataStorage/Account.json");
         ArrayList<Customer> theList;
-        setString(email, password, fName, lName, id, address);
+        setString(email, password, fName, lName, id, address, dmy, gender, postal, phone);
         if(theFile.exists()){
             try {
                 FileReader fileReader = new FileReader(theFile);
@@ -221,15 +264,16 @@ public class Customer {
                 theList = gson.fromJson(fileReader, type);
                 fileReader.close();
 
-                List<Integer> acc_list = new ArrayList<>();
-                for(Customer c : theList){
-                    acc_list.add(c.getAccount_no());
-                }
-                setAccount_no(Collections.max(acc_list)+1);
+                // List<Integer> acc_list = new ArrayList<>();
+                // for(Customer c : theList){
+                //     acc_list.add(c.getAccount_no());
+                // }
+                // setAccount_no(Collections.max(acc_list)+1);
                 
                 FileWriter write = new FileWriter(theFile);
                 Gson writegson = new Gson();
-                theList.add(new Customer(getAccount_no(),getEmail(),getPassword(),getFirstName(),getLastName(),getidentificationID(),getAddress()));
+                theList.add(new Customer(getEmail(),getPassword(),getFirstName(),getLastName(),getidentificationID(),getAddress()
+                                            ,getDmy(),getGender(),getPostal(),getPhone()));
                 writegson.toJson(theList, write);
                 write.close();
 
@@ -261,9 +305,9 @@ public class Customer {
             try {
                 FileWriter write = new FileWriter(theFile);
                 Gson gson = new Gson();
-                setAccount_no(1);
                 theList = new ArrayList<>();
-                theList.add(new Customer(getAccount_no(),getEmail(),getPassword(),getFirstName(),getLastName(),getidentificationID(),getAddress()));
+                theList.add(new Customer(getEmail(),getPassword(),getFirstName(),getLastName(),getidentificationID(),getAddress()
+                                         ,getDmy(),getGender(),getPostal(),getPhone()));
                 gson.toJson(theList, write);
                 write.close();
 
@@ -281,27 +325,27 @@ public class Customer {
         }
     }
     public void CreateAccount() throws IOException {
-        File theFile = new File("DataStorage/Account.json");
-        ArrayList<Customer> theList;
+        // File theFile = new File("DataStorage/Account.json");
+        // ArrayList<Customer> theList;
             
-        if(theFile.exists()){
-            try {
-                FileReader fileReader = new FileReader(theFile);
-                Type type = new TypeToken<ArrayList<Customer>>(){}.getType();
-                Gson gson = new Gson();
-                theList = gson.fromJson(fileReader, type);
-                fileReader.close();
+        // if(theFile.exists()){
+        //     try {
+        //         FileReader fileReader = new FileReader(theFile);
+        //         Type type = new TypeToken<ArrayList<Customer>>(){}.getType();
+        //         Gson gson = new Gson();
+        //         theList = gson.fromJson(fileReader, type);
+        //         fileReader.close();
 
-                // customer_account_data = new ArrayList<>();
-                // for(Customer c : theList){
-                //     customer_account_data.add("First Name : "+c.getFirstName());
-                //     customer_account_data.add("Last Name  : "+c.getLastName());
-                //     customer_account_data.add("Address    : "+c.getAddress());
-                //     customer_account_data.add("Email      : "+c.getEmail());
-                // }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+        //         // customer_account_data = new ArrayList<>();
+        //         // for(Customer c : theList){
+        //         //     customer_account_data.add("First Name : "+c.getFirstName());
+        //         //     customer_account_data.add("Last Name  : "+c.getLastName());
+        //         //     customer_account_data.add("Address    : "+c.getAddress());
+        //         //     customer_account_data.add("Email      : "+c.getEmail());
+        //         // }
+        //     } catch (IOException e) {
+        //         e.printStackTrace();
+        //     }
+        // }
     }
 }
