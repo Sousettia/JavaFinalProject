@@ -361,7 +361,6 @@ public class infoRegister extends Customer implements ActionListener {
 									datestr,gender,tfPostCode.getText(),tfPhoneNumber.getText());
 					Login login = new Login();
 					login.loginPage();
-
 				}else{
 					System.out.println("ID is not correct");
 				}

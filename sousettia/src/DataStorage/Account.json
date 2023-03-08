@@ -1,1 +1,26 @@
-[{"identificationID":"1111111111111","email":"@gmail.com","password":"1","firstName":"sadas","lastName":"fgdf","address":"dfa","dmy":"08-03-2023","gender":"Male","postal":"10250","phone":"02331145554"},{"identificationID":"1111111111111","email":"@gmail.com","password":"1","firstName":"Enter Firstname","lastName":"Enter Lastname","address":"Enter Address","dmy":"08-03-2023","gender":"","postal":"Enter Postal Code","phone":"Enter Phone Number"}]
+[
+    {
+        "identificationID": "1111111111111",
+        "email": "@gmail.com",
+        "password": "1",
+        "firstName": "sadas",
+        "lastName": "fgdf",
+        "address": "dfa",
+        "dmy": "08-03-2023",
+        "gender": "Male",
+        "postal": "10250",
+        "phone": "02331145554"
+    },
+    {
+        "identificationID": "1111111111111",
+        "email": "@gmail.com",
+        "password": "1",
+        "firstName": "Enter Firstname",
+        "lastName": "Enter Lastname",
+        "address": "Enter Address",
+        "dmy": "08-03-2023",
+        "gender": "",
+        "postal": "Enter Postal Code",
+        "phone": "Enter Phone Number"
+    }
+]

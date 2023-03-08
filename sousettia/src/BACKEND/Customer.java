@@ -348,4 +348,11 @@ public class Customer {
         //     }
         // }
     }
+    public boolean emptyfieldcheck(String email, String password, String fName, String lName, String id, String address, 
+                                    String dmy, String gender, String postal, String phone){
+        setString(email, password, fName, lName, id, address, dmy, gender, postal, phone);
+        
+        return false;
+    }
 }
+
