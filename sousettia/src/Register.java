@@ -199,9 +199,9 @@ public class Register implements ActionListener{
 			login.loginPage();
 		}
 		if(e.getSource()==btnNext) {
-			customer.setEmail(tfEmail.getText());
-			customer.setPassword(new String(passwordField.getPassword()));
-			customer.setConfirmPassword(new String(passwordFieldCF.getPassword()));
+			customer.setEmail(tfEmail.getText().trim());
+			customer.setPassword(new String(passwordField.getPassword()).trim());
+			customer.setConfirmPassword(new String(passwordFieldCF.getPassword()).trim());
 
 			if(customer.register_enpcheck(customer.getEmail(),customer.getPassword(),customer.getConfirmPassword())){
 				infoRegister inRegister = new infoRegister(customer.getEmail(),customer.getPassword());

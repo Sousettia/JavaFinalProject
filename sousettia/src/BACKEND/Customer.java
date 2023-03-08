@@ -251,6 +251,34 @@ public class Customer {
         }   
         return IDcheck;
     }
+    public boolean postalcheck(String postal){
+        boolean Postalcheck = false;
+        if(postal.length() == 5){
+            for(int i = 0 ; i < postal.length(); i++){
+                if(Character.isDigit(postal.charAt(i))){
+                    Postalcheck = true;
+                }else{
+                    Postalcheck = false;
+                    break;
+                }
+            }
+        }   
+        return Postalcheck;
+    }
+    public boolean phonecheck(String phone){
+        boolean Phonecheck = false;
+        if(phone.length() == 10 && phone.startsWith("0")){
+            for(int i = 0 ; i < phone.length(); i++){
+                if(Character.isDigit(phone.charAt(i))){
+                    Phonecheck = true;
+                }else{
+                    Phonecheck = false;
+                    break;
+                }
+            }
+        }   
+        return Phonecheck;
+    }
     public void register(String email, String password, String fName, String lName, 
                             String id, String address, String dmy, String gender, String postal, String phone) throws IOException{
         File theFile = new File("DataStorage/Account.json");
@@ -348,11 +376,35 @@ public class Customer {
         //     }
         // }
     }
-    public boolean emptyfieldcheck(String email, String password, String fName, String lName, String id, String address, 
-                                    String dmy, String gender, String postal, String phone){
-        setString(email, password, fName, lName, id, address, dmy, gender, postal, phone);
+    // public boolean emptyfieldcheck(String email, String password, String fName, String lName, String id, String address, 
+    //                                 String dmy, String gender, String postal, String phone){
+    //     setString(email, password, fName, lName, id, address, dmy, gender, postal, phone);
         
-        return false;
+    //     return true;
+    // }
+    public String registerallcheck(String email, String password, String fName, String lName, String id, String address, 
+                                    String dmy, String gender, String postal, String phone){
+        if(fName.equals("Enter Firstname") || fName.equals("")) 
+            return "Please Fill in the firstname box!";
+        if(lName.equals("Enter Lastname") || lName.equals("")) 
+            return "Please Fill in the lastname box!";
+        if(id.equals("Enter Identification ID") || id.equals("")) 
+            return "Please Fill in the Identification ID box!";
+        if(!idcheck(id)) 
+            return "Please Fill the correct format of ID : 13 digits of number only!";
+        if(address.equals("Enter Address") || address.equals("")) 
+            return "Please Fill in the address box!";
+        if(gender.equals("") || gender.equals("")) 
+            return "Please choose the gender!";
+        if(postal.equals("Enter Postal Code") || postal.equals("")) 
+            return "Please Fill in the postal code box!";
+        if(!postalcheck(postal)) 
+            return "Please Fill the correct format of Postal Code : #####";
+        if(phone.equals("Enter Phone Number") || phone.equals("")) 
+            return "Please Fill in the phone number box!";
+        if(!phonecheck(phone)) 
+            return "Please Fill the correct format of Phone Number : 0##########";
+        return "NICE";
     }
 }
 

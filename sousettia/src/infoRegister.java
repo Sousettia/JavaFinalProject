@@ -13,6 +13,8 @@ import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
@@ -43,6 +45,7 @@ public class infoRegister extends Customer implements ActionListener {
 	private String password;
 	private String datestr;
 	private JDateChooser dateChooser = new JDateChooser(cld.getTime());
+	JLabel lblinforegiserror = new JLabel("",SwingConstants.CENTER);
 	
 	public infoRegister(String email, String password){
 		this.email = email;
@@ -60,7 +63,7 @@ public class infoRegister extends Customer implements ActionListener {
 		frame.setResizable(false);
 		frame.setBounds(250, 120, 807, 538);
 		
-		ImageIcon image = new ImageIcon("bank.png");
+		ImageIcon image = new ImageIcon("icon/bank.png");
 		frame.setIconImage(image.getImage());
 		
 		
@@ -347,22 +350,35 @@ public class infoRegister extends Customer implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		
 		if(e.getSource()==btnConfirm) {
-			frame.dispose();
 			SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-YYYY");
 			Date date = dateChooser.getDate();
 			datestr = sdf.format(date);
 
+			String firstname = tfFname.getText().trim();
+			String lastname = tfLname.getText().trim();
+			String id = tfID.getText().trim();
+			String address = tfAddress.getText().trim();
+			String postcode = tfPostCode.getText().trim();
+			String phone = tfPhoneNumber.getText().trim();
 			String gender = "";
 			if(genderMale.isSelected()) gender = genderMale.getText();
 			if(genderFemale.isSelected()) gender = genderFemale.getText();
 			try {
-				if(super.idcheck(tfID.getText())){
-					super.register(email,password,tfFname.getText(),tfLname.getText(),tfID.getText(),tfAddress.getText(),
-									datestr,gender,tfPostCode.getText(),tfPhoneNumber.getText());
+				if(super.registerallcheck(email,password,firstname,lastname,id,address,
+											datestr,gender,postcode,phone) == "NICE"){
+					frame.dispose();
+					super.register(email,password,firstname,lastname,id,address,
+									datestr,gender,postcode,phone);
 					Login login = new Login();
 					login.loginPage();
-				}else{
-					System.out.println("ID is not correct");
+				}else{ 
+					lblinforegiserror.setText(
+						super.registerallcheck(email,password,tfFname.getText(),tfLname.getText(),tfID.getText(),tfAddress.getText(),
+												datestr,gender,tfPostCode.getText(),tfPhoneNumber.getText()));
+					lblinforegiserror.setBounds(128, 402, 515, 30);
+					frame.getContentPane().add(lblinforegiserror);
+					lblinforegiserror.setFont(new Font("Alice", Font.BOLD, 17));
+					lblinforegiserror.setForeground(Color.red);
 				}
 			} catch (IOException e1) {
 				e1.printStackTrace();
