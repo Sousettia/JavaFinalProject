@@ -7,8 +7,6 @@ import java.util.*;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import DataStorage.temp_acc_class;
-
 public class Customer {
     //#region attributes
     private String identificationID;

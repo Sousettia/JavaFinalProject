@@ -1,4 +1,4 @@
-package DataStorage;
+package BACKEND;
 
 import java.util.ArrayList;
 
@@ -16,7 +16,7 @@ public class temp_acc_class {
     }
 
     public temp_acc_class(double account_no, double balance, String account_type,
-            ArrayList<DataStorage.transaction> transaction) {
+            ArrayList<BACKEND.transaction> transaction) {
         this.account_no = account_no;
         this.balance = balance;
         this.account_type = account_type;
