@@ -1,6 +1,6 @@
 import java.io.IOException;
 
-import BACKEND.Customer;
+// import BACKEND.Customer;
 
 public class starter {
 	public static void main(String[] args) throws IOException {

@@ -2,20 +2,20 @@ package BACKEND;
 
 import java.util.ArrayList;
 
-public class temp_acc_class {
+public class PersonalAccountData {
     private String account_no;
     private double balance;
     private String account_type;
     ArrayList < transaction > transaction;
 
-    public temp_acc_class() {
+    public PersonalAccountData() {
         this.account_no = "null";
         this.balance = 0;
         this.account_type = "null";
         this.transaction = null;
     }
 
-    public temp_acc_class(String account_no, double balance, String account_type,
+    public PersonalAccountData(String account_no, double balance, String account_type,
             ArrayList<BACKEND.transaction> transaction) {
         this.account_no = account_no;
         this.balance = balance;

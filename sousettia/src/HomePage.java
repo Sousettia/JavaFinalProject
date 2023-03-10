@@ -17,7 +17,10 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import BACKEND.Customer;
+import BACKEND.CustomerwithAccount;
 import BACKEND.Product;
+import BACKEND.accountlist;
+import BACKEND.PersonalAccountData;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -113,26 +116,48 @@ public class HomePage {
 		}
 	}
 	public void setlblAccountDetail(String email) throws IOException{
+		//#region getAccountNumber
+		File theFile = new File("DataStorage/CustomerwithAccount.json");
+        Gson gson = new Gson();
 
-		File theFile = new File("DataStorage/Customer.json");
-        ArrayList<Customer> theList;
-		FileReader fileReader = new FileReader(theFile);
-		Type type = new TypeToken<ArrayList<Customer>>(){}.getType();
-		Gson gson = new Gson();
-		theList = gson.fromJson(fileReader, type);
-		fileReader.close();
+        //Read Data From CWA
+        ArrayList<CustomerwithAccount> theCustomerwithAccountList = new ArrayList<>();
+
+        FileReader fileReader = new FileReader(theFile);
+        Type type = new TypeToken<ArrayList<CustomerwithAccount>>(){}.getType();
+        theCustomerwithAccountList = gson.fromJson(fileReader, type);
+        fileReader.close();
 
 		cus.setEmail(email);
-		for (Customer c : theList) {
-			if(c.getEmail().equals(cus.getEmail())){
-				lblName.setText("Name :  " + c.getFirstName() + " " + c.getLastName());
-				lblDateOfBirth.setText("Birth :  " + c.getDmy());
-				lblPhoneNumber.setText("Phone :  " + c.getPhone());
-				lblAddress.setText("Address :  " + c.getAddress());
-				lblEmail.setText("Email :  " + c.getEmail());
-			}
+        ArrayList<accountlist> alar = new ArrayList<>();
+        for (CustomerwithAccount c : theCustomerwithAccountList) {
+            if(c.getEmail().equals(cus.getEmail())){
+                for (accountlist a : c.getAccountlist()) {
+                    alar.add(new accountlist(a.getAccount_no()));
+                }
+            }
+        }
+		String accountNumber = "";
+		for (accountlist accountlist : alar) {
+			accountNumber = accountlist.getAccount_no();
+			break;
+		}
+		//#endregion
+		try {
+			FileReader AccountfileReader = new FileReader(new File("DataStorage/" + accountNumber + ".json"));
+			PersonalAccountData pad = gson.fromJson(AccountfileReader, PersonalAccountData.class);
+			
+			lblAccountId.setText("Account ID:  "+pad.getAccount_no());
+			lblBalance.setText("Balance:  " + String.format("%.2f",pad.getBalance()));
+			lblAccountType.setText("Account Type:  " + pad.getAccount_type());
+
+			lblAccountIdTF.setText("Account ID:  "+pad.getAccount_no());
+			lblBalanceTF.setText("Balance:  " + String.format("%.2f",pad.getBalance()));
+		} catch (IOException e) {
+			//
 		}
 	}
+
 	public void homepagePage() {
 		//icon
 		ImageIcon image = new ImageIcon("icon/bank.png");
@@ -145,6 +170,9 @@ public class HomePage {
 		frame.setBounds(100, 70, 1320, 720);
 		frame.setResizable(false);
 		frame.getContentPane().setLayout(null);
+		jp2.setVisible(false);
+        jp3.setVisible(false);
+        jp4.setVisible(false);
 		
 		DropoutMenu.setLayout(null);
 		DropoutMenu.setBackground(new Color(255, 196, 225));
@@ -425,15 +453,15 @@ public class HomePage {
 		
 		jp2.add(lblAccountDetail);
 		lblAccountId.setFont(new Font("Alice", Font.BOLD, 23));
-		lblAccountId.setBounds(512, 66, 225, 33);
+		lblAccountId.setBounds(512, 66, 400, 33);
 		
 		jp2.add(lblAccountId);
 		lblAccountType.setFont(new Font("Alice", Font.BOLD, 23));
-		lblAccountType.setBounds(512, 97, 225, 33);
+		lblAccountType.setBounds(512, 97, 400, 33);
 		
 		jp2.add(lblAccountType);
 		lblBalance.setFont(new Font("Alice", Font.BOLD, 23));
-		lblBalance.setBounds(512, 128, 225, 33);
+		lblBalance.setBounds(512, 128, 400, 33);
 		
 		jp2.add(lblBalance);
 		
@@ -494,11 +522,11 @@ public class HomePage {
 		lblFrom.setFont(new Font("Alice", Font.BOLD, 25));
 		panelTranfer.add(lblFrom);
 		lblAccountIdTF.setFont(new Font("Alice", Font.BOLD, 23));
-		lblAccountIdTF.setBounds(54, 47, 169, 27);
+		lblAccountIdTF.setBounds(54, 47, 400, 27);
 		
 		panelTranfer.add(lblAccountIdTF);
 		lblBalanceTF.setFont(new Font("Alice", Font.BOLD, 23));
-		lblBalanceTF.setBounds(54, 84, 169, 27);
+		lblBalanceTF.setBounds(54, 84, 400, 27);
 		
 		panelTranfer.add(lblBalanceTF);
 		panelTranfer_1.setBackground(new Color(255, 234, 245));

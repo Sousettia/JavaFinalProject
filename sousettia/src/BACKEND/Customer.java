@@ -173,7 +173,7 @@ public class Customer {
     }
 
     public void setTransactionList(String statement,double amount) {
-        transactionList.add(new temp_acc_class());
+        transactionList.add(new PersonalAccountData());
     }
     
     //#endregion
@@ -393,7 +393,7 @@ public class Customer {
 
         FileWriter write = new FileWriter(BookBankFile);
 
-        temp_acc_class tac = new temp_acc_class();
+        PersonalAccountData tac = new PersonalAccountData();
         tac.setAccount_no(accountNumber);
         tac.setBalance(0);
         tac.setAccount_type("SavingAccount");

@@ -6,10 +6,6 @@
         {
             "statement": "Open Account",
             "amount": 0.0
-        },
-        {
-            "statement": "Deposit",
-            "amount": 1000.0
         }
     ]
 }

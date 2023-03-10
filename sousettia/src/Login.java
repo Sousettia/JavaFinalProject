@@ -192,6 +192,7 @@ public class Login extends Customer implements ActionListener {
 					setEmail(tfEmail.getText());
 					HomePage homepage = new HomePage();
 					homepage.setlblCustomerDetail(tfEmail.getText());
+					homepage.setlblAccountDetail(tfEmail.getText());
 					homepage.homepagePage();
 					frame.dispose();
 				}else{
