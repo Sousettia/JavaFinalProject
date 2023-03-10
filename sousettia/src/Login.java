@@ -189,7 +189,9 @@ public class Login extends Customer implements ActionListener {
 		if(e.getSource()==btnLogin) {
 			try {
 				if(super.login(tfEmail.getText(),new String(passwordField.getPassword()))){
+					setEmail(tfEmail.getText());
 					HomePage homepage = new HomePage();
+					homepage.setlblCustomerDetail(tfEmail.getText());
 					homepage.homepagePage();
 					frame.dispose();
 				}else{

@@ -1,0 +1,15 @@
+{
+    "account_no": "521719",
+    "balance": 0.0,
+    "account_type": "SavingAccount",
+    "transaction": [
+        {
+            "statement": "Open Account",
+            "amount": 0.0
+        },
+        {
+            "statement": "Deposit",
+            "amount": 1000.0
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+[
+    {
+        "identificationID": "2222222222222",
+        "email": "panachai@gmail.com",
+        "password": "2",
+        "firstName": "rwerew",
+        "lastName": "ghjghhg",
+        "address": "asdasdasd",
+        "dmy": "09-03-2023",
+        "gender": "Female",
+        "postal": "55555",
+        "phone": "0333333333"
+    },
+    {
+        "identificationID": "1749700112600",
+        "email": "sousettia@gmail.com",
+        "password": "1",
+        "firstName": "Jirapat",
+        "lastName": "Anantasirijinda",
+        "address": "88/88 So Far Away",
+        "dmy": "03-09-2004",
+        "gender": "Male",
+        "postal": "10250",
+        "phone": "0636579233"
+    }
+]

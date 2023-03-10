@@ -1,15 +1,11 @@
 {
     "account_no": 1,
-    "balance": 1000.00,
+    "balance": 1000.0,
     "account_type": "SavingAccount",
     "transaction": [
         {
-            "statement": "deposit",
-            "amount": 3000.00
-        },
-        {
-            "statement": "withdraw",
-            "amount": 300.00
+            "statement": "null",
+            "amount": 0.0
         }
     ]
 }

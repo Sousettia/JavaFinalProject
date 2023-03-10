@@ -5,7 +5,7 @@ public class transaction {
     private double amount;
     
     public transaction() {
-        this.statement = "null";
+        this.statement = "Open Account";
         this.amount = 0;
     }
     public transaction(String statement, double amount) {
