@@ -32,9 +32,11 @@ public class Deposit  {
 	private JTextField txtBahtD;
 	JLabel lblAccountIdTF = new JLabel("Account ID:");
 	JLabel lblBalanceTF = new JLabel("Balance:");
-	public String email;
-	public Deposit(String email) throws IOException {
+	private String email;
+	private String account_no;
+	public Deposit(String email,String account_no) throws IOException {
 		this.email = email;
+		this.account_no = account_no;
 		setlblAccountDetail();
 	}
 	/**
@@ -108,16 +110,16 @@ public class Deposit  {
 					try {
 						Customer cus = new Customer();
 						cus.setEmail(email);
-						cus.deposit(Double.parseDouble(txtBahtD.getText()));
-						HomePage homepage = new HomePage(email);
+						cus.deposit(account_no,Double.parseDouble(txtBahtD.getText()));
+						HomePage homepage = new HomePage(email,account_no);
 						homepage.homepagePage();
+						frame.dispose();
 					} catch (IOException e1) {
 						e1.printStackTrace();
 					}
 				}else{
 					System.out.println("WRONG");
 				}
-				frame.dispose();
 			}
 		});
 		btnConfirm.setForeground(new Color(255, 132, 153));
@@ -131,7 +133,7 @@ public class Deposit  {
 		btnCancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					HomePage homepage = new HomePage(email);
+					HomePage homepage = new HomePage(email,account_no);
 					homepage.homepagePage();
 					frame.dispose();
 				} catch (IOException e1) {
@@ -172,14 +174,9 @@ public class Deposit  {
                 }
             }
         }
-		String accountNumber = "";
-		for (accountlist accountlist : alar) {
-			accountNumber = accountlist.getAccount_no();
-			break;
-		}
 		//#endregion
 		try {
-			FileReader AccountfileReader = new FileReader(new File("DataStorage/" + accountNumber + ".json"));
+			FileReader AccountfileReader = new FileReader(new File("DataStorage/" + account_no + ".json"));
 			PersonalAccountData pad = gson.fromJson(AccountfileReader, PersonalAccountData.class);
 
 			lblAccountIdTF.setText("Account ID:  "+pad.getAccount_no());

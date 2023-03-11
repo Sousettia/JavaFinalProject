@@ -1,5 +1,6 @@
 import java.awt.Color;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -11,6 +12,7 @@ import javax.swing.JSplitPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.Timer;
 
 import com.google.gson.Gson;
@@ -29,6 +31,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
@@ -40,7 +43,6 @@ public class HomePage {
 	JFrame frame = new JFrame();
 	Timer tm1,tm2,tm3;
 	int pl1 = 65;
-
 	ImageIcon imageButton1 = new ImageIcon("icon/Home Icon.png");
 	ImageIcon imageButton2 = new ImageIcon("icon/R_1.png");
 	ImageIcon imageButton3 = new ImageIcon("icon/R.png");
@@ -87,15 +89,27 @@ public class HomePage {
 	private final JLabel lblTransaction = new JLabel("Transaction", SwingConstants.LEFT);
 	private final JButton btnCreateaccount = new JButton("CREATEACCOUNT");
 	private final JButton btnLogout = new JButton("LOG OUT");
+
+	private final JButton btnTransferBank = new JButton("Transfer");
+	private final JLabel lblChangeAccount = new JLabel("Change Account", SwingConstants.LEFT);
+	private JComboBox<String> comboBox = new JComboBox<>();
 	private JTextField tfAccount;
 	private JTextField tfBalance;
 	private JTextField tfComment;
-	public String email;
+	private String email;
+	private String account_no;
 	
-	public HomePage(String email) throws IOException {
+	public HomePage(String email, String account_no) throws IOException {
 		this.email = email;
+		this.account_no = account_no;
 		setlblAccountDetail();
 		setlblCustomerDetail();
+	}
+	public String getAccount_no() {
+		return account_no;
+	}
+	public void setAccount_no(String account_no) {
+		this.account_no = account_no;
 	}
 	public String getEmail() {
 		return email;
@@ -149,14 +163,9 @@ public class HomePage {
                 }
             }
         }
-		String accountNumber = "";
-		for (accountlist accountlist : alar) {
-			accountNumber = accountlist.getAccount_no();
-			break;
-		}
 		//#endregion
 		try {
-			FileReader AccountfileReader = new FileReader(new File("DataStorage/" + accountNumber + ".json"));
+			FileReader AccountfileReader = new FileReader(new File("DataStorage/" + account_no + ".json"));
 			PersonalAccountData pad = gson.fromJson(AccountfileReader, PersonalAccountData.class);
 			
 			lblAccountId.setText("Account ID:  "+pad.getAccount_no());
@@ -169,15 +178,45 @@ public class HomePage {
 			e.printStackTrace();
 		}
 	}
-	public void ShowTransaction(){
-		model.addElement(new transaction("Deposit"));
+	public void ShowTransaction() throws IOException{
+		//#region getAccountNumber
+		File theFile = new File("DataStorage/CustomerwithAccount.json");
+        Gson gson = new Gson();
 
-		list.getSelectionModel().addListSelectionListener(e -> {
-			transaction p = list.getSelectedValue();
-			label.setText(String.format("%.2f", p.getAmount()));
-		});
+        //Read Data From CWA
+        ArrayList<CustomerwithAccount> theCustomerwithAccountList = new ArrayList<>();
+
+        FileReader fileReader = new FileReader(theFile);
+        Type type = new TypeToken<ArrayList<CustomerwithAccount>>(){}.getType();
+        theCustomerwithAccountList = gson.fromJson(fileReader, type);
+        fileReader.close();
+
+        ArrayList<accountlist> alar = new ArrayList<>();
+        for (CustomerwithAccount c : theCustomerwithAccountList) {
+            if(c.getEmail().equals(getEmail())){
+                for (accountlist a : c.getAccountlist()) {
+                    alar.add(new accountlist(a.getAccount_no()));
+                }
+            }
+        }
+
+		//#endregion
+		try {
+			FileReader AccountfileReader = new FileReader(new File("DataStorage/" + account_no + ".json"));
+			PersonalAccountData pad = gson.fromJson(AccountfileReader, PersonalAccountData.class);
+            
+            for (transaction t : pad.getTransaction()) {
+                model.addElement(new transaction(t.getStatement(),t.getAmount()));
+            }
+			list.getSelectionModel().addListSelectionListener(e -> {
+				transaction p = list.getSelectedValue();
+				label.setText(String.format("%.2f", p.getAmount()));
+			});
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
-	public void homepagePage() {
+	public void homepagePage() throws IOException {
 		//icon
 		ImageIcon image = new ImageIcon("icon/bank.png");
 		frame.setIconImage(image.getImage());
@@ -281,9 +320,9 @@ public class HomePage {
 		btnCreateaccount.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					CreateAccount create = new CreateAccount();
-					Customer cus = new Customer();
-					cus.CreateAccount(email);
+					CreateAccount create = new CreateAccount(email,account_no);
+					// Customer cus = new Customer();
+					// cus.CreateAccount(email);
 					create.CreateaccountPopup();
 					frame.dispose();
 				} catch (IOException e1) {
@@ -494,14 +533,15 @@ public class HomePage {
 		ShowTransaction();
 
 		panelTransaction.setBackground(new Color(255, 234, 245));
-		panelTransaction.setBounds(35, 383, 622, 225);
+		panelTransaction.setBounds(24, 349, 589, 244);
 		
 		jp2.add(panelTransaction);
 		panelTransaction.setLayout(null);
 		list.setModel(model);
-		splitPane.setBounds(10, 5, 612, 210);
+		splitPane.setBounds(10, 3, 569, 92);
 		
 		splitPane.setLeftComponent(new JScrollPane(list));
+		label.setFont(new Font("Alice", Font.PLAIN, 25));
 		panell.add(label);
 		splitPane.setRightComponent(panell);
 		panelTransaction.add(splitPane);
@@ -511,20 +551,6 @@ public class HomePage {
 		lblTransaction.setForeground(new Color(255, 111, 183));
 		lblTransaction.setFont(new Font("Alice", Font.BOLD, 31));
 		
-		JButton btnChangeaccount = new JButton("ChangeAccount");
-		btnChangeaccount.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				changeAccount change = new changeAccount();
-				change.changeAccountpage();
-				
-			}
-		});
-		btnChangeaccount.setForeground(new Color(255, 132, 153));
-		btnChangeaccount.setFont(new Font("Alice", Font.BOLD, 25));
-		btnChangeaccount.setFocusable(false);
-		btnChangeaccount.setBackground(Color.WHITE);
-		btnChangeaccount.setBounds(880, 43, 225, 81);
-		jp2.add(btnChangeaccount);
 		jp3.setBackground(new Color(255, 234, 245));
 		jp3.setBounds(0, 0, 1243, 618);
 		
@@ -670,7 +696,7 @@ public class HomePage {
         btnDeposit.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 try {
-					Deposit deposit = new Deposit(email);
+					Deposit deposit = new Deposit(email,account_no);
                		deposit.DepositPage();
 					frame.dispose();
 				} catch (IOException ex) {
@@ -689,7 +715,7 @@ public class HomePage {
         btnWithdraw.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 try {
-					Withdraw withdraw = new Withdraw(email);
+					Withdraw withdraw = new Withdraw(email,account_no);
                		withdraw.Withdrawpage();
 					frame.dispose();
 				} catch (Exception ex) {
@@ -703,6 +729,11 @@ public class HomePage {
         btnWithdraw.setFont(new Font("Alice", Font.BOLD, 25));
         btnWithdraw.setFocusable(false);
         btnWithdraw.setBackground(Color.WHITE);
+
+		lblChangeAccount.setForeground(new Color(255, 111, 183));
+        lblChangeAccount.setFont(new Font("Alice", Font.BOLD, 31));
+        lblChangeAccount.setBounds(700, 326, 400, 37);
+		jp2.add(lblChangeAccount);
 		
 		tm1 = new Timer(10, new ActionListener() {
 			   
@@ -801,5 +832,61 @@ public class HomePage {
 			}
 		});
 		
+
+		btnTransferBank.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+                // Transfer transfer = new Transfer();
+                // transfer.TransferPage();
+            }
+        }); 
+        btnTransferBank.setForeground(new Color(255, 132, 153));
+        btnTransferBank.setFont(new Font("Alice", Font.BOLD, 25));
+        btnTransferBank.setFocusable(false);
+        btnTransferBank.setBackground(Color.WHITE);
+        btnTransferBank.setBounds(740, 99, 195, 74);
+
+        panelTranfer_1.add(btnTransferBank);
+
+		changeAccountComboBox();
+	}
+	public void changeAccountComboBox() throws IOException{
+		File theFile = new File("DataStorage/CustomerwithAccount.json");
+		ArrayList<CustomerwithAccount> theCustomerwithAccountList = new ArrayList<>();
+
+		FileReader fileReader = new FileReader(theFile);
+		Type type = new TypeToken<ArrayList<CustomerwithAccount>>(){}.getType();
+		Gson gson = new Gson();
+		theCustomerwithAccountList = gson.fromJson(fileReader, type);
+		fileReader.close();
+
+		ArrayList<String> account_noArrayList = new ArrayList<>();
+		for (CustomerwithAccount c : theCustomerwithAccountList) {
+			if(c.getEmail().equals(getEmail())){
+				for (accountlist a : c.getAccountlist()) {
+					account_noArrayList.add(a.getAccount_no());
+				}
+			}
+		}
+		if(!account_no.equals(account_noArrayList.get(0))){
+			Collections.swap(account_noArrayList, 0, account_noArrayList.indexOf(account_no));
+		}
+		comboBox.setModel(new DefaultComboBoxModel<String>(account_noArrayList.toArray(new String[0])));
+		comboBox.setFont(new Font("Alice", Font.BOLD, 18));
+        comboBox.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if(e.getSource()==comboBox) {
+                    try {
+						HomePage homepage = new HomePage(email,String.valueOf(comboBox.getSelectedItem()));
+						homepage.homepagePage();
+					} catch (IOException e1) {
+						e1.printStackTrace();
+					}
+					frame.dispose();
+                }
+            }
+        });
+        comboBox.setBounds(766, 414, 260, 56);
+        jp2.add(comboBox);
 	}
 }

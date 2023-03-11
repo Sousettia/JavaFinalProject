@@ -504,7 +504,7 @@ public class Customer {
 			//
 		}
     }
-    public void deposit(double amount) throws IOException {
+    public void deposit(String account_no,double amount) throws IOException {
         //#region getAccountNumber
 		File theFile = new File("DataStorage/CustomerwithAccount.json");
         Gson gson = new Gson();
@@ -525,20 +525,12 @@ public class Customer {
                 }
             }
         }
-        //First Account Only
-		String accountNumber = "";
-        int i = 0;
-		for (accountlist accountlist : alar) {
-			accountNumber = accountlist.getAccount_no();
-			if(i == 0)break;
-            i++;
-		}
 		//#endregion
 		try {
-			FileReader AccountfileReader = new FileReader(new File("DataStorage/" + accountNumber + ".json"));
+			FileReader AccountfileReader = new FileReader(new File("DataStorage/" + account_no + ".json"));
 			PersonalAccountData pad = gson.fromJson(AccountfileReader, PersonalAccountData.class);
             
-            File BookBankFile = new File("DataStorage/"+accountNumber+".json");
+            File BookBankFile = new File("DataStorage/"+account_no+".json");
             FileWriter write = new FileWriter(BookBankFile);
 
             PersonalAccountData tac = new PersonalAccountData();
@@ -561,8 +553,7 @@ public class Customer {
 			//
 		}
     }
-
-    public void withdraw(double amount) throws IOException {
+    public void withdraw(String account_no,double amount) throws IOException {
         //#region getAccountNumber
 		File theFile = new File("DataStorage/CustomerwithAccount.json");
         Gson gson = new Gson();
@@ -583,20 +574,12 @@ public class Customer {
                 }
             }
         }
-        //First Account Only
-		String accountNumber = "";
-        int i = 0;
-		for (accountlist accountlist : alar) {
-			accountNumber = accountlist.getAccount_no();
-			if(i == 0)break;
-            i++;
-		}
 		//#endregion
 		try {
-			FileReader AccountfileReader = new FileReader(new File("DataStorage/" + accountNumber + ".json"));
+			FileReader AccountfileReader = new FileReader(new File("DataStorage/" + account_no + ".json"));
 			PersonalAccountData pad = gson.fromJson(AccountfileReader, PersonalAccountData.class);
             
-            File BookBankFile = new File("DataStorage/"+accountNumber+".json");
+            File BookBankFile = new File("DataStorage/"+account_no+".json");
             FileWriter write = new FileWriter(BookBankFile);
 
             PersonalAccountData tac = new PersonalAccountData();
@@ -609,7 +592,7 @@ public class Customer {
             for (transaction t : pad.getTransaction()) {
                 transaction.add(new transaction(t.getStatement(),t.getAmount()));
             }
-            transaction.add(new transaction("Deposit", amount));
+            transaction.add(new transaction("Withdraw", amount));
             tac.setTransaction(transaction);
 
             Gson writegson = new Gson();

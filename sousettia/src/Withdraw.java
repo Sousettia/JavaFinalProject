@@ -34,11 +34,12 @@ public class Withdraw  {
 	private JTextField txtBahtWD;
 	JLabel lblAccountIdTF = new JLabel("Account ID:");
 	JLabel lblBalanceTF = new JLabel("Balance:");
-	public String email;
+	private String email;
+	private String account_no;
 
-
-	public Withdraw(String email) throws IOException {
+	public Withdraw(String email,String account_no) throws IOException {
 		this.email = email;
+		this.account_no = account_no;
 		setlblAccountDetail(email);
 	}
 	/**
@@ -112,16 +113,16 @@ public class Withdraw  {
 					try {
 						Customer cus = new Customer();
 						cus.setEmail(email);
-						cus.withdraw(Double.parseDouble(txtBahtWD.getText()));
-						HomePage homepage = new HomePage(email);
+						cus.withdraw(account_no,Double.parseDouble(txtBahtWD.getText()));
+						HomePage homepage = new HomePage(email,account_no);
 						homepage.homepagePage();
+						frame.dispose();
 					} catch (IOException e1) {
 						e1.printStackTrace();
 					}
 				}else{
 					System.out.println("WRONG");
 				}
-				frame.dispose();
 			}
 		});
 		btnConfirm.setForeground(new Color(255, 132, 153));
@@ -135,7 +136,7 @@ public class Withdraw  {
 		btnCancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					HomePage homepage = new HomePage(email);
+					HomePage homepage = new HomePage(email,account_no);
 					homepage.homepagePage();
 					frame.dispose();
 				} catch (IOException e1) {
@@ -176,20 +177,15 @@ public class Withdraw  {
                 }
             }
         }
-		String accountNumber = "";
-		for (accountlist accountlist : alar) {
-			accountNumber = accountlist.getAccount_no();
-			break;
-		}
 		//#endregion
 		try {
-			FileReader AccountfileReader = new FileReader(new File("DataStorage/" + accountNumber + ".json"));
+			FileReader AccountfileReader = new FileReader(new File("DataStorage/" + account_no + ".json"));
 			PersonalAccountData pad = gson.fromJson(AccountfileReader, PersonalAccountData.class);
 
 			lblAccountIdTF.setText("Account ID:  "+pad.getAccount_no());
 			lblBalanceTF.setText("Balance:  " + String.format("%.2f",pad.getBalance()));
 		} catch (IOException e) {
-			//
+			e.printStackTrace();
 		}
 	}
 	public boolean isDouble(String str) {
