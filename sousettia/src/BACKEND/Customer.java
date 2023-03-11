@@ -346,7 +346,8 @@ public class Customer {
             write.close();
         }
     }
-    public void CreateAccount() throws IOException {
+    public void CreateAccount(String email) throws IOException {
+        setEmail(email);
         Random random = new Random();
         int digits = random.nextInt(000000,999999);
         String randomed = String.format("%06d", digits);
@@ -437,29 +438,186 @@ public class Customer {
     }
     public String registerallcheck(String email, String password, String fName, String lName, String id, String address, 
                                     String dmy, String gender, String postal, String phone){
-        // if(fName.equals("Enter Firstname") || fName.equals("")) 
-        //     return "Please Fill in the firstname box!";
-        // if(lName.equals("Enter Lastname") || lName.equals("")) 
-        //     return "Please Fill in the lastname box!";
-        // if(id.equals("Enter Identification ID") || id.equals("")) 
-        //     return "Please Fill in the Identification ID box!";
-        // if(!idcheck(id)) 
-        //     return "Please Fill the correct format of ID : 13 digits of number only!";
-        // if(address.equals("Enter Address") || address.equals("")) 
-        //     return "Please Fill in the address box!";
-        // if(gender.equals("") || gender.equals("")) 
-        //     return "Please choose the gender!";
-        // if(postal.equals("Enter Postal Code") || postal.equals("")) 
-        //     return "Please Fill in the postal code box!";
-        // if(!postalcheck(postal)) 
-        //     return "Please Fill the correct format of Postal Code : #####";
-        // if(phone.equals("Enter Phone Number") || phone.equals("")) 
-        //     return "Please Fill in the phone number box!";
-        // if(!phonecheck(phone)) 
-        //     return "Please Fill the correct format of Phone Number : 0##########";
+        if(fName.equals("Enter Firstname") || fName.equals("")) 
+            return "Please Fill in the firstname box!";
+        if(lName.equals("Enter Lastname") || lName.equals("")) 
+            return "Please Fill in the lastname box!";
+        if(id.equals("Enter Identification ID") || id.equals("")) 
+            return "Please Fill in the Identification ID box!";
+        if(!idcheck(id)) 
+            return "Please Fill the correct format of ID : 13 digits of number only!";
+        if(address.equals("Enter Address") || address.equals("")) 
+            return "Please Fill in the address box!";
+        if(gender.equals("") || gender.equals("")) 
+            return "Please choose the gender!";
+        if(postal.equals("Enter Postal Code") || postal.equals("")) 
+            return "Please Fill in the postal code box!";
+        if(!postalcheck(postal)) 
+            return "Please Fill the correct format of Postal Code : #####";
+        if(phone.equals("Enter Phone Number") || phone.equals("")) 
+            return "Please Fill in the phone number box!";
+        if(!phonecheck(phone)) 
+            return "Please Fill the correct format of Phone Number : 0##########";
         return "NICE";
     }
+    public void getPersonalDataInFile() throws IOException{
+        //#region getAccountNumber
+		File theFile = new File("DataStorage/CustomerwithAccount.json");
+        Gson gson = new Gson();
 
+        //Read Data From CWA
+        ArrayList<CustomerwithAccount> theCustomerwithAccountList = new ArrayList<>();
 
+        FileReader fileReader = new FileReader(theFile);
+        Type type = new TypeToken<ArrayList<CustomerwithAccount>>(){}.getType();
+        theCustomerwithAccountList = gson.fromJson(fileReader, type);
+        fileReader.close();
+
+        ArrayList<accountlist> alar = new ArrayList<>();
+        for (CustomerwithAccount c : theCustomerwithAccountList) {
+            if(c.getEmail().equals(getEmail())){
+                for (accountlist a : c.getAccountlist()) {
+                    alar.add(new accountlist(a.getAccount_no()));
+                }
+            }
+        }
+        //First Account Only
+		String accountNumber = "";
+        int i = 0;
+		for (accountlist accountlist : alar) {
+			accountNumber = accountlist.getAccount_no();
+			if(i == 0)break;
+            i++;
+		}
+		//#endregion
+		try {
+			FileReader AccountfileReader = new FileReader(new File("DataStorage/" + accountNumber + ".json"));
+			PersonalAccountData pad = gson.fromJson(AccountfileReader, PersonalAccountData.class);
+			
+            pad.getAccount_no(); pad.getAccount_type(); pad.getBalance();
+
+            for (transaction t : pad.getTransaction()) {
+                t.getStatement();
+                t.getAmount();
+            }
+		} catch (IOException e) {
+			//
+		}
+    }
+    public void deposit(double amount) throws IOException {
+        //#region getAccountNumber
+		File theFile = new File("DataStorage/CustomerwithAccount.json");
+        Gson gson = new Gson();
+
+        //Read Data From CWA
+        ArrayList<CustomerwithAccount> theCustomerwithAccountList = new ArrayList<>();
+
+        FileReader fileReader = new FileReader(theFile);
+        Type type = new TypeToken<ArrayList<CustomerwithAccount>>(){}.getType();
+        theCustomerwithAccountList = gson.fromJson(fileReader, type);
+        fileReader.close();
+
+        ArrayList<accountlist> alar = new ArrayList<>();
+        for (CustomerwithAccount c : theCustomerwithAccountList) {
+            if(c.getEmail().equals(getEmail())){
+                for (accountlist a : c.getAccountlist()) {
+                    alar.add(new accountlist(a.getAccount_no()));
+                }
+            }
+        }
+        //First Account Only
+		String accountNumber = "";
+        int i = 0;
+		for (accountlist accountlist : alar) {
+			accountNumber = accountlist.getAccount_no();
+			if(i == 0)break;
+            i++;
+		}
+		//#endregion
+		try {
+			FileReader AccountfileReader = new FileReader(new File("DataStorage/" + accountNumber + ".json"));
+			PersonalAccountData pad = gson.fromJson(AccountfileReader, PersonalAccountData.class);
+            
+            File BookBankFile = new File("DataStorage/"+accountNumber+".json");
+            FileWriter write = new FileWriter(BookBankFile);
+
+            PersonalAccountData tac = new PersonalAccountData();
+            tac.setAccount_no(pad.getAccount_no());
+            tac.setBalance(pad.getBalance()+amount);
+            tac.setAccount_type(pad.getAccount_type());
+
+            ArrayList<transaction> transaction = new ArrayList<>();
+
+            for (transaction t : pad.getTransaction()) {
+                transaction.add(new transaction(t.getStatement(),t.getAmount()));
+            }
+            transaction.add(new transaction("Deposit", amount));
+            tac.setTransaction(transaction);
+
+            Gson writegson = new Gson();
+            writegson.toJson(tac,write);
+            write.close();
+		} catch (IOException e) {
+			//
+		}
+    }
+
+    public void withdraw(double amount) throws IOException {
+        //#region getAccountNumber
+		File theFile = new File("DataStorage/CustomerwithAccount.json");
+        Gson gson = new Gson();
+
+        //Read Data From CWA
+        ArrayList<CustomerwithAccount> theCustomerwithAccountList = new ArrayList<>();
+
+        FileReader fileReader = new FileReader(theFile);
+        Type type = new TypeToken<ArrayList<CustomerwithAccount>>(){}.getType();
+        theCustomerwithAccountList = gson.fromJson(fileReader, type);
+        fileReader.close();
+
+        ArrayList<accountlist> alar = new ArrayList<>();
+        for (CustomerwithAccount c : theCustomerwithAccountList) {
+            if(c.getEmail().equals(getEmail())){
+                for (accountlist a : c.getAccountlist()) {
+                    alar.add(new accountlist(a.getAccount_no()));
+                }
+            }
+        }
+        //First Account Only
+		String accountNumber = "";
+        int i = 0;
+		for (accountlist accountlist : alar) {
+			accountNumber = accountlist.getAccount_no();
+			if(i == 0)break;
+            i++;
+		}
+		//#endregion
+		try {
+			FileReader AccountfileReader = new FileReader(new File("DataStorage/" + accountNumber + ".json"));
+			PersonalAccountData pad = gson.fromJson(AccountfileReader, PersonalAccountData.class);
+            
+            File BookBankFile = new File("DataStorage/"+accountNumber+".json");
+            FileWriter write = new FileWriter(BookBankFile);
+
+            PersonalAccountData tac = new PersonalAccountData();
+            tac.setAccount_no(pad.getAccount_no());
+            tac.setBalance(pad.getBalance()-amount);
+            tac.setAccount_type(pad.getAccount_type());
+
+            ArrayList<transaction> transaction = new ArrayList<>();
+            
+            for (transaction t : pad.getTransaction()) {
+                transaction.add(new transaction(t.getStatement(),t.getAmount()));
+            }
+            transaction.add(new transaction("Deposit", amount));
+            tac.setTransaction(transaction);
+
+            Gson writegson = new Gson();
+            writegson.toJson(tac,write);
+            write.close();
+		} catch (IOException e) {
+			//
+		}
+    }
 }
 

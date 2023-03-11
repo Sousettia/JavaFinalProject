@@ -18,8 +18,8 @@ import com.google.gson.reflect.TypeToken;
 
 import BACKEND.Customer;
 import BACKEND.CustomerwithAccount;
-import BACKEND.Product;
 import BACKEND.accountlist;
+import BACKEND.transaction;
 import BACKEND.PersonalAccountData;
 
 import java.awt.event.MouseAdapter;
@@ -51,8 +51,8 @@ public class HomePage {
 	JButton btnTransfer = new JButton(imageButton3);
 	JButton btnCurrency = new JButton(imageButton4);
 	JButton btnMenu = new JButton(imageButton5);
-	JList<Product> list = new JList<>();
-	DefaultListModel<Product> model = new DefaultListModel<>();
+	JList<transaction> list = new JList<>();
+	DefaultListModel<transaction> model = new DefaultListModel<>();
 	JPanel panelTransaction = new JPanel();
 	JPanel panell = new JPanel();
 	JLabel label = new JLabel();
@@ -90,11 +90,23 @@ public class HomePage {
 	private JTextField tfAccount;
 	private JTextField tfBalance;
 	private JTextField tfComment;
+	public String email;
 	
+	public HomePage(String email) throws IOException {
+		this.email = email;
+		setlblAccountDetail();
+		setlblCustomerDetail();
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	/**
 	 * @wbp.parser.entryPoint
 	 */
-	public void setlblCustomerDetail(String email) throws IOException{
+	public void setlblCustomerDetail() throws IOException{
 
 		File theFile = new File("DataStorage/Customer.json");
         ArrayList<Customer> theList;
@@ -115,7 +127,7 @@ public class HomePage {
 			}
 		}
 	}
-	public void setlblAccountDetail(String email) throws IOException{
+	public void setlblAccountDetail() throws IOException{
 		//#region getAccountNumber
 		File theFile = new File("DataStorage/CustomerwithAccount.json");
         Gson gson = new Gson();
@@ -154,10 +166,17 @@ public class HomePage {
 			lblAccountIdTF.setText("Account ID:  "+pad.getAccount_no());
 			lblBalanceTF.setText("Balance:  " + String.format("%.2f",pad.getBalance()));
 		} catch (IOException e) {
-			//
+			e.printStackTrace();
 		}
 	}
+	public void ShowTransaction(){
+		model.addElement(new transaction("Deposit"));
 
+		list.getSelectionModel().addListSelectionListener(e -> {
+			transaction p = list.getSelectedValue();
+			label.setText(String.format("%.2f", p.getAmount()));
+		});
+	}
 	public void homepagePage() {
 		//icon
 		ImageIcon image = new ImageIcon("icon/bank.png");
@@ -261,8 +280,15 @@ public class HomePage {
 		DropoutMenu.add(btnMenu);
 		btnCreateaccount.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				CreateAccount create = new CreateAccount();
-				create.CreateaccountPopup();
+				try {
+					CreateAccount create = new CreateAccount();
+					Customer cus = new Customer();
+					cus.CreateAccount(email);
+					create.CreateaccountPopup();
+					frame.dispose();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
 			}
 		});
 		btnCreateaccount.setHorizontalAlignment(SwingConstants.LEFT);
@@ -464,14 +490,9 @@ public class HomePage {
 		lblBalance.setBounds(512, 128, 400, 33);
 		
 		jp2.add(lblBalance);
-		
-		model.addElement(new Product("Add money......................"));
-		model.addElement(new Product("Add money......................"));
-		
-		list.getSelectionModel().addListSelectionListener(e -> {
-			Product p = list.getSelectedValue();
-			label.setText(" 500 baht.");
-		});
+
+		ShowTransaction();
+
 		panelTransaction.setBackground(new Color(255, 234, 245));
 		panelTransaction.setBounds(35, 383, 622, 225);
 		
@@ -644,6 +665,44 @@ public class HomePage {
 		jp4.setBounds(0, 0, 1243, 618);
 		
 		gatherPanel.add(jp4);
+
+		JButton btnDeposit = new JButton("Deposit");
+        btnDeposit.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                try {
+					Deposit deposit = new Deposit(email);
+               		deposit.DepositPage();
+					frame.dispose();
+				} catch (IOException ex) {
+					ex.printStackTrace();
+				}
+            }
+        });
+        btnDeposit.setBounds(967, 62, 156, 30);
+        jp3.add(btnDeposit);
+        btnDeposit.setForeground(new Color(255, 132, 153));
+        btnDeposit.setFont(new Font("Alice", Font.BOLD, 25));
+        btnDeposit.setFocusable(false);
+        btnDeposit.setBackground(Color.WHITE);
+        
+        JButton btnWithdraw = new JButton("Withdraw");
+        btnWithdraw.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                try {
+					Withdraw withdraw = new Withdraw(email);
+               		withdraw.Withdrawpage();
+					frame.dispose();
+				} catch (Exception ex) {
+					ex.printStackTrace();
+				}
+            }
+        });
+        btnWithdraw.setBounds(967, 155, 156, 30);
+        jp3.add(btnWithdraw);
+        btnWithdraw.setForeground(new Color(255, 132, 153));
+        btnWithdraw.setFont(new Font("Alice", Font.BOLD, 25));
+        btnWithdraw.setFocusable(false);
+        btnWithdraw.setBackground(Color.WHITE);
 		
 		tm1 = new Timer(10, new ActionListener() {
 			   

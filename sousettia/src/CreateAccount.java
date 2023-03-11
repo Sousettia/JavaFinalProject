@@ -93,7 +93,8 @@ public class CreateAccount{
 		JButton btnCancel = new JButton("Cancel");
 		btnCancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.dispose();
+				confirmAccount confirmAccount = new confirmAccount();
+				confirmAccount.confirmAccountpage();
 			}
 		});
 		btnCancel.setForeground(new Color(255, 132, 153));
