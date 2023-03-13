@@ -127,15 +127,18 @@ public class confirmAccount  {
 		theCustomerwithAccountList = gson.fromJson(fileReader, type);
 		fileReader.close();
 
+		String newacc = "";
 		ArrayList<accountlist> alar = new ArrayList<>();
 		for (CustomerwithAccount c : theCustomerwithAccountList) {
 			if(c.getEmail().equals(getEmail())){
 				for (accountlist a : c.getAccountlist()) {
 					alar.add(new accountlist(a.getAccount_no()));
+					newacc = a.getAccount_no();
 				}
 			}
 		}
-		FileReader AccountfileReader = new FileReader(new File("DataStorage/" + account_no + ".json"));
+
+		FileReader AccountfileReader = new FileReader(new File("DataStorage/" + newacc + ".json"));
 		PersonalAccountData pad = gson.fromJson(AccountfileReader, PersonalAccountData.class);
 		
 		lblAccount.setText("Account ID:  "+pad.getAccount_no());

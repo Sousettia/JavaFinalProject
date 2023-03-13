@@ -35,7 +35,7 @@ public class Register implements ActionListener{
 		frame.setResizable(false);
 		
 		frame.setBounds(500, 120, 553, 538);
-		ImageIcon image = new ImageIcon("icon/bank.png");
+		ImageIcon image = new ImageIcon(getClass().getResource("icon/bank.png"));
 		frame.setIconImage(image.getImage());
 		
 		//lblregister

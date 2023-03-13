@@ -178,7 +178,6 @@ public class Customer {
     
     //#endregion
     static Scanner scan = new Scanner(System.in);
-
     public boolean login(String email,String password) throws IOException{
         setEmail(email); setPassword(password);
         File theFile = new File("DataStorage/Customer.json");

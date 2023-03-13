@@ -50,11 +50,11 @@ public class Login extends Customer implements ActionListener {
 		frame.getContentPane().setLayout(null);
 		
 		//logo image
-		ImageIcon image = new ImageIcon("icon/bank.png");
+		ImageIcon image = new ImageIcon(getClass().getResource("icon/bank.png"));
 		frame.setIconImage(image.getImage());
 		
 		//swan image
-		ImageIcon icon = new ImageIcon("icon/137852811086 (1).png");
+		ImageIcon icon = new ImageIcon(getClass().getResource("icon/137852811086 (1).png"));
 		
 		JPanel panelLogin = new JPanel();
 		panelLogin.setBackground(new Color(255, 196, 225));
