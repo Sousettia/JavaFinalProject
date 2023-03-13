@@ -17,6 +17,11 @@
     </p>
 </div>
 
+##
+
+File .exe need to open at src folder ONLY!!! 
+or it wouln't read the file and you can't run even you input it correct
+
 ## Getting Started
 
 This Online Bank Management System is an online software designed in Java programming language for the purpose of effective online banking system. It mainly aims at making the banking system easily accessible from anywhere and improving and enhancing the running banking process. With the use of this online software, bank customers don’t need to go to bank to make inquiry regarding their balance or to transfer their balance to other account or for any other banking services.
@@ -24,8 +29,8 @@ This Online Bank Management System is an online software designed in Java progra
 
 ### Built With
 
-* FRONT END - ??
-* BACK END - ??
+* Visual Studio Code
+* Eclipse
 
 ## Dependency Management
 
