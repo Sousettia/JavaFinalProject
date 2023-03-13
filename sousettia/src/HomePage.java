@@ -136,6 +136,16 @@ public class HomePage {
     private final JPanel panel_1 = new JPanel();
     private final JLabel lblBird = new JLabel("");
 	
+	private JTextArea textAreaProperties(JTextArea textArea) {
+		textArea.setRows(2);
+		textArea.setEditable(false);  
+		textArea.setCursor(null);  
+		textArea.setOpaque(false);  
+		textArea.setFocusable(false);
+		textArea.setLineWrap(true);
+		textArea.setWrapStyleWord(true);
+		return textArea;
+	}
 	public HomePage(String email, String account_no) throws IOException {
 		this.email = email;
 		this.account_no = account_no;
@@ -1226,15 +1236,5 @@ public class HomePage {
 		}catch(IOException e){
 			e.printStackTrace();
 		}
-	}
-	private JTextArea textAreaProperties(JTextArea textArea) {
-		textArea.setRows(2);
-		textArea.setEditable(false);  
-		textArea.setCursor(null);  
-		textArea.setOpaque(false);  
-		textArea.setFocusable(false);
-		textArea.setLineWrap(true);
-		textArea.setWrapStyleWord(true);
-		return textArea;
 	}
 }
