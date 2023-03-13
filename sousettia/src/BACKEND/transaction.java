@@ -5,6 +5,12 @@ public class transaction {
     private String destinationID;
     private double amount;
     
+    public transaction(String statement, String destinationID, double amount) {
+        this.statement = statement;
+        this.destinationID = destinationID;
+        this.amount = amount;
+    }
+
     public transaction(String statement) {
         this.statement = statement;
     }
@@ -12,7 +18,7 @@ public class transaction {
     public transaction() {
         this.statement = "Open Account";
         this.amount = 0;
-        this.destinationID = "";
+        this.destinationID = "NONE";
     }
 
     public transaction(String statement, double amount) {

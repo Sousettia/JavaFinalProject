@@ -213,31 +213,36 @@ public class Login extends Customer implements ActionListener {
 	}
 	public String account_no() throws IOException{
 		//#region getAccountNumber
-		File theFile = new File("DataStorage/CustomerwithAccount.json");
-        Gson gson = new Gson();
+		try {
+			File theFile = new File("DataStorage/CustomerwithAccount.json");
+			Gson gson = new Gson();
 
-        //Read Data From CWA
-        ArrayList<CustomerwithAccount> theCustomerwithAccountList = new ArrayList<>();
+			//Read Data From CWA
+			ArrayList<CustomerwithAccount> theCustomerwithAccountList = new ArrayList<>();
 
-        FileReader fileReader = new FileReader(theFile);
-        Type type = new TypeToken<ArrayList<CustomerwithAccount>>(){}.getType();
-        theCustomerwithAccountList = gson.fromJson(fileReader, type);
-        fileReader.close();
+			FileReader fileReader = new FileReader(theFile);
+			Type type = new TypeToken<ArrayList<CustomerwithAccount>>(){}.getType();
+			theCustomerwithAccountList = gson.fromJson(fileReader, type);
+			fileReader.close();
 
-        ArrayList<accountlist> alar = new ArrayList<>();
-        for (CustomerwithAccount c : theCustomerwithAccountList) {
-            if(c.getEmail().equals(tfEmail.getText())){
-                for (accountlist a : c.getAccountlist()) {
-                    alar.add(new accountlist(a.getAccount_no()));
-                }
-            }
-        }
-		String DefaultaccountNumber = "";
-		for (accountlist accountlist : alar) {
-			DefaultaccountNumber = accountlist.getAccount_no();
-			break;
+			ArrayList<accountlist> alar = new ArrayList<>();
+			for (CustomerwithAccount c : theCustomerwithAccountList) {
+				if(c.getEmail().equals(tfEmail.getText())){
+					for (accountlist a : c.getAccountlist()) {
+						alar.add(new accountlist(a.getAccount_no()));
+					}
+				}
+			}
+			String DefaultaccountNumber = "";
+			for (accountlist accountlist : alar) {
+				DefaultaccountNumber = accountlist.getAccount_no();
+				break;
+			}
+
+			return DefaultaccountNumber;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return "NULL";
 		}
-
-		return DefaultaccountNumber;
 	}
 }

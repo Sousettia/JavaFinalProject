@@ -602,5 +602,121 @@ public class Customer {
 			//
 		}
     }
+    public String transfercheck(String account_no, String amount, String comment){
+        if(!isAccountNo(account_no)){
+            return "Please in put the correct account number";
+        }
+        if(!isDouble(amount) || !isNegative(amount)){
+            return "Please input the correct amount";
+        }
+        return "NICE";
+    }
+    public void tranfer(String account_no,double amount,String destination) throws IOException{
+        user(account_no, amount, destination);
+        recipient(account_no, amount, destination);
+    }
+    public void user(String account_no,double amount,String destination) throws IOException{
+		try {
+            Gson gson = new Gson();
+			FileReader AccountfileReader = new FileReader(new File("DataStorage/" + account_no + ".json"));
+			PersonalAccountData pad = gson.fromJson(AccountfileReader, PersonalAccountData.class);
+            
+            File BookBankFile = new File("DataStorage/"+account_no+".json");
+            FileWriter write = new FileWriter(BookBankFile);
+
+            PersonalAccountData tac = new PersonalAccountData();
+            tac.setAccount_no(pad.getAccount_no());
+            tac.setBalance(pad.getBalance()-amount);
+            tac.setAccount_type(pad.getAccount_type());
+
+            ArrayList<transaction> transaction = new ArrayList<>();
+            
+            for (transaction t : pad.getTransaction()) {
+                transaction.add(new transaction(t.getStatement(),t.getDestinationID(),t.getAmount()));
+            }
+            transaction.add(new transaction("Transfer",destination, amount));
+            tac.setTransaction(transaction);
+
+            Gson writegson = new Gson();
+            writegson.toJson(tac,write);
+            write.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+    public void recipient(String account_no,double amount,String destination) throws IOException{
+		try {
+            Gson gson = new Gson();
+			FileReader AccountfileReader = new FileReader(new File("DataStorage/" + destination + ".json"));
+			PersonalAccountData pad = gson.fromJson(AccountfileReader, PersonalAccountData.class);
+            
+            File BookBankFile = new File("DataStorage/"+destination+".json");
+            FileWriter write = new FileWriter(BookBankFile);
+
+            PersonalAccountData tac = new PersonalAccountData();
+            tac.setAccount_no(pad.getAccount_no());
+            tac.setBalance(pad.getBalance()+amount);
+            tac.setAccount_type(pad.getAccount_type());
+
+            ArrayList<transaction> transaction = new ArrayList<>();
+            
+            for (transaction t : pad.getTransaction()) {
+                transaction.add(new transaction(t.getStatement(),t.getDestinationID(),t.getAmount()));
+            }
+            transaction.add(new transaction("Receive",account_no, amount));
+            tac.setTransaction(transaction);
+
+            Gson writegson = new Gson();
+            writegson.toJson(tac,write);
+            write.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+    public boolean isDouble(String str) {
+        try {
+            Double.parseDouble(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+    public boolean isNegative(String amount) {
+        try {
+            if(Double.parseDouble(amount) <= 0){}
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+    public boolean isAccountNo(String accountnumber){
+        try {
+            File theFile = new File("DataStorage/CustomerwithAccount.json");
+            ArrayList<CustomerwithAccount> theCustomerwithAccountList = new ArrayList<>();
+
+            FileReader fileReader = new FileReader(theFile);
+            Type type = new TypeToken<ArrayList<CustomerwithAccount>>(){}.getType();
+            Gson gson = new Gson();
+            theCustomerwithAccountList = gson.fromJson(fileReader, type);
+            fileReader.close();
+
+            for (CustomerwithAccount c : theCustomerwithAccountList) {
+                for (accountlist a : c.getAccountlist()) {
+                    if(a.getAccount_no().equals(accountnumber)){
+                        return true;
+                    }
+                }
+            }
+        } catch (JsonIOException e) {
+            e.printStackTrace();
+        } catch (JsonSyntaxException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 }
 

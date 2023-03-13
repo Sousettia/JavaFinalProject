@@ -115,18 +115,13 @@ public class CreateAccount{
 		JButton btnConfirm = new JButton("Confirm"); 
 		btnConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {	
-				confirmAccount confirmAccount = new confirmAccount(email,account_no);
-				confirmAccount.confirmAccountpage();
-				frame.dispose();
-				// try {
-				// 	confirmAccount confirmAccount = new confirmAccount();
-				// 	confirmAccount.confirmAccountpage();
-				// 	Customer cus = new Customer();
-				// 	cus.CreateAccount(email);
-				// 	frame.dispose();
-				// } catch (IOException e1) {
-				// 	e1.printStackTrace();
-				// }
+				try {
+					confirmAccount confirmAccount = new confirmAccount(email,account_no);
+					confirmAccount.confirmAccountpage();
+					frame.dispose();
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}
 			}
 		});
 		btnConfirm.setForeground(new Color(255, 132, 153));

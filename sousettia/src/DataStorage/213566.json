@@ -1,0 +1,19 @@
+{
+    "account_no": "213566",
+    "balance": 300.0,
+    "account_type": "SavingAccount",
+    "transaction": [
+        {
+            "statement": "Open Account",
+            "amount": 0.0
+        },
+        {
+            "statement": "Deposit",
+            "amount": 500.0
+        },
+        {
+            "statement": "Withdraw",
+            "amount": 200.0
+        }
+    ]
+}

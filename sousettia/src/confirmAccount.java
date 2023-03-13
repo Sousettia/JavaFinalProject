@@ -3,22 +3,38 @@ import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import BACKEND.CustomerwithAccount;
+import BACKEND.PersonalAccountData;
+import BACKEND.accountlist;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
 public class confirmAccount  {
 
-	JFrame frame = new JFrame();
+	private JFrame frame = new JFrame();
+	private JLabel lblAccount = new JLabel("Account ID:");
+	private JLabel lblAccountType = new JLabel("Account Type:");
+	private JLabel lblBalance = new JLabel("Balance:");
 	private String email;
 	private String account_no;
 
-	public confirmAccount(String email, String account_no) {
+	public confirmAccount(String email, String account_no) throws IOException {
 		this.email = email;
 		this.account_no = account_no;
+		setlblAccountDetail();
 	}
 
 	public String getEmail() {
@@ -54,9 +70,9 @@ public class confirmAccount  {
 		panelColor.setBounds(0, 0, 692, 86);
 		frame.getContentPane().add(panelColor);
 		
-		JLabel lblOpenAcc = new JLabel("Opening an Saving account");
+		JLabel lblOpenAcc = new JLabel("Opened an Saving account");
 		lblOpenAcc.setFont(new Font("Alice", Font.BOLD, 30));
-		lblOpenAcc.setBounds(153, 24, 385, 41);
+		lblOpenAcc.setBounds(153, 24, 450, 41);
 		panelColor.add(lblOpenAcc);
 		
 		JLabel lblTwo = new JLabel("Account Detail ");
@@ -64,34 +80,18 @@ public class confirmAccount  {
 		lblTwo.setFont(new Font("Alice", Font.BOLD, 33));
 		lblTwo.setBounds(34, 134, 365, 33);
 		frame.getContentPane().add(lblTwo);
-		
-		JLabel lblAccount = new JLabel("Account ID:");
+	
 		lblAccount.setFont(new Font("Alice", Font.BOLD, 23));
-		lblAccount.setBounds(64, 204, 225, 33);
+		lblAccount.setBounds(64, 204, 400, 33);
 		frame.getContentPane().add(lblAccount);
 		
-		JLabel lblAccountType = new JLabel("Account Type:");
 		lblAccountType.setFont(new Font("Alice", Font.BOLD, 23));
-		lblAccountType.setBounds(64, 251, 225, 33);
+		lblAccountType.setBounds(64, 251, 400, 33);
 		frame.getContentPane().add(lblAccountType);
 		
-		JLabel lblBalance = new JLabel("Balance:");
 		lblBalance.setFont(new Font("Alice", Font.BOLD, 23));
-		lblBalance.setBounds(64, 298, 225, 33);
+		lblBalance.setBounds(64, 298, 400, 33);
 		frame.getContentPane().add(lblBalance);
-		
-		// JButton btnCancel = new JButton("Cancel");
-		// btnCancel.addActionListener(new ActionListener() {
-		// public void actionPerformed(ActionEvent e) {
-		// 		frame.dispose();
-		// 	}
-		// });
-		// btnCancel.setForeground(new Color(255, 132, 153));
-		// btnCancel.setFont(new Font("Alice", Font.BOLD, 25));
-		// btnCancel.setFocusable(false);
-		// btnCancel.setBackground(Color.WHITE);
-		// btnCancel.setBounds(369, 487, 118, 30);
-		// frame.getContentPane().add(btnCancel);
 		
 		JButton btnConfirm = new JButton("Confirm");
 		btnConfirm.addActionListener(new ActionListener() {
@@ -114,5 +114,32 @@ public class confirmAccount  {
 		
 		ImageIcon image = new ImageIcon("icon/bank.png");
 		frame.setIconImage(image.getImage());
+	}
+	public void setlblAccountDetail() throws IOException{
+		File theFile = new File("DataStorage/CustomerwithAccount.json");
+		Gson gson = new Gson();
+
+		//Read Data From CWA
+		ArrayList<CustomerwithAccount> theCustomerwithAccountList = new ArrayList<>();
+
+		FileReader fileReader = new FileReader(theFile);
+		Type type = new TypeToken<ArrayList<CustomerwithAccount>>(){}.getType();
+		theCustomerwithAccountList = gson.fromJson(fileReader, type);
+		fileReader.close();
+
+		ArrayList<accountlist> alar = new ArrayList<>();
+		for (CustomerwithAccount c : theCustomerwithAccountList) {
+			if(c.getEmail().equals(getEmail())){
+				for (accountlist a : c.getAccountlist()) {
+					alar.add(new accountlist(a.getAccount_no()));
+				}
+			}
+		}
+		FileReader AccountfileReader = new FileReader(new File("DataStorage/" + account_no + ".json"));
+		PersonalAccountData pad = gson.fromJson(AccountfileReader, PersonalAccountData.class);
+		
+		lblAccount.setText("Account ID:  "+pad.getAccount_no());
+		lblBalance.setText("Balance:  " + String.format("%.2f",pad.getBalance()));
+		lblAccountType.setText("Account Type:  " + pad.getAccount_type());
 	}
 }

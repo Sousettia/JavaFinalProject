@@ -1,4 +1,6 @@
 import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Desktop;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
@@ -9,6 +11,7 @@ import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
@@ -20,6 +23,8 @@ import com.google.gson.reflect.TypeToken;
 
 import BACKEND.Customer;
 import BACKEND.CustomerwithAccount;
+import BACKEND.DataFinanceNews;
+import BACKEND.FinanceNews;
 import BACKEND.accountlist;
 import BACKEND.transaction;
 import BACKEND.PersonalAccountData;
@@ -30,6 +35,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Type;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.awt.event.ActionListener;
@@ -55,6 +62,9 @@ public class HomePage {
 	JButton btnMenu = new JButton(imageButton5);
 	JList<transaction> list = new JList<>();
 	DefaultListModel<transaction> model = new DefaultListModel<>();
+    JPanel panel2 = new JPanel();
+	JComboBox<String> cb1 = new JComboBox<String>();
+    JComboBox<String> cb2 = new JComboBox<String>();
 	JPanel panelTransaction = new JPanel();
 	JPanel panell = new JPanel();
 	JLabel label = new JLabel();
@@ -83,6 +93,7 @@ public class HomePage {
 	private JLabel lblAccountType = new JLabel("Account Type:");
 	private JLabel lblBalance = new JLabel("Balance:");
 
+	private JLabel lblFrom = new JLabel("From");
 	private JLabel lblAccountIdTF = new JLabel("Account ID:");
 	private JLabel lblBalanceTF = new JLabel("Balance:");
 	
@@ -90,14 +101,40 @@ public class HomePage {
 	private final JButton btnCreateaccount = new JButton("CREATEACCOUNT");
 	private final JButton btnLogout = new JButton("LOG OUT");
 
+	private final JPanel customerPanel = new JPanel();
 	private final JButton btnTransferBank = new JButton("Transfer");
 	private final JLabel lblChangeAccount = new JLabel("Change Account", SwingConstants.LEFT);
 	private JComboBox<String> comboBox = new JComboBox<>();
+	private final JLabel lblBackground = new JLabel("");
+    private final JLabel lblBackground2 = new JLabel("");
 	private JTextField tfAccount;
-	private JTextField tfBalance;
+	private JTextField tfAmount;
 	private JTextField tfComment;
 	private String email;
 	private String account_no;
+
+	private final JPanel panel1 = new JPanel();
+    private final JLabel lblphoto2 = new JLabel("");
+    private final JLabel lblOpen = new JLabel("Open:");
+    private final JLabel lblHigh = new JLabel("High:");
+    private final JLabel lblLow = new JLabel("Low:");
+    private final JLabel lblClose = new JLabel("Close:");
+    private final JLabel lblVolume = new JLabel("Volume:");
+    private final JLabel lblSymbol = new JLabel("Symbol:");
+    private final JLabel lblDate = new JLabel("Date:");
+    private final JLabel lblTitle = new JLabel("Title:");
+    private final JLabel lblUrl = new JLabel("Url:");
+    private final JLabel lblDescription = new JLabel("Description:");
+    private final JLabel lblPublished = new JLabel("Published at:");
+	private final JTextArea textAreaTitle = new JTextArea("");
+	private final JTextArea textAreaDescription = new JTextArea("");
+    private final JLabel lblphoto1 = new JLabel("");
+
+	private JTextField tfBaht;
+    private final JLabel lblbaht = new JLabel("THB - Thai Baht");
+    private final JPanel panelTh_1 = new JPanel();
+    private final JPanel panel_1 = new JPanel();
+    private final JLabel lblBird = new JLabel("");
 	
 	public HomePage(String email, String account_no) throws IOException {
 		this.email = email;
@@ -142,29 +179,28 @@ public class HomePage {
 		}
 	}
 	public void setlblAccountDetail() throws IOException{
-		//#region getAccountNumber
-		File theFile = new File("DataStorage/CustomerwithAccount.json");
-        Gson gson = new Gson();
-
-        //Read Data From CWA
-        ArrayList<CustomerwithAccount> theCustomerwithAccountList = new ArrayList<>();
-
-        FileReader fileReader = new FileReader(theFile);
-        Type type = new TypeToken<ArrayList<CustomerwithAccount>>(){}.getType();
-        theCustomerwithAccountList = gson.fromJson(fileReader, type);
-        fileReader.close();
-
-		cus.setEmail(email);
-        ArrayList<accountlist> alar = new ArrayList<>();
-        for (CustomerwithAccount c : theCustomerwithAccountList) {
-            if(c.getEmail().equals(cus.getEmail())){
-                for (accountlist a : c.getAccountlist()) {
-                    alar.add(new accountlist(a.getAccount_no()));
-                }
-            }
-        }
-		//#endregion
+	
 		try {
+			File theFile = new File("DataStorage/CustomerwithAccount.json");
+			Gson gson = new Gson();
+
+			//Read Data From CWA
+			ArrayList<CustomerwithAccount> theCustomerwithAccountList = new ArrayList<>();
+
+			FileReader fileReader = new FileReader(theFile);
+			Type type = new TypeToken<ArrayList<CustomerwithAccount>>(){}.getType();
+			theCustomerwithAccountList = gson.fromJson(fileReader, type);
+			fileReader.close();
+
+			cus.setEmail(email);
+			ArrayList<accountlist> alar = new ArrayList<>();
+			for (CustomerwithAccount c : theCustomerwithAccountList) {
+				if(c.getEmail().equals(cus.getEmail())){
+					for (accountlist a : c.getAccountlist()) {
+						alar.add(new accountlist(a.getAccount_no()));
+					}
+				}
+			}
 			FileReader AccountfileReader = new FileReader(new File("DataStorage/" + account_no + ".json"));
 			PersonalAccountData pad = gson.fromJson(AccountfileReader, PersonalAccountData.class);
 			
@@ -175,44 +211,14 @@ public class HomePage {
 			lblAccountIdTF.setText("Account ID:  "+pad.getAccount_no());
 			lblBalanceTF.setText("Balance:  " + String.format("%.2f",pad.getBalance()));
 		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-	public void ShowTransaction() throws IOException{
-		//#region getAccountNumber
-		File theFile = new File("DataStorage/CustomerwithAccount.json");
-        Gson gson = new Gson();
+			lblAccountId.setText("");
+			lblBalance.setText("");
+			lblAccountType.setText("");
 
-        //Read Data From CWA
-        ArrayList<CustomerwithAccount> theCustomerwithAccountList = new ArrayList<>();
-
-        FileReader fileReader = new FileReader(theFile);
-        Type type = new TypeToken<ArrayList<CustomerwithAccount>>(){}.getType();
-        theCustomerwithAccountList = gson.fromJson(fileReader, type);
-        fileReader.close();
-
-        ArrayList<accountlist> alar = new ArrayList<>();
-        for (CustomerwithAccount c : theCustomerwithAccountList) {
-            if(c.getEmail().equals(getEmail())){
-                for (accountlist a : c.getAccountlist()) {
-                    alar.add(new accountlist(a.getAccount_no()));
-                }
-            }
-        }
-
-		//#endregion
-		try {
-			FileReader AccountfileReader = new FileReader(new File("DataStorage/" + account_no + ".json"));
-			PersonalAccountData pad = gson.fromJson(AccountfileReader, PersonalAccountData.class);
-            
-            for (transaction t : pad.getTransaction()) {
-                model.addElement(new transaction(t.getStatement(),t.getAmount()));
-            }
-			list.getSelectionModel().addListSelectionListener(e -> {
-				transaction p = list.getSelectedValue();
-				label.setText(String.format("%.2f", p.getAmount()));
-			});
-		} catch (IOException e) {
+			lblAccountIdTF.setText("Please Create Account First");
+			lblAccountIdTF.setForeground(Color.red);
+			lblBalanceTF.setText("");
+			
 			e.printStackTrace();
 		}
 	}
@@ -320,9 +326,12 @@ public class HomePage {
 		btnCreateaccount.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
+					Customer cus = new Customer();
+					cus.CreateAccount(email);
+					if(account_no.isEmpty()){
+						accountnumberFirstSet();
+					}
 					CreateAccount create = new CreateAccount(email,account_no);
-					// Customer cus = new Customer();
-					// cus.CreateAccount(email);
 					create.CreateaccountPopup();
 					frame.dispose();
 				} catch (IOException e1) {
@@ -486,59 +495,16 @@ public class HomePage {
 		
 		gatherPanel.add(jp2);
 		jp2.setLayout(null);
-		lblCustomerDetail.setForeground(new Color(255, 111, 183));
-		lblCustomerDetail.setBounds(0, 23, 404, 33);
-		lblCustomerDetail.setFont(new Font("Alice", Font.BOLD, 31));
-		
-		jp2.add(lblCustomerDetail);
-		lblName.setFont(new Font("Alice", Font.BOLD, 23));
-		lblName.setBounds(46, 66, 400, 33);
-		
-		jp2.add(lblName);
-		lblDateOfBirth.setFont(new Font("Alice", Font.BOLD, 23));
-		lblDateOfBirth.setBounds(46, 97, 400, 33);
-		
-		jp2.add(lblDateOfBirth);
-		lblPhoneNumber.setFont(new Font("Alice", Font.BOLD, 23));
-		lblPhoneNumber.setBounds(46, 128, 400, 33);
-		
-		jp2.add(lblPhoneNumber);
-		lblAddress.setFont(new Font("Alice", Font.BOLD, 23));
-		lblAddress.setBounds(46, 159, 400, 33);
-		
-		jp2.add(lblAddress);
-		lblEmail.setFont(new Font("Alice", Font.BOLD, 23));
-		lblEmail.setBounds(46, 221, 400, 33);
-		
-		jp2.add(lblEmail);
-		lblAccountDetail.setBackground(new Color(255, 255, 255));
-		lblAccountDetail.setForeground(new Color(255, 111, 183));
-		lblAccountDetail.setFont(new Font("Alice", Font.BOLD, 31));
-		lblAccountDetail.setBounds(466, 23, 400, 33);
-		
-		jp2.add(lblAccountDetail);
-		lblAccountId.setFont(new Font("Alice", Font.BOLD, 23));
-		lblAccountId.setBounds(512, 66, 400, 33);
-		
-		jp2.add(lblAccountId);
-		lblAccountType.setFont(new Font("Alice", Font.BOLD, 23));
-		lblAccountType.setBounds(512, 97, 400, 33);
-		
-		jp2.add(lblAccountType);
-		lblBalance.setFont(new Font("Alice", Font.BOLD, 23));
-		lblBalance.setBounds(512, 128, 400, 33);
-		
-		jp2.add(lblBalance);
 
 		ShowTransaction();
 
 		panelTransaction.setBackground(new Color(255, 234, 245));
-		panelTransaction.setBounds(24, 349, 589, 244);
+		panelTransaction.setBounds(107, 399, 589, 239);
 		
 		jp2.add(panelTransaction);
 		panelTransaction.setLayout(null);
 		list.setModel(model);
-		splitPane.setBounds(10, 3, 569, 92);
+		splitPane.setBounds(10, 26, 569, 92);
 		
 		splitPane.setLeftComponent(new JScrollPane(list));
 		label.setFont(new Font("Alice", Font.PLAIN, 25));
@@ -546,7 +512,7 @@ public class HomePage {
 		splitPane.setRightComponent(panell);
 		panelTransaction.add(splitPane);
 		
-		lblTransaction.setBounds(35, 288, 240, 37);
+		lblTransaction.setBounds(95, 352, 240, 37);
 		jp2.add(lblTransaction);
 		lblTransaction.setForeground(new Color(255, 111, 183));
 		lblTransaction.setFont(new Font("Alice", Font.BOLD, 31));
@@ -563,7 +529,6 @@ public class HomePage {
 		jp3.add(panelTranfer);
 		panelTranfer.setLayout(null);
 		
-		JLabel lblFrom = new JLabel("From");
 		lblFrom.setHorizontalAlignment(SwingConstants.TRAILING);
 		lblFrom.setBounds(-86, 10, 169, 27);
 		lblFrom.setFont(new Font("Alice", Font.BOLD, 25));
@@ -577,7 +542,7 @@ public class HomePage {
 		
 		panelTranfer.add(lblBalanceTF);
 		panelTranfer_1.setBackground(new Color(255, 234, 245));
-		panelTranfer_1.setBounds(200, 270, 854, 303);
+		panelTranfer_1.setBounds(200, 270, 1000, 303);
 		jp3.add(panelTranfer_1);
 		
 		JLabel lblGoto = new JLabel("Go to");
@@ -632,33 +597,33 @@ public class HomePage {
 		tfAccount.setBounds(352, 73, 308, 29);
 		panelTranfer_1.add(tfAccount);
 		
-		tfBalance = new JTextField();
-		tfBalance.addFocusListener(new FocusAdapter() {
+		tfAmount = new JTextField();
+		tfAmount.addFocusListener(new FocusAdapter() {
 			@Override
 			public void focusGained(FocusEvent e) {
-				if(tfBalance.getText().equals("Please Type a Balance")) {
-					tfBalance.setText(null);
-					tfBalance.requestFocus();
-					tfBalance.setFont(new Font("Alice", Font.PLAIN, 15));
-					tfBalance.setForeground(Color.black);	
+				if(tfAmount.getText().equals("Please Type a Balance")) {
+					tfAmount.setText(null);
+					tfAmount.requestFocus();
+					tfAmount.setFont(new Font("Alice", Font.PLAIN, 15));
+					tfAmount.setForeground(Color.black);	
 				}
 			}
 			@Override
 			public void focusLost(FocusEvent e) {
-				if(tfBalance.getText().length()==0) {
-					tfBalance.setFont(new Font("Alice", Font.ITALIC, 12));
-					tfBalance.setForeground(Color.gray);
-					tfBalance.setText("Please Type a Balance");
+				if(tfAmount.getText().length()==0) {
+					tfAmount.setFont(new Font("Alice", Font.ITALIC, 12));
+					tfAmount.setForeground(Color.gray);
+					tfAmount.setText("Please Type a Balance");
 				}
 			}
 		});
-		tfBalance.setText("Please Type a Balance");
-		tfBalance.setForeground(Color.GRAY);
-		tfBalance.setFont(new Font("Alice", Font.ITALIC, 12));
-		tfBalance.setColumns(10);
-		tfBalance.setBackground(new Color(255, 255, 255));
-		tfBalance.setBounds(352, 117, 308, 29);
-		panelTranfer_1.add(tfBalance);
+		tfAmount.setText("Please Type a Balance");
+		tfAmount.setForeground(Color.GRAY);
+		tfAmount.setFont(new Font("Alice", Font.ITALIC, 12));
+		tfAmount.setColumns(10);
+		tfAmount.setBackground(new Color(255, 255, 255));
+		tfAmount.setBounds(352, 117, 308, 29);
+		panelTranfer_1.add(tfAmount);
 		
 		tfComment = new JTextField();
 		tfComment.addFocusListener(new FocusAdapter() {
@@ -687,8 +652,108 @@ public class HomePage {
 		tfComment.setBackground(new Color(255, 255, 255));
 		tfComment.setBounds(352, 161, 308, 29);
 		panelTranfer_1.add(tfComment);
-		jp4.setBackground(new Color(128, 255, 128));
+		
+		jp4.setBackground(new Color(255, 234, 245));
 		jp4.setBounds(0, 0, 1243, 618);
+		
+		gatherPanel.add(jp4);
+		jp4.setLayout(null);
+		
+		JPanel panelColor = new JPanel();
+		panelColor.setLayout(null);
+		panelColor.setBackground(new Color(255, 223, 239));
+		panelColor.setBounds(275, 68, 692, 86);
+		jp4.add(panelColor);
+		
+		JLabel lblCurrency = new JLabel("Currency Exchange",SwingConstants.CENTER);
+		lblCurrency.setFont(new Font("Alice", Font.BOLD, 36));
+		lblCurrency.setBounds(153, 24, 385, 41);
+		panelColor.add(lblCurrency);
+		
+		JPanel panelTh = new JPanel();
+		panelTh.setBackground(new Color(255, 234, 245));
+		panelTh.setBounds(163, 234, 383, 115);
+		jp4.add(panelTh);
+		panelTh.setLayout(null);
+		
+		tfBaht = new JTextField();
+		tfBaht.addFocusListener(new FocusAdapter() {
+			@Override
+			public void focusGained(FocusEvent e) {
+				if(tfBaht.getText().equals("0.00 ")) {
+					tfBaht.setText(null);
+					tfBaht.requestFocus();
+					tfBaht.setFont(new Font("Alice", Font.PLAIN, 42));
+					tfBaht.setForeground(Color.black);	
+				}
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				if(tfBaht.getText().length()==0) {
+					tfBaht.setFont(new Font("Alice", Font.PLAIN, 42));
+					tfBaht.setForeground(Color.gray);
+					tfBaht.setText("0.00 ");
+				}
+			}
+		});
+		tfBaht.setBounds(10, 37, 366, 68);
+		panelTh.add(tfBaht);
+		tfBaht.setText("0.00 ");
+		tfBaht.setForeground(Color.GRAY);
+		tfBaht.setFont(new Font("Alice", Font.PLAIN, 42));
+		tfBaht.setColumns(10);
+		tfBaht.setBackground(new Color(255, 255, 255));
+		
+		JPanel bahtPanel = new JPanel();
+		bahtPanel.setBackground(new Color(192, 192, 192));
+		bahtPanel.setBounds(10, 10, 366, 28);
+		panelTh.add(bahtPanel);
+		bahtPanel.setLayout(null);
+		lblbaht.setFont(new Font("Alice", Font.BOLD, 20));
+		lblbaht.setBounds(10, 10, 158, 13);
+		
+		bahtPanel.add(lblbaht);
+		
+		JLabel IconArrow = new JLabel();
+		ImageIcon imageArrow = new ImageIcon("icon/R.png");
+		IconArrow.setBounds(5,5,0,0);
+		IconArrow.setIcon(imageArrow);
+		
+		JPanel photoArrow = new JPanel();
+		photoArrow.setBounds(556, 249, 126, 64);
+		jp4.add(photoArrow);
+		photoArrow.setBackground(new Color(255, 234, 245));
+		photoArrow.add(IconArrow);
+		panelTh_1.setLayout(null);
+		panelTh_1.setBackground(new Color(255, 234, 245));
+		panelTh_1.setBounds(692, 234, 383, 115);
+		
+		jp4.add(panelTh_1);
+		panel_1.setBackground(new Color(255, 255, 255));
+		panel_1.setBounds(10, 37, 366, 69);
+		panelTh_1.add(panel_1);
+		
+		JComboBox<String> comboBox_1 = new JComboBox<String>();
+		comboBox_1.setBackground(new Color(192, 192, 192));
+		comboBox_1.setBounds(10, 10, 366, 28);
+		panelTh_1.add(comboBox_1);
+		
+		JButton btnExchange = new JButton("Exchange");
+		btnExchange.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
+		btnExchange.setForeground(new Color(0, 0, 0));
+		btnExchange.setFont(new Font("Alice", Font.BOLD, 25));
+		btnExchange.setFocusable(false);
+		btnExchange.setBackground(new Color(255, 196, 225));
+		btnExchange.setBounds(530, 502, 182, 51);
+		jp4.add(btnExchange);
+		lblBird.setIcon(new ImageIcon("icon/ProjectFinal_1.png"));
+		lblBird.setBounds(540, 268, 608, 435);
+		
+		jp4.add(lblBird);
 		
 		gatherPanel.add(jp4);
 
@@ -732,7 +797,7 @@ public class HomePage {
 
 		lblChangeAccount.setForeground(new Color(255, 111, 183));
         lblChangeAccount.setFont(new Font("Alice", Font.BOLD, 31));
-        lblChangeAccount.setBounds(700, 326, 400, 37);
+		lblChangeAccount.setBounds(745, 352, 450, 37);
 		jp2.add(lblChangeAccount);
 		
 		tm1 = new Timer(10, new ActionListener() {
@@ -750,6 +815,130 @@ public class HomePage {
 				    }
 			   }
 		});
+		customerPanel.setBackground(new Color(255, 234, 245));
+		customerPanel.setBounds(24, 0, 1219, 316);
+		
+		jp2.add(customerPanel);
+		customerPanel.setLayout(null);
+		lblCustomerDetail.setBounds(109, 59, 404, 33);
+		customerPanel.add(lblCustomerDetail);
+		lblCustomerDetail.setForeground(new Color(0, 0, 0));
+		lblCustomerDetail.setFont(new Font("Alice", Font.BOLD, 31));
+		lblName.setBounds(81, 106, 400, 33);
+		customerPanel.add(lblName);
+		lblName.setFont(new Font("Alice", Font.BOLD, 23));
+		lblDateOfBirth.setBounds(81, 137, 400, 33);
+		customerPanel.add(lblDateOfBirth);
+		lblDateOfBirth.setFont(new Font("Alice", Font.BOLD, 23));
+		lblPhoneNumber.setBounds(81, 168, 400, 33);
+		customerPanel.add(lblPhoneNumber);
+		lblPhoneNumber.setFont(new Font("Alice", Font.BOLD, 23));
+		lblAddress.setBounds(81, 199, 400, 33);
+		customerPanel.add(lblAddress);
+		lblAddress.setFont(new Font("Alice", Font.BOLD, 23));
+		lblEmail.setBounds(81, 230, 400, 33);
+		customerPanel.add(lblEmail);
+		lblEmail.setFont(new Font("Alice", Font.BOLD, 23));
+		lblBackground.setIcon(new ImageIcon("icon/gooseAgain1_3.png"));
+        lblBackground.setBounds(-55, -19, 698, 635);
+		
+		customerPanel.add(lblBackground);
+		lblAccountDetail.setBounds(628, 59, 500, 33);
+		customerPanel.add(lblAccountDetail);
+		lblAccountDetail.setBackground(new Color(255, 255, 255));
+		lblAccountDetail.setForeground(new Color(0, 0, 0));
+		lblAccountDetail.setFont(new Font("Alice", Font.BOLD, 31));
+		lblAccountId.setBounds(675, 104, 400, 33);
+		customerPanel.add(lblAccountId);
+		lblAccountId.setFont(new Font("Alice", Font.BOLD, 23));
+		lblAccountType.setBounds(675, 135, 400, 33);
+		customerPanel.add(lblAccountType);
+		lblAccountType.setFont(new Font("Alice", Font.BOLD, 23));
+		lblBalance.setBounds(675, 166, 400, 33);
+		customerPanel.add(lblBalance);
+		lblBalance.setFont(new Font("Alice", Font.BOLD, 23));
+		lblBackground2.setIcon(new ImageIcon("icon/gooseAgain2_1.png"));
+        lblBackground2.setBounds(244, -19, 943, 635);
+		
+		customerPanel.add(lblBackground2);
+		
+		jp1.setBackground(new Color(251, 252, 211));
+		jp1.setBounds(2, 0, 1241, 616);
+		
+		gatherPanel.add(jp1);
+		jp1.setLayout(null);
+		panel1.setBackground(new Color(255, 215, 234));
+		panel1.setBounds(20, 10, 1212, 307);
+		
+		jp1.add(panel1);
+		panel1.setLayout(null);
+		ShowFinanceNews();
+		lblTitle.setFont(new Font("Alice", Font.BOLD, 19));
+		lblTitle.setBounds(52, 31, 169, 27);
+		panel1.add(lblTitle);
+
+		textAreaTitle.setFont(new Font("Alice", Font.BOLD, 19));
+		textAreaTitle.setBounds(130, 31, 800, 80);
+		panel1.add(textAreaTitle);
+		
+		lblUrl.setFont(new Font("Alice", Font.BOLD, 19));
+		lblUrl.setBounds(52, 88, 1100, 27);
+		
+		panel1.add(lblUrl);
+		lblDescription.setFont(new Font("Alice", Font.BOLD, 19));
+		lblDescription.setBounds(52, 145, 169, 27);
+		textAreaDescription.setFont(new Font("Alice", Font.BOLD, 19));
+		textAreaDescription.setBounds(200, 145, 800, 80);
+		panel1.add(textAreaDescription);
+		
+		panel1.add(lblDescription);
+		lblPublished.setFont(new Font("Alice", Font.BOLD, 19));
+		lblPublished.setBounds(52, 202, 800, 27);
+		
+		panel1.add(lblPublished);
+		lblphoto2.setBounds(576, 28, 608, 279);
+		panel1.add(lblphoto2);
+		lblphoto2.setIcon(new ImageIcon("icon/photo2_1.png"));
+		panel2.setLayout(null);
+		panel2.setBackground(new Color(255, 215, 234));
+		panel2.setBounds(20, 327, 1212, 289);
+		
+		jp1.add(panel2);
+		cb2.setBackground(new Color(128, 128, 192));
+		cb2.setBounds(0, 0, 1212, 21);
+		panel2.add(cb2);
+		lblOpen.setFont(new Font("Alice", Font.BOLD, 19));
+		lblOpen.setBounds(52, 31, 169, 27);
+		
+		panel2.add(lblOpen);
+		lblHigh.setFont(new Font("Alice", Font.BOLD, 19));
+		lblHigh.setBounds(52, 63, 169, 27);
+		
+		panel2.add(lblHigh);
+		lblLow.setFont(new Font("Alice", Font.BOLD, 19));
+		lblLow.setBounds(52, 95, 169, 27);
+		
+		panel2.add(lblLow);
+		lblClose.setFont(new Font("Alice", Font.BOLD, 19));
+		lblClose.setBounds(52, 127, 169, 27);
+		
+		panel2.add(lblClose);
+		lblVolume.setFont(new Font("Alice", Font.BOLD, 19));
+		lblVolume.setBounds(52, 159, 169, 27);
+		
+		panel2.add(lblVolume);
+		lblSymbol.setFont(new Font("Alice", Font.BOLD, 19));
+		lblSymbol.setBounds(52, 191, 169, 27);
+		
+		panel2.add(lblSymbol);
+		lblDate.setFont(new Font("Alice", Font.BOLD, 19));
+		lblDate.setBounds(52, 223, 169, 27);
+		
+		panel2.add(lblDate);
+		lblphoto1.setBounds(594, -51, 798, 411);
+		panel2.add(lblphoto1);
+		lblphoto1.setIcon(new ImageIcon("icon/photo2_2_1.png"));
+
 		btnMenu.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -835,9 +1024,20 @@ public class HomePage {
 
 		btnTransferBank.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                frame.dispose();
-                // Transfer transfer = new Transfer();
-                // transfer.TransferPage();
+				try {
+					Customer cus = new Customer();
+					cus.setEmail(email);
+					if(cus.transfercheck(tfAccount.getText(),tfAmount.getText(),tfComment.getText()) == "NICE"){
+						cus.tranfer(account_no, Double.parseDouble(tfAmount.getText()), tfAccount.getText());
+						Transfer transfer = new Transfer(email,account_no,tfAccount.getText(),tfAmount.getText(),tfComment.getText());
+						transfer.TransferPage();
+						frame.dispose();
+					}else{
+						System.out.println(cus.transfercheck(tfAccount.getText(),tfAmount.getText(),tfComment.getText()));
+					}
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
             }
         }); 
         btnTransferBank.setForeground(new Color(255, 132, 153));
@@ -850,43 +1050,191 @@ public class HomePage {
 
 		changeAccountComboBox();
 	}
-	public void changeAccountComboBox() throws IOException{
+	public void ShowTransaction() throws IOException{
+		//#region getAccountNumber
 		File theFile = new File("DataStorage/CustomerwithAccount.json");
-		ArrayList<CustomerwithAccount> theCustomerwithAccountList = new ArrayList<>();
+        Gson gson = new Gson();
 
-		FileReader fileReader = new FileReader(theFile);
-		Type type = new TypeToken<ArrayList<CustomerwithAccount>>(){}.getType();
-		Gson gson = new Gson();
-		theCustomerwithAccountList = gson.fromJson(fileReader, type);
-		fileReader.close();
+        //Read Data From CWA
+        ArrayList<CustomerwithAccount> theCustomerwithAccountList = new ArrayList<>();
 
-		ArrayList<String> account_noArrayList = new ArrayList<>();
-		for (CustomerwithAccount c : theCustomerwithAccountList) {
-			if(c.getEmail().equals(getEmail())){
-				for (accountlist a : c.getAccountlist()) {
-					account_noArrayList.add(a.getAccount_no());
-				}
-			}
-		}
-		if(!account_no.equals(account_noArrayList.get(0))){
-			Collections.swap(account_noArrayList, 0, account_noArrayList.indexOf(account_no));
-		}
-		comboBox.setModel(new DefaultComboBoxModel<String>(account_noArrayList.toArray(new String[0])));
-		comboBox.setFont(new Font("Alice", Font.BOLD, 18));
-        comboBox.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                if(e.getSource()==comboBox) {
-                    try {
-						HomePage homepage = new HomePage(email,String.valueOf(comboBox.getSelectedItem()));
-						homepage.homepagePage();
-					} catch (IOException e1) {
-						e1.printStackTrace();
-					}
-					frame.dispose();
+        FileReader fileReader = new FileReader(theFile);
+        Type type = new TypeToken<ArrayList<CustomerwithAccount>>(){}.getType();
+        theCustomerwithAccountList = gson.fromJson(fileReader, type);
+        fileReader.close();
+
+        ArrayList<accountlist> alar = new ArrayList<>();
+        for (CustomerwithAccount c : theCustomerwithAccountList) {
+            if(c.getEmail().equals(getEmail())){
+                for (accountlist a : c.getAccountlist()) {
+                    alar.add(new accountlist(a.getAccount_no()));
                 }
             }
-        });
-        comboBox.setBounds(766, 414, 260, 56);
-        jp2.add(comboBox);
+        }
+
+		//#endregion
+		try {
+			FileReader AccountfileReader = new FileReader(new File("DataStorage/" + account_no + ".json"));
+			PersonalAccountData pad = gson.fromJson(AccountfileReader, PersonalAccountData.class);
+            
+            for (transaction t : pad.getTransaction()) {
+                model.addElement(new transaction(t.getStatement(),t.getDestinationID(),t.getAmount()));
+            }
+			list.getSelectionModel().addListSelectionListener(e -> {
+				transaction p = list.getSelectedValue();
+				if(p.getStatement().equalsIgnoreCase("Withdraw") || p.getStatement().equalsIgnoreCase("Deposit")){
+					label.setText(p.getStatement() + "::" + String.format("%.2f", p.getAmount()) + " Baht.");
+				}else if (p.getStatement().equalsIgnoreCase("Receive")){
+					label.setText("Receive From : " + p.getDestinationID() + "::"+ String.format("%.2f", p.getAmount()) + " Baht.");
+				}
+				else if (p.getStatement().equalsIgnoreCase("Transfer")){
+					label.setText("Transfer To : " + p.getDestinationID() + "::"+ String.format("%.2f", p.getAmount()) + " Baht.");
+				}else{
+					label.setText("Welcome to WhiteSwan Bank!!");
+				}
+			});
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	public void ShowFinanceNews() throws IOException{
+		try {
+			Gson gson = new Gson();
+			FileReader fileReader = new FileReader(new File("DataStorage/FinanceNews.json"));
+			FinanceNews fn = gson.fromJson(fileReader, FinanceNews.class);
+
+			ArrayList<String> titleArrayList = new ArrayList<>();
+			for(DataFinanceNews dfn : fn.getData()){
+				titleArrayList.add(dfn.getTitle());
+			}
+			cb1.setModel(new DefaultComboBoxModel<String>(titleArrayList.toArray(new String[0])));
+			cb1.setFont(new Font("Alice", Font.BOLD, 22));
+			cb1.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					if(e.getSource()==cb1) {
+						for(DataFinanceNews dfn : fn.getData()){
+							if(String.valueOf(cb1.getSelectedItem()).equals(dfn.getTitle())){
+								textAreaProperties(textAreaTitle);
+								textAreaProperties(textAreaDescription);
+								textAreaTitle.setText(dfn.getTitle());
+								textAreaDescription.setText(dfn.getDescription());
+								lblUrl.setText("URL : " + dfn.getUrl());
+								lblUrl.setForeground(Color.BLUE.darker());
+								lblUrl.setCursor(new Cursor(Cursor.HAND_CURSOR));
+						
+								lblUrl.addMouseListener(new MouseAdapter() {
+						
+									@Override
+									public void mouseClicked(MouseEvent e) {
+										try {
+											Desktop.getDesktop().browse(new URI(dfn.getUrl()));
+										} catch (IOException | URISyntaxException e1) {
+											e1.printStackTrace();
+										}
+									}
+						
+									@Override
+									public void mouseExited(MouseEvent e) {
+										lblUrl.setText("URL :  " + dfn.getUrl());
+									}
+						
+									@Override
+									public void mouseEntered(MouseEvent e) {
+										lblUrl.setText("<html><a href=''>" + "URL : " + dfn.getUrl() + "</a></html>");
+									}
+						
+								});
+								lblPublished.setText("Publish at :  " + dfn.getPublished_at());
+
+							}
+						}
+					}
+				}
+			});
+			cb1.setBackground(new Color(128, 128, 192));
+			cb1.setBounds(0, 0, 1212, 30);
+			panel1.add(cb1);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	public void changeAccountComboBox() throws IOException, IndexOutOfBoundsException{
+		try {
+			File theFile = new File("DataStorage/CustomerwithAccount.json");
+			ArrayList<CustomerwithAccount> theCustomerwithAccountList = new ArrayList<>();
+			FileReader fileReader = new FileReader(theFile);
+			Type type = new TypeToken<ArrayList<CustomerwithAccount>>(){}.getType();
+			Gson gson = new Gson();
+			theCustomerwithAccountList = gson.fromJson(fileReader, type);
+			fileReader.close();
+
+			ArrayList<String> account_noArrayList = new ArrayList<>();
+			for (CustomerwithAccount c : theCustomerwithAccountList) {
+				if(c.getEmail().equals(getEmail())){
+					for (accountlist a : c.getAccountlist()) {
+						account_noArrayList.add(a.getAccount_no());
+					}
+				}
+			}
+			if(!account_no.equals(account_noArrayList.get(0))){
+				Collections.swap(account_noArrayList, 0, account_noArrayList.indexOf(account_no));
+			}
+			comboBox.setModel(new DefaultComboBoxModel<String>(account_noArrayList.toArray(new String[0])));
+			comboBox.setFont(new Font("Alice", Font.BOLD, 22));
+			comboBox.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					if(e.getSource()==comboBox) {
+						try {
+							HomePage homepage = new HomePage(email,String.valueOf(comboBox.getSelectedItem()));
+							homepage.homepagePage();
+						} catch (IOException e1) {
+							e1.printStackTrace();
+						}
+						frame.dispose();
+					}
+				}
+			});
+			comboBox.setBounds(773, 428, 301, 80);
+			jp2.add(comboBox);
+		} catch (Exception e) {
+			lblChangeAccount.setForeground(Color.red);
+			lblChangeAccount.setText("Please Create Account First");
+			e.printStackTrace();
+		}
+	}
+	public void accountnumberFirstSet(){
+		try {
+			File theFile = new File("DataStorage/CustomerwithAccount.json");
+			ArrayList<CustomerwithAccount> theCustomerwithAccountList = new ArrayList<>();
+
+			FileReader fileReader = new FileReader(theFile);
+			Type type = new TypeToken<ArrayList<CustomerwithAccount>>(){}.getType();
+			Gson gson = new Gson();
+			theCustomerwithAccountList = gson.fromJson(fileReader, type);
+			fileReader.close();
+
+			ArrayList<String> account_no = new ArrayList<>();
+			for (CustomerwithAccount c : theCustomerwithAccountList) {
+				if(c.getEmail().equals(getEmail())){
+					for (accountlist a : c.getAccountlist()) {
+						account_no.add(a.getAccount_no());
+					}
+				}
+			}
+			if(account_no.size()==1){setAccount_no(account_no.get(0));}
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+	}
+	private JTextArea textAreaProperties(JTextArea textArea) {
+		textArea.setRows(2);
+		textArea.setEditable(false);  
+		textArea.setCursor(null);  
+		textArea.setOpaque(false);  
+		textArea.setFocusable(false);
+		textArea.setLineWrap(true);
+		textArea.setWrapStyleWord(true);
+		return textArea;
 	}
 }
