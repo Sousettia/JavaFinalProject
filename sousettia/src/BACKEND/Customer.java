@@ -599,14 +599,14 @@ public class Customer {
             writegson.toJson(tac,write);
             write.close();
 		} catch (IOException e) {
-			//
+			e.printStackTrace();
 		}
     }
     public String transfercheck(String account_no, String amount, String comment){
         if(!isAccountNo(account_no)){
             return "Please in put the correct account number";
         }
-        if(!isDouble(amount) || !isNegative(amount)){
+        if(!isDouble(amount) && !isNegative(amount)){
             return "Please input the correct amount";
         }
         return "NICE";

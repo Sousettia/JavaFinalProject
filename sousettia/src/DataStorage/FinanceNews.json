@@ -1,356 +1,1687 @@
 {
-    "data": [
-      {
-        "description": "The unitholders of Green Plains Partners enjoyed a quiet year during 2022. Check out why I'm maintaining my strong buy rating on GPP stock.",
-        "published_at": "2022-12-01T06:56:36+00:00",
-        "source": "seekingalpha.com",
-        "tags": [
-          "Basic Materials",
-          "Business",
-          "Energy",
-          "Gpp",
-          "Gpre",
-          "Stock"
-        ],
-        "tickers": [
-          "gpp",
-          "gpre"
-        ],
-        "title": "Green Plains Partners: All Indicators Are Looking Up For 2023",
-        "url": "https://seekingalpha.com/article/4561633-green-plains-partners-all-2023-indicators-looking-up"
-      },
-      {
-        "description": "The competitive change only applies to \"select\" new phones",
-        "published_at": "2022-12-01T07:01:04+00:00",
-        "source": "tomsguide.com",
-        "tags": [
-          "Stock",
-          "Technology"
-        ],
-        "tickers": [
-          "goog",
-          "googl"
-        ],
-        "title": "OnePlus' new update policy doesn't go far enough",
-        "url": "https://www.tomsguide.com/opinion/oneplus-new-update-policy-doesnt-go-far-enough"
-      },
-      {
-        "description": "Aster Guardians Global Nursing Award, un'iniziativa del principale fornitore di servizi sanitari Aster DM Healthcare volta a riconoscere il contributo",
-        "published_at": "2022-12-01T06:47:00+00:00",
-        "source": "businesswire.com",
-        "tags": [],
-        "tickers": [],
-        "title": "Riassunto: La scadenza per l'Aster Guardians Global Nursing Award 2023, del valore di 250.000 dollari USA,  stata prorogata fino al 12 dicembre",
-        "url": "http://www.businesswire.com/news/home/20221130005498/it/"
-      },
-      {
-        "description": "Nasdaq OMX Copenhagen A/S\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 Skjern, 1. december 2022Nikolaj Plads 61007 K\u00f8benhavn K         Fondsb\u00f8rsmeddelelse...",
-        "published_at": "2022-12-01T07:01:07+00:00",
-        "source": "globenewswire.com",
-        "tags": [
-          "Copenhagen Stock Exchange:Skje",
-          "S",
-          "Skjern Bank A"
-        ],
-        "tickers": [],
-        "title": "Finanskalender 2023",
-        "url": "https://www.globenewswire.com/news-release/2022/12/01/2565569/0/da/Finanskalender-2023.html?f=22&fvtc=2&fvtv=1"
-      },
-      {
-        "description": "BOREO PLC\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 Investor news\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0\u00a0 1 December 2022 at 09:00 EET            Boreo strengthens its Technical Trade Business...",
-        "published_at": "2022-12-01T07:00:00+00:00",
-        "source": "globenewswire.com",
-        "tags": [
-          "Boreo Oyj",
-          "Helsinki Stock Exchange:Yeint"
-        ],
-        "tickers": [],
-        "title": "Boreo strengthens its Technical Trade Business Area by strategic add-on acquisition of J-Matic Oy and J-Matic Rent Oy",
-        "url": "https://www.globenewswire.com/news-release/2022/12/01/2565552/0/en/Boreo-strengthens-its-Technical-Trade-Business-Area-by-strategic-add-on-acquisition-of-J-Matic-Oy-and-J-Matic-Rent-Oy.html?f=22&fvtc=2&fvtv=1"
-      },
-      {
-        "description": "\u00a0PR N\u00b0C3139C   STMicroelectronics et Soitec annoncent leur coop\u00e9ration dans la technologie de fabrication de substrats en carbure de silicium   L\u2019accord...",
-        "published_at": "2022-12-01T07:00:00+00:00",
-        "source": "globenewswire.com",
-        "tags": [
-          "Paris Stock Exchange:Soi",
-          "Soitec",
-          "Stock",
-          "Technology"
-        ],
-        "tickers": [
-          "stm"
-        ],
-        "title": "SOITEC : STMicroelectronics et Soitec annoncent leur coopration dans la technologie de fabrication de substrats en carbure de silicium",
-        "url": "https://www.globenewswire.com/news-release/2022/12/01/2565567/0/fr/SOITEC-STMicroelectronics-et-Soitec-annoncent-leur-coop%C3%A9ration-dans-la-technologie-de-fabrication-de-substrats-en-carbure-de-silicium.html?f=22&fvtc=2&fvtv=1"
-      },
-      {
-        "description": "All information regarding the capital increase via accelerated bookbuilding can be found on the website of Intervest Offices & Warehouses under...",
-        "published_at": "2022-12-01T07:00:00+00:00",
-        "source": "globenewswire.com",
-        "tags": [
-          "Brussels Stock Exchange:Into",
-          "Intervest Offices & Warehouses Nv"
-        ],
-        "tickers": [],
-        "title": "Intervest Offices & Warehouses NV: announces successful accelerated private placement of new shares",
-        "url": "https://www.globenewswire.com/news-release/2022/12/01/2565565/0/en/Intervest-Offices-Warehouses-NV-announces-successful-accelerated-private-placement-of-new-shares.html?f=22&fvtc=2&fvtv=1"
-      },
-      {
-        "description": "Toute information concernant l'augmentation de capital au moyen d\u2019un placement priv\u00e9 acc\u00e9l\u00e9r\u00e9 est disponible sur le site web d\u2019Intervest Offices &...",
-        "published_at": "2022-12-01T07:00:00+00:00",
-        "source": "globenewswire.com",
-        "tags": [
-          "Brussels Stock Exchange:Into",
-          "Intervest Offices & Warehouses Nv"
-        ],
-        "tickers": [],
-        "title": "Intervest Offices & Warehouses NV: annonce le placement priv acclr russie d\u2019actions nouvelles",
-        "url": "https://www.globenewswire.com/news-release/2022/12/01/2565565/0/fr/Intervest-Offices-Warehouses-NV-annonce-le-placement-priv%C3%A9-acc%C3%A9l%C3%A9r%C3%A9-r%C3%A9ussie-d-actions-nouvelles.html?f=22&fvtc=2&fvtv=1"
-      },
-      {
-        "description": "Mavenir, le fournisseur de solutions logicielles de r\u00e9seau qui construit l'avenir des r\u00e9seaux \u00e0 l'aide de logiciels cloud natifs capables de fonctionn",
-        "published_at": "2022-12-01T07:00:00+00:00",
-        "source": "businesswire.com",
-        "tags": [],
-        "tickers": [],
-        "title": "PM Factory Pays-Bas dploie le systme cloud natif Packet Gateway de Mavenir sur l'ensemble de ses solutions destines aux MVNO",
-        "url": "https://www.businesswire.com/news/home/20221130005145/fr/?feedref=JjAwJuNHiystnCoBq_hl-fqXyBvmekC3Xq1G1wQ7hjMFbZM1ntlKeK-8bUzJqFSVSfe41V1BKA-b6v2ZVrSSNs-dUYKiDvY7XniNSqv88QcY1Ge_vf9QIMZ4alzIf_0HlyE0C4hZhHVlTvKnn0d0vQ%3D%3D"
-      },
-      {
-        "description": "Mavenir, de Network Software Provider die de toekomst van netwerken bouwt met cloud-native software die op elke cloud draait, heeft vandaag de impleme",
-        "published_at": "2022-12-01T07:00:00+00:00",
-        "source": "businesswire.com",
-        "tags": [],
-        "tickers": [],
-        "title": "PM Factory Nederland implementeert cloud-native Packet Gateway van Mavenir om zijn MVNO-oplossingenset van vermogen te voorzien",
-        "url": "https://www.businesswire.com/news/home/20221130005147/nl/?feedref=JjAwJuNHiystnCoBq_hl-fqXyBvmekC3Xq1G1wQ7hjMFbZM1ntlKeK-8bUzJqFSVSfe41V1BKA-b6v2ZVrSSNs-dUYKiDvY7XniNSqv88QcY1Ge_vf9QIMZ4alzIf_0HlyE0C4hZhHVlTvKnn0d0vQ%3D%3D"
-      },
-      {
-        "description": "A d\u00eda de hoy, la mayor\u00eda de los servicios bancarios no est\u00e1n adaptados a las personas que padecen alguna discapacidad. El 90 % de las personas con pro",
-        "published_at": "2022-12-01T07:00:00+00:00",
-        "source": "businesswire.com",
-        "tags": [
-          "Financial Services",
-          "Stock"
-        ],
-        "tickers": [
-          "ma"
-        ],
-        "title": "Thales apuesta por la inclusin con su tarjeta de pago por voz",
-        "url": "https://www.businesswire.com/news/home/20221130005010/es/?feedref=JjAwJuNHiystnCoBq_hl-fqXyBvmekC3Xq1G1wQ7hjMFbZM1ntlKeK-8bUzJqFSVSfe41V1BKA-b6v2ZVrSSNs-dUYKiDvY7XniNSqv88QcY1Ge_vf9QIMZ4alzIf_0HlyE0C4hZhHVlTvKnn0d0vQ%3D%3D"
-      },
-      {
-        "description": "Belgium head into the final group game off the back of a 2-0 loss to Morrocco and reports of a dressing-room clash",
-        "published_at": "2022-12-01T06:56:39+00:00",
-        "source": "aljazeera.com",
-        "tags": [
-          "Belgium",
-          "Croatia",
-          "Sports"
-        ],
-        "tickers": [],
-        "title": "World Cup 2022: Belgium vs Croatia match preview",
-        "url": "https://www.aljazeera.com/sports/2022/12/1/disjointed-belgium-face-2018-finalists-croatia-in-must-win-clash"
-      },
-      {
-        "description": "PIMCO Dynamic Income Fund is a CEF investing in a diversified basket of fixed income instruments. See why I think PDI is a solid addition for conservative investors.",
-        "published_at": "2022-12-01T07:06:10+00:00",
-        "source": "seekingalpha.com",
-        "tags": [
-          "Business",
-          "ETF",
-          "Mutual Fund",
-          "Pdi"
-        ],
-        "tickers": [
-          "pdi",
-          "pegax"
-        ],
-        "title": "PDI: Utility Maximizing Income Fund",
-        "url": "https://seekingalpha.com/article/4561636-pdi-cef-utility-maximizing-income-fund"
-      },
-      {
-        "description": "Mavenir, el proveedor de software de red que define el futuro de las redes con software nativo que se ejecuta en cualquier nube, ha anunciado hoy la i",
-        "published_at": "2022-12-01T07:00:00+00:00",
-        "source": "businesswire.com",
-        "tags": [],
-        "tickers": [],
-        "title": "PM Factory, de Pases Bajos, implementa la puerta de enlace para paquetes nativos de la nube de Mavenir para potenciar su conjunto de soluciones para MVNO",
-        "url": "https://www.businesswire.com/news/home/20221130005227/es/?feedref=JjAwJuNHiystnCoBq_hl-d0q77hRjGWvCunvqSsMC5PkKuEqWGdtYcKRejd3o8qMqnKfqP6Z7nZVMLG-WqUNUuIFBOuQU34x9_qUrqnb9IFt3G9xeKEyIFKgj2nxZILuWb2_mZzaa2HVGkrPJ34F1Q%3D%3D"
-      },
-      {
-        "description": "A Mavenir, provedora de software de rede que vem construindo o futuro das redes com software nativo da nuvem e que funciona em qualquer uma, anunciou ",
-        "published_at": "2022-12-01T07:00:00+00:00",
-        "source": "businesswire.com",
-        "tags": [
-          "Netherlands",
-          "Netherlands Antilles"
-        ],
-        "tickers": [],
-        "title": "PM Factory Netherlands implanta o Packet Gateway nativo da nuvem da Mavenir para alimentar seu conjunto de solues MVNO",
-        "url": "https://www.businesswire.com/news/home/20221130005228/pt/?feedref=JjAwJuNHiystnCoBq_hl-d0q77hRjGWvCunvqSsMC5PkKuEqWGdtYcKRejd3o8qMqnKfqP6Z7nZVMLG-WqUNUuIFBOuQU34x9_qUrqnb9IFt3G9xeKEyIFKgj2nxZILuWb2_mZzaa2HVGkrPJ34F1Q%3D%3D"
-      },
-      {
-        "description": "Regulatory News: Eutelsat Communications (Euronext Paris : ETL) (Paris:ETL) a s\u00e9lectionn\u00e9 Thales Alenia Space (Thales 67 % et Leonardo 33 %) pour la c",
-        "published_at": "2022-12-01T07:00:00+00:00",
-        "source": "businesswire.com",
-        "tags": [
-          "Stock",
-          "Unknown Sector"
-        ],
-        "tickers": [
-          "eutlf"
-        ],
-        "title": "Eutelsat confie  Thales Alenia Space la construction d\u2019un nouveau satellite flexible dfini par logiciel",
-        "url": "https://www.businesswire.com/news/home/20221130006019/fr/?feedref=JjAwJuNHiystnCoBq_hl-d0q77hRjGWvCunvqSsMC5PkKuEqWGdtYcKRejd3o8qMqnKfqP6Z7nZVMLG-WqUNUuIFBOuQU34x9_qUrqnb9IFt3G9xeKEyIFKgj2nxZILuWb2_mZzaa2HVGkrPJ34F1Q%3D%3D"
-      },
-      {
-        "description": "Europe Races Against the Clock on Oil",
-        "published_at": "2022-12-01T05:57:35+00:00",
-        "source": "bloomberg.com",
-        "tags": [
-          "Tiingo Top"
-        ],
-        "tickers": [],
-        "title": "Europe Races Against the Clock on Oil",
-        "url": "https://www.bloomberg.com/news/newsletters/2022-12-01/europe-races-against-the-clock-on-oil"
-      },
-      {
-        "description": "IVERIC bio (ISEE) stock\u00a0down 2.67% after-hours\u00a0after the\u00a0biopharmaceutical firm has priced an upsized underwritten public offering of 13,350,000 shares of its common stock at a price...",
-        "published_at": "2022-12-01T06:13:19+00:00",
-        "source": "seekingalpha.com",
-        "tags": [
-          "Business",
-          "Healthcare",
-          "Isee",
-          "Stock",
-          "Unknown Sector"
-        ],
-        "tickers": [
-          "isee",
-          "isee"
-        ],
-        "title": "Iveric bio stock slides on pricing upsized $300M stock offering",
-        "url": "https://seekingalpha.com/news/3912796-iveric-bio-stock-slides-on-pricing-upsized-300m-stock-offering"
-      },
-      {
-        "description": "Regulatory News: Innate Pharma SA (Euronext Paris : IPH ; Nasdaq : IPHA) (\u00ab Innate \u00bb ou la \u00ab Soci\u00e9t\u00e9 \u00bb) a annonc\u00e9 aujourd\u2019hui que trois posters mettan",
-        "published_at": "2022-12-01T06:00:00+00:00",
-        "source": "businesswire.com",
-        "tags": [
-          "Healthcare",
-          "Stock",
-          "Unknown Sector"
-        ],
-        "tickers": [
-          "azn",
-          "bmy",
-          "io",
-          "ipha",
-          "nvo"
-        ],
-        "title": "Innate Pharma prsentera sa franchise adnosine, IPH5201 et IPH5301, au congrs de l\u2019ESMO IO 2022",
-        "url": "http://www.businesswire.com/news/home/20221130005790/fr/"
-      },
-      {
-        "description": "Sintavia, LLC, ein Designer und Additiv-Hersteller von komplexen mechanischen Systemen f\u00fcr die Luftfahrt-, Raumfahrt- und Verteidigungsindustrie, gab ",
-        "published_at": "2022-12-01T04:31:00+00:00",
-        "source": "businesswire.com",
-        "tags": [],
-        "tickers": [],
-        "title": "Sintavia entwickelt firmeneigene Niobium-Drucktechnik",
-        "url": "http://www.businesswire.com/news/home/20221130005285/de/"
-      },
-      {
-        "description": "\uff08\u30d3\u30b8\u30cd\u30b9\u30ef\u30a4\u30e4\uff09 -- \u7814\u7a76\u306b\u91cd\u70b9\u3092\u7f6e\u304f\u30d0\u30a4\u30aa\u88fd\u85ac\u4f01\u696d\u306e\u30a2\u30ca\u30f3\u30c0\u30fb\u30b5\u30a4\u30a8\u30f3\u30c6\u30a3\u30d5\u30a3\u30c3\u30af\u306f\u672c\u65e5\u3001\u30a2\u30ca\u30f3\u30c0\u5c02\u6709\u306eLiquid Structure\u2122\uff08\u6db2\u4f53\u69cb\u9020\uff09\u9001\u9054\u6280\u8853\u306b\u30ab\u30f3\u30ca\u30d3\u30b8\u30aa\u30fc\u30eb\uff08CBD\uff09\u3092\u7528\u3044\u305f\u6cbb\u9a13\u85acNantheia\u2122 A1002N5S\u3092\u793e\u4f1a\u4e0d\u5b89\u969c\u5bb3\u306e\u6cbb\u7642\u85ac\u5019\u88dc\u3068\u3057\u3066\u8a55\u4fa1\u3059\u308b\u81e8\u5e8a\u8a66\u9a13\u306eIND\u7533",
-        "published_at": "2022-12-01T05:17:00+00:00",
-        "source": "businesswire.com",
-        "tags": [],
-        "tickers": [],
-        "title": "\u30a2\u30ca\u30f3\u30c0\u30fb\u30b5\u30a4\u30a8\u30f3\u30c6\u30a3\u30d5\u30a3\u30c3\u30af\u3001\u793e\u4f1a\u4e0d\u5b89\u969c\u5bb3\uff08SAD\uff09\u6cbb\u7642\u3092\u8ffd\u7a76\u3059\u308b\u81e8\u5e8a\u8a66\u9a13\u306eIND\u7533\u8acb\u3092FDA\u304c\u627f\u8a8d\u3057\u305f\u3068\u767a\u8868",
-        "url": "http://www.businesswire.com/news/home/20221129005230/ja/"
-      },
-      {
-        "description": "Funds Are Betting on More US Dollar Pain After Brutal November",
-        "published_at": "2022-12-01T01:13:31+00:00",
-        "source": "bloomberg.com",
-        "tags": [
-          "Financial Services",
-          "Stock",
-          "Tiingo Top"
-        ],
-        "tickers": [
-          "ivz",
-          "jpm"
-        ],
-        "title": "Funds Are Betting on More US Dollar Pain After Brutal November",
-        "url": "https://www.bloomberg.com/news/articles/2022-11-30/funds-line-up-to-bet-on-more-dollar-pain-after-brutal-november"
-      },
-      {
-        "description": "CNS Pharmaceuticals (CNSP) has priced a public offering of an aggregate of 1,889,764 shares of common stock and warrants to purchase up to 1,889,764 shares of common stock at a...",
-        "published_at": "2022-12-01T06:20:50+00:00",
-        "source": "seekingalpha.com",
-        "tags": [
-          "Business",
-          "Cnsp",
-          "Stock",
-          "Unknown Sector"
-        ],
-        "tickers": [
-          "cnsp"
-        ],
-        "title": "CNS Pharmaceuticals prices $6.0M securities offering",
-        "url": "https://seekingalpha.com/news/3912797-cns-pharmaceuticals-prices-60m-securities-offering"
-      },
-      {
-        "description": "Mizizi is a streetwear brand for the African diaspora, and they recently unveiled a limited-edition capsule collection of soccer jerseys of the 5 African countries that are playing in the World Cup taking place in Qatar. ",
-        "published_at": "2022-12-01T06:28:03+00:00",
-        "source": "forbes.com",
-        "tags": [
-          "African Countries In The 2022 Fifa World Cup",
-          "Cameroon",
-          "Ghana",
-          "Mizizi F.C.",
-          "Mizizi F.C.\u2019S World Cup Jerseys Are A Representation Of African Pride",
-          "Morocco",
-          "Qatar",
-          "Senegal",
-          "Tiingo Top",
-          "Tunisia",
-          "World Cup"
-        ],
-        "tickers": [],
-        "title": "Mizizi F.C.\u2019s World Cup Jerseys Are A Representation Of African Pride",
-        "url": "https://www.forbes.com/sites/allysonportee/2022/12/01/mizizi-fcs-world-cup-jerseys-are-a-representation-of-african-pride/"
-      },
-      {
-        "description": "U.S. President Joe Biden and French President Emmanuel Macron will celebrate more than 200 years of U.S.-French relations on Thursday but simmering in the background is a dispute over new American subsidies that has riled Europe.",
-        "published_at": "2022-12-01T06:05:45+00:00",
-        "source": "reuters.com",
-        "tags": [
-          "2022:Ml_Kbn2Sl2Re",
-          "2022:Ml_Kbn2Sl2Re:1",
-          "2022:Ml_Kbn2Sl2Re:2",
-          "2022:Ml_Kbn2Sl2Rf",
-          "2022:Ml_Kbn2Sl2Rf:1",
-          "2022:Ml_L1N32Q3Xw",
-          "2022:Ml_L1N32Q3Xw:2111816521",
-          "Guid:Tag:Reuters.Com",
-          "Usn:Kbn2Sl2Re",
-          "Usn:Kbn2Sl2Rf",
-          "Usn:L1N32Q3Xw",
-          "Vguid:Tag:Reuters.Com"
-        ],
-        "tickers": [],
-        "title": "At state visit, Biden and Macron face dispute over American subsidies",
-        "url": "https://www.reuters.com/world/state-visit-biden-macron-face-dispute-over-american-subsidies-2022-12-01/"
-      }
-    ],
-    "pagination": {
-      "count": 25,
-      "limit": 25,
-      "offset": 0,
-      "total": 10000
+  "data": [
+    {
+      "description": "The attorney general\u2019s office, in its response to the Oregon Firearms Federation's lawsuit, argued large-capacity magazines that hold more than 10 rounds are not \u201carms\u201d protected by the Second Amendment and the state\u2019s new requirement for a permit to purchase a gun will withstand constitutional scrutiny.",
+      "published_at": "2022-12-01T00:12:58+00:00",
+      "source": "oregonlive.com",
+      "tags": [],
+      "tickers": [],
+      "title": "Delaying Oregon gun control Measure 114 would lead to \u2018unnecessary deaths,\u2019 attorney general argues",
+      "url": "https://www.oregonlive.com/crime/2022/12/delaying-oregon-gun-control-measure-114-would-lead-to-unnecessary-deaths-attorney-general-argues.html"
+    },
+    {
+      "description": "After his rescue from a suitcase by TSA officers, Smells the cat gets the royal treatment in his Brooklyn home with a Thanksgiving spread.",
+      "published_at": "2022-12-01T00:10:10+00:00",
+      "source": "cnn.com",
+      "tags": [
+        "Smells The Cat Presented With A Thanksgiving Spread After Tsa Rescue From Suitcase - Cnn",
+        "Travel"
+      ],
+      "tickers": [],
+      "title": "Smells the cat presented with a Thanksgiving spread after TSA rescue from suitcase",
+      "url": "https://www.cnn.com/travel/article/smells-the-cat-tsa-suitcase-thanksgiving-dinner/index.html"
+    },
+    {
+      "description": "Rafay Systems announced today that it joined the AWS Service Ready Program for Amazon Elastic Compute Cloud (Amazon EC2) Spot Instances.",
+      "published_at": "2022-12-01T00:00:00+00:00",
+      "source": "businesswire.com",
+      "tags": [
+        "Communication Services",
+        "Consumer Cyclical",
+        "Stock"
+      ],
+      "tickers": [
+        "amzn",
+        "vz",
+        "vza"
+      ],
+      "title": "Rafay Joins Amazon EC2 Spot Ready Program to Provide Cost-Saving Solutions for AWS Customers",
+      "url": "https://www.businesswire.com/news/home/20221130005369/en/Rafay-Joins-Amazon-EC2-Spot-Ready-Program-to-Provide-Cost-Saving-Solutions-for-AWS-Customers/?feedref=JjAwJuNHiystnCoBq_hl-fTiTHZ_tL7veK4k7YjFBuWKa1ah7uC6RdZY8DBvigxR7fxFuNFTHSunhvli30RlBNXya2izy9YOgHlBiZQk2LPgxNjXHjsNmKaXEz4koEK2b14xTzGINXzl6XdKCab6Yw%3D%3D"
+    },
+    {
+      "description": "Four of 12 railroad unions rejected the contract, threatening a strike that could crush the national economy.",
+      "published_at": "2022-12-01T00:16:46+00:00",
+      "source": "oregonlive.com",
+      "tags": [
+        "Financial Services",
+        "Stock",
+        "Unknown Sector"
+      ],
+      "tickers": [
+        "jef",
+        "jef-1"
+      ],
+      "title": "U.S. House votes to impose contract on unions, avert railroad strike",
+      "url": "https://www.oregonlive.com/business/2022/12/us-house-votes-to-impose-contract-on-unions-avert-railroad-strike.html"
+    },
+    {
+      "description": "Two conservative federal judges on Wednesday said they hoped to not have to follow through on their pledges not to hire Yale Law School students as law clerks to protest \"cancel culture\" at the school, saying a \"course correction\" appeared to be underway.",
+      "published_at": "2022-12-01T00:20:28+00:00",
+      "source": "reuters.com",
+      "tags": [
+        "2022:Ml_Kbn2Sl2H8",
+        "2022:Ml_Kbn2Sl2H8:1",
+        "2022:Ml_Kbn2Sl2H9",
+        "2022:Ml_Kbn2Sl2H9:1",
+        "2022:Ml_L1N32Q3Xm",
+        "2022:Ml_L1N32Q3Xm:996294",
+        "Guid:Tag:Reuters.Com",
+        "Usn:Kbn2Sl2H8",
+        "Usn:Kbn2Sl2H9",
+        "Usn:L1N32Q3Xm",
+        "Vguid:Tag:Reuters.Com"
+      ],
+      "tickers": [],
+      "title": "Trump-appointed judges say 'course correction' could halt Yale clerk boycott",
+      "url": "https://www.reuters.com/legal/government/trump-appointed-judges-say-course-correction-could-halt-yale-clerk-boycott-2022-12-01/"
+    },
+    {
+      "description": "Police say they are searching for a missing man believed to be experiencing a mental health crisis.",
+      "published_at": "2022-12-01T00:23:22+00:00",
+      "source": "koin.com",
+      "tags": [
+        "Okkd"
+      ],
+      "tickers": [],
+      "title": "Police seek public\u2019s help after missing man\u2019s car found near Highway 224",
+      "url": "https://www.koin.com/news/missing-persons/oregon-gladstone-police-seek-publics-help-after-kyle-kirchem-missing-mans-car-found-near-highway-224/"
+    },
+    {
+      "description": "TikTok Chief Executive\u00a0Shou Chew\u00a0said the video-sharing platform is taking greater steps to keep user data secure and that it needs to invest more in...",
+      "published_at": "2022-12-01T00:00:00+00:00",
+      "source": "marketwatch.com",
+      "tags": [
+        "Applications Software",
+        "Article_Normal",
+        "Business",
+        "C&E Industry Filter",
+        "C&E Industry News Filter",
+        "Cloud Computing",
+        "Computer Services",
+        "Computers",
+        "Computing",
+        "Conferences",
+        "Consumer Electronics",
+        "Consumer Services",
+        "Content Types",
+        "Corporate",
+        "Data Services",
+        "Data Warehousing",
+        "Entertainment",
+        "Exhibitions",
+        "Factiva Filters",
+        "General",
+        "General News",
+        "Industrial",
+        "Industrial News",
+        "Information Management",
+        "Information Security",
+        "Internet",
+        "Knowledge",
+        "Management",
+        "Media",
+        "Online Services",
+        "Political",
+        "Privacy Issues",
+        "Senior Level Management",
+        "Social Media Platforms",
+        "Software",
+        "Technology",
+        "Tools"
+      ],
+      "tickers": [],
+      "title": "The Wall Street Journal: TikTok CEO offers reassurances over data privacy",
+      "url": "https://www.marketwatch.com/story/tiktok-ceo-offers-reassurances-over-data-privacy-11669852813?rss=1&siteid=rss"
+    },
+    {
+      "description": "Apple's iPhone 15 Ultra redesign looks stunning...",
+      "published_at": "2022-12-01T00:38:43+00:00",
+      "source": "forbes.com",
+      "tags": [
+        "Apple",
+        "Iphone",
+        "Iphone 14",
+        "Iphone 15",
+        "Iphone 15 Design",
+        "Iphone 15 Pro",
+        "Iphone 15 Pro Max",
+        "Iphone 15 Ultra",
+        "Iphone Upgrade",
+        "New Iphone"
+      ],
+      "tickers": [],
+      "title": "New iPhone 15 Ultra Renders Detail Apple\u2019s Radical Redesign",
+      "url": "https://www.forbes.com/sites/gordonkelly/2022/11/30/apple-iphone-15-pro-max-ultra-design-changes-new-renders/"
+    },
+    {
+      "description": "Here are the best new movies and shows available on Netflix today.",
+      "published_at": "2022-12-01T00:32:32+00:00",
+      "source": "forbes.com",
+      "tags": [
+        "Best Movies",
+        "Best Shows",
+        "Consumer Cyclical",
+        "Netflix",
+        "Stock"
+      ],
+      "tickers": [
+        "nflx"
+      ],
+      "title": "The Best New Movies And Shows On Netflix Today: November 30, 2022",
+      "url": "https://www.forbes.com/sites/travisbean/2022/11/30/the-best-new-movies-and-shows-on-netflix-today-november-30-2022/"
+    },
+    {
+      "description": "Rolling Stones' 60th Year Honored With UK Collectible Coin",
+      "published_at": "2022-12-01T00:19:28+00:00",
+      "source": "bloomberg.com",
+      "tags": [
+        "Tiingo Top"
+      ],
+      "tickers": [],
+      "title": "Rolling Stones' 60th Year Honored With UK Collectible Coin",
+      "url": "https://www.bloomberg.com/news/articles/2022-12-01/rolling-stones-60th-year-honored-with-uk-collectible-coin"
+    },
+    {
+      "description": "South Korea's factory activity shrank for a fifth straight month in November but the downturn moderated slightly, a private-sector survey showed on Thursday, possibly suggesting the worst is over for businesses.",
+      "published_at": "2022-12-01T00:38:29+00:00",
+      "source": "reuters.com",
+      "tags": [
+        "2022:Ml_Kbn2Sl2Hp",
+        "2022:Ml_Kbn2Sl2Hp:1",
+        "2022:Ml_Kbn2Sl2Hq",
+        "2022:Ml_Kbn2Sl2Hq:1",
+        "2022:Ml_Zun0068Kf",
+        "2022:Ml_Zun0068Kf:1352445010",
+        "Guid:Tag:Reuters.Com",
+        "South Korea",
+        "Usn:Kbn2Sl2Hp",
+        "Usn:Kbn2Sl2Hq",
+        "Usn:Zun0068Kf",
+        "Vguid:Tag:Reuters.Com"
+      ],
+      "tickers": [],
+      "title": "South Korea Nov factory activity shrinks for 5th month, but downturn eases slightly - PMI",
+      "url": "https://www.reuters.com/markets/asia/south-korea-nov-factory-activity-shrinks-5th-month-downturn-eases-slightly-pmi-2022-12-01/"
+    },
+    {
+      "description": "The Inter-American Development Bank (IDB) has approved a $500 million credit line to Argentina to mitigate the impacts of climate change, its Economy Ministry said in a statement on Wednesday.",
+      "published_at": "2022-12-01T00:40:58+00:00",
+      "source": "reuters.com",
+      "tags": [
+        "2022:Ml_E1N32302P",
+        "2022:Ml_Kbn2Sl2Ht",
+        "2022:Ml_Kbn2Sl2Ht:1",
+        "2022:Ml_Kbn2Sl2Hu",
+        "2022:Ml_Kbn2Sl2Hu:1",
+        "2022:Ml_L1N32R00U",
+        "2022:Ml_L1N32R00U:2106037960",
+        "Argentina",
+        "Guid:Tag:Reuters.Com",
+        "Usn:E1N32302P",
+        "Usn:Kbn2Sl2Ht",
+        "Usn:Kbn2Sl2Hu",
+        "Usn:L1N32R00U",
+        "Vguid:Tag:Reuters.Com"
+      ],
+      "tickers": [],
+      "title": "IDB approves $500 mln loan to Argentina to fight climate change",
+      "url": "https://www.reuters.com/world/americas/idb-approves-500-mln-loan-argentina-fight-climate-change-2022-12-01/"
+    },
+    {
+      "description": "/PRNewswire/ -- Designing Time: How NOOKA Changed The Way We Saw the Future (www.kickstarter.com/projects/sanq/designing-timenooka-future) is being produced by...",
+      "published_at": "2022-12-01T00:39:00+00:00",
+      "source": "prnewswire.com",
+      "tags": [
+        "Books",
+        "Computer & Electronics",
+        "ETF",
+        "Multimedia & Internet",
+        "Publishing & Information Services",
+        "Retail",
+        "Stock",
+        "Unknown Sector"
+      ],
+      "tickers": [
+        "time",
+        "we"
+      ],
+      "title": "DESIGNING TIME: HOW NOOKA CHANGED THE WAY WE SAW THE FUTURE",
+      "url": "https://www.prnewswire.com/news-releases/designing-time-how-nooka-changed-the-way-we-saw-the-future-301690882.html"
+    },
+    {
+      "description": "Earlier in the year, PetMed Express announced its partnership with Vetster. Read more to see why we think this partnership makes PETS stock a Buy.",
+      "published_at": "2022-12-01T00:38:56+00:00",
+      "source": "seekingalpha.com",
+      "tags": [
+        "Business",
+        "Chwy",
+        "Consumer Defensive",
+        "Pet",
+        "Pets",
+        "Stock",
+        "Unknown Sector",
+        "Woof"
+      ],
+      "tickers": [
+        "chwy",
+        "pet",
+        "pet",
+        "pets",
+        "woof",
+        "woof"
+      ],
+      "title": "PetMed Express: Vetster Partnership A Growth Mega Booster",
+      "url": "https://seekingalpha.com/article/4561562-petmed-express-vetster-partnership-a-growth-mega-booster"
+    },
+    {
+      "description": "ResortPass, which has pioneered the offering of day access to luxury hotels and resorts around the world, has raised $26 million in Series B funding a",
+      "published_at": "2022-12-01T00:45:00+00:00",
+      "source": "businesswire.com",
+      "tags": [
+        "Consumer Cyclical",
+        "Stock",
+        "Technology"
+      ],
+      "tickers": [
+        "h",
+        "lulu",
+        "twtr"
+      ],
+      "title": "ResortPass Raises $26 Million Series B for Hotel Amenity Access",
+      "url": "https://www.businesswire.com/news/home/20221130005386/en/ResortPass-Raises-26-Million-Series-B-for-Hotel-Amenity-Access/?feedref=JjAwJuNHiystnCoBq_hl-Ymqj4g6qAlg7edDzhXcztJcgiwDl5F89IquLVWUqfRVgLxDkSKfgoruKb9yWl5as-PbWreMWuYBefATrZ0EPTUKvKXA1G4lfyVQLpVttJwGBSvR87oUDgbHejiywQBpbg%3D%3D"
+    },
+    {
+      "description": "/PRNewswire/ -- Au total, 111 contrats concernant des projets dans l'industrie des nouveaux mat\u00e9riaux ont \u00e9t\u00e9 sign\u00e9s lors de la deuxi\u00e8me conf\u00e9rence...",
+      "published_at": "2022-12-01T00:42:00+00:00",
+      "source": "prnewswire.com",
+      "tags": [
+        "Banking & Financial Services",
+        "Chemical",
+        "General Manufacturing",
+        "Mining & Metals",
+        "Publishing & Information Services",
+        "Trade Show News"
+      ],
+      "tickers": [],
+      "title": "Xinhua Silk Road : 111 accords impliquant 135,28 milliards de yuans signs lors de la confrence sur les nouveaux matriaux qui s'est tenue  Bengbu, Anhui",
+      "url": "https://www.prnewswire.com/news-releases/xinhua-silk-road--111-accords-impliquant-135-28-milliards-de-yuans-signes-lors-de-la-conference-sur-les-nouveaux-materiaux-qui-sest-tenue-a-bengbu-anhui-301690884.html"
+    },
+    {
+      "description": "The Biden administration broke its silence on Wednesday on European Union deliberations over a $65-70 per barrel Russian oil price cap on Wednesday, warning far-lower prices cited for some Russian Urals crude shipments should be approached with caution.",
+      "published_at": "2022-12-01T00:48:00+00:00",
+      "source": "reuters.com",
+      "tags": [
+        "2022:Ml_Kbn2Sl2Hx",
+        "2022:Ml_Kbn2Sl2Hx:1",
+        "2022:Ml_Kbn2Sl2Hy",
+        "2022:Ml_Kbn2Sl2Hy:1",
+        "2022:Ml_L1N32Q3W4",
+        "2022:Ml_L1N32Q3W4:471931236",
+        "2022:Ml_M1L1N32Q3W4",
+        "2022:Ml_M1L1N32Q3W4:471931236",
+        "Guid:Tag:Reuters.Com",
+        "Russian Federation",
+        "Usn:Kbn2Sl2Hx",
+        "Usn:Kbn2Sl2Hy",
+        "Usn:L1N32Q3W4",
+        "Usn:M1L1N32Q3W4",
+        "Vguid:Tag:Reuters.Com"
+      ],
+      "tickers": [],
+      "title": "U.S. urges caution on low-quoted Russian oil prices as EU debates price cap",
+      "url": "https://www.reuters.com/business/energy/us-urges-caution-low-quoted-russian-oil-prices-eu-debates-price-cap-2022-12-01/"
+    },
+    {
+      "description": "South Korea's exports in November suffered their worst annual drop in 2-1/2 years, hurt by cooling global demand in major markets led by China and a downturn in the semiconductor industry, data showed on Thursday.",
+      "published_at": "2022-12-01T00:48:17+00:00",
+      "source": "reuters.com",
+      "tags": [
+        "2022:Ml_Kbn2Sl2I3",
+        "2022:Ml_Kbn2Sl2I3:1",
+        "2022:Ml_Kbn2Sl2I4",
+        "2022:Ml_Kbn2Sl2I4:1",
+        "2022:Ml_L4N32Q0Mv",
+        "2022:Ml_L4N32Q0Mv:771907096",
+        "China",
+        "Guid:Tag:Reuters.Com",
+        "South Korea",
+        "Usn:Kbn2Sl2I3",
+        "Usn:Kbn2Sl2I4",
+        "Usn:L4N32Q0Mv",
+        "Vguid:Tag:Reuters.Com"
+      ],
+      "tickers": [],
+      "title": "South Korea Nov exports suffer worst decline in 2-1/2 years",
+      "url": "https://www.reuters.com/markets/asia/south-korea-nov-exports-suffer-worst-decline-2-12-years-2022-12-01/"
+    },
+    {
+      "description": "Japanese companies raised spending on plant and equipment in July-September by 9.8% from the same period a year earlier, Ministry of Finance data showed on Thursday.",
+      "published_at": "2022-12-01T00:52:47+00:00",
+      "source": "reuters.com",
+      "tags": [
+        "2022:Ml_Kbn2Sl2I8",
+        "2022:Ml_Kbn2Sl2I8:1",
+        "2022:Ml_T9N323003",
+        "2022:Ml_T9N323003:1173872826",
+        "Guid:Tag:Reuters.Com",
+        "Japan",
+        "Usn:Kbn2Sl2I8",
+        "Usn:T9N323003",
+        "Vguid:Tag:Reuters.Com"
+      ],
+      "tickers": [],
+      "title": "Japan Q3 corporate capex up 9.8% year/year - MOF",
+      "url": "https://www.reuters.com/markets/asia/japan-q3-corporate-capex-up-98-yearyear-mof-2022-12-01/"
+    },
+    {
+      "description": "Some of the best Cyber Monday headphone deals are still live\u2014but not for long. We've rounded up the best deals still available. ",
+      "published_at": "2022-12-01T00:51:23+00:00",
+      "source": "forbes.com",
+      "tags": [
+        "Apple",
+        "Best Cyber Monday Headphone Deals",
+        "Cyber Monday Headphone Deals",
+        "Cyber Week",
+        "Headphone Deals: Save On Pairs"
+      ],
+      "tickers": [],
+      "title": "The Best Cyber Monday Headphone Deals Still Happening: Apple, Bose, Beats And More",
+      "url": "https://www.forbes.com/sites/forbes-personal-shopper/2022/11/30/cyber-monday-headphone-deals/"
+    },
+    {
+      "description": "Audemars Piguet Reintroduces an Unusual Wandering Hours Watch",
+      "published_at": "2022-12-01T00:30:10+00:00",
+      "source": "bloomberg.com",
+      "tags": [
+        "Tiingo Top"
+      ],
+      "tickers": [],
+      "title": "Audemars Piguet Reintroduces an Unusual Wandering Hours Watch",
+      "url": "https://www.bloomberg.com/news/articles/2022-12-01/code-11-59-by-audemars-piguet-starwheel-details-history-price"
+    },
+    {
+      "description": "Two years ago, Giorgio Armani partnered with Swiss watch brand Parmigiani Fleurier to make a new luxury watch: Giorgio Armani 11 Collection. It is here and it is everything one would expect from this dynamic dual. ",
+      "published_at": "2022-12-01T00:58:27+00:00",
+      "source": "forbes.com",
+      "tags": [
+        "Giorgio Armani",
+        "Giorgio Armani 11 Collection",
+        "Parmigiani Fleurier",
+        "Parmigiani Fleurier Makes Giorgio Armani Watches",
+        "Swiss"
+      ],
+      "tickers": [],
+      "title": "Giorgio Armani\u2019s 11 Collection Made By Parmigiani Fleurier Has Tailor-Made Elegance",
+      "url": "https://www.forbes.com/sites/robertanaas/2022/11/30/giorgio-armanis-11-collection-made-by-parmigiani-fleurier-has-tailor-made-elegance/"
+    },
+    {
+      "description": "Sam Bankman-Fried, the disgraced founder of the bankrupt FTX crypto empire, said he didn\u2019t want to defraud investors, while admitting to many errors at the helm of the company.",
+      "published_at": "2022-12-01T00:55:50+00:00",
+      "source": "smh.com.au",
+      "tags": [
+        "Business",
+        "Companies",
+        "ETF",
+        "Financial Services",
+        "Stock",
+        "Unknown Sector"
+      ],
+      "tickers": [
+        "bcf",
+        "bgio",
+        "blk"
+      ],
+      "title": "\u2018I\u2019ve had a bad month\u2019: FTX boss Bankman-Fried denies trying to commit fraud",
+      "url": "https://www.smh.com.au/business/companies/i-ve-had-a-bad-month-ftx-boss-bankman-fried-denies-trying-to-commit-fraud-20221201-p5c2rm.html?ref=rss&utm_medium=rss&utm_source=rss_business"
+    },
+    {
+      "description": "SoftServe, ein f\u00fchrendes Unternehmen im Bereich digitaler Dienstleistungen und Consulting, wurde als Aspirant des Life Sciences Digital Services PEAK ",
+      "published_at": "2022-12-01T00:40:00+00:00",
+      "source": "businesswire.com",
+      "tags": [
+        "Iran"
+      ],
+      "tickers": [],
+      "title": "Everest Group wrdigt SoftServe als Key Player bei digitalen Dienstleistungen fr die Life-Sciences-Branche",
+      "url": "https://www.businesswire.com/news/home/20221130005891/de/?feedref=JjAwJuNHiystnCoBq_hl-fqXyBvmekC3Xq1G1wQ7hjMFbZM1ntlKeK-8bUzJqFSVSfe41V1BKA-b6v2ZVrSSNs-dUYKiDvY7XniNSqv88QcY1Ge_vf9QIMZ4alzIf_0HlyE0C4hZhHVlTvKnn0d0vQ%3D%3D"
+    },
+    {
+      "description": "Socceroos fans have partied in Qatar following Australia's win over Denmark at the World Cup.",
+      "published_at": "2022-12-01T00:54:01+00:00",
+      "source": "smh.com.au",
+      "tags": [
+        "Australia",
+        "Denmark",
+        "Qatar",
+        "Soccer",
+        "Sport"
+      ],
+      "tickers": [],
+      "title": "Socceroos fans party in Qatar",
+      "url": "https://www.smh.com.au/sport/soccer/socceroos-fans-party-in-qatar-20221201-p5c2u5.html?ref=rss&utm_medium=rss&utm_source=rss_feed"
+    },
+    {
+      "description": "BURNABY, Colombie-Britannique,  30 nov. 2022  (GLOBE NEWSWIRE) -- INTERFOR CORPORATION (\u00ab\u00a0Interfor\u00a0\u00bb ou la \u00ab\u00a0Soci\u00e9t\u00e9\u00a0\u00bb) (TSX\u00a0: IFP) a annonc\u00e9 aujourd\u2019hui...",
+      "published_at": "2022-12-01T01:00:31+00:00",
+      "source": "globenewswire.com",
+      "tags": [
+        "Interfor Corporation",
+        "Toronto Stock Exchange:Ifp"
+      ],
+      "tickers": [],
+      "title": "Interfor conclut l\u2019acquisition de Chaleur Forest Products et annonce un financement par emprunt  long terme supplmentaire",
+      "url": "https://www.globenewswire.com/news-release/2022/12/01/2565513/0/fr/Interfor-conclut-l-acquisition-de-Chaleur-Forest-Products-et-annonce-un-financement-par-emprunt-%C3%A0-long-terme-suppl%C3%A9mentaire.html?f=22&fvtc=2&fvtv=1"
+    },
+    {
+      "description": "The Democratic House majority is on its way out, but in its two years, this Congress has done quite a bit: a pandemic rescue package, a massive infrastructure package and more. But there\u2019s still much to do in this lame duck session, and progressive rising star Rep. Mondaire Jones \u2014 on his way out due to Dem redistricting \u2014 joins Mehdi to talk about what he thinks needs to be done in his last month in Congress.",
+      "published_at": "2022-12-01T01:01:47+00:00",
+      "source": "msnbc.com",
+      "tags": [],
+      "tickers": [],
+      "title": "Progressive Rising Star on Leaving Congress",
+      "url": "https://www.msnbc.com/the-mehdi-hasan-show/watch/progressive-rising-star-on-leaving-congress-155767877799"
+    },
+    {
+      "description": "Speaking by video at New York Times event, FTX founder apologizes but claims company\u2019s collapse was the result of error not malfeasance. ",
+      "published_at": "2022-12-01T01:00:35+00:00",
+      "source": "forbes.com",
+      "tags": [
+        "Alameda",
+        "Alameda Research",
+        "Andrew Sorkin",
+        "Bankruptcy",
+        "Crypto",
+        "Ftx",
+        "New York Times",
+        "Nyt",
+        "Sam Bankman-Fried",
+        "Sbf"
+      ],
+      "tickers": [],
+      "title": "Sam Bankman-Fried, Offering Little Clarity, Says \u2018I\u2019ve Had A Bad Month\u2019",
+      "url": "https://www.forbes.com/sites/mariagraciasantillanalinares/2022/11/30/sam-bankman-fried-offering-little-clarity-says-ive-had-a-bad-month/"
+    },
+    {
+      "description": "/PRNewswire/ -- Faruqi & Faruqi, LLP, a leading national securities law firm, is investigating potential claims against Bird Global, Inc. (\"Bird\" or the...",
+      "published_at": "2022-12-01T01:00:00+00:00",
+      "source": "prnewswire.com",
+      "tags": [
+        "Faruqi & Faruqi",
+        "Llp",
+        "Stock",
+        "Unknown Sector"
+      ],
+      "tickers": [
+        "bird",
+        "brds",
+        "ifbd"
+      ],
+      "title": "BIRD DEADLINE ALERT Securities Litigation Partner James (Josh) Wilson Encourages Investors Who Suffered Losses Exceeding $100,000 In Bird To Contact Him Directly To Discuss Their Options",
+      "url": "https://www.prnewswire.com/news-releases/bird-deadline-alert-securities-litigation-partner-james-josh-wilson-encourages-investors-who-suffered-losses-exceeding-100-000-in-bird-to-contact-him-directly-to-discuss-their-options-301690860.html"
+    },
+    {
+      "description": "The Idaho company broadcasts Blazers games for $30 a month, far cheaper than alternatives.",
+      "published_at": "2022-12-01T01:07:07+00:00",
+      "source": "oregonlive.com",
+      "tags": [],
+      "tickers": [],
+      "title": "Trail Blazers broadcaster Evoca TV warns it will shut down without more funding",
+      "url": "https://www.oregonlive.com/business/2022/12/trail-blazers-broadcaster-evoca-tv-warns-it-will-shut-down-without-more-funding.html"
+    },
+    {
+      "description": "\"Mad Money\" host Jim Cramer rings the lightning round bell, which means he's giving his answers to callers' stock questions at rapid speed.",
+      "published_at": "2022-12-01T00:02:45+00:00",
+      "source": "cnbc.com",
+      "tags": [
+        "Business",
+        "Energy",
+        "Healthcare",
+        "Investment Strategy",
+        "Markets",
+        "Stock",
+        "Stock Markets",
+        "Technology",
+        "Tiingo Top"
+      ],
+      "tickers": [
+        "avxl",
+        "ceqp",
+        "enph",
+        "wmb"
+      ],
+      "title": "Cramer's lightning round: Crestwood Equity is a dynamite stock",
+      "url": "https://www.cnbc.com/2022/11/30/cramers-lightning-round-crestwood-equity-is-a-dynamite-stock.html"
+    },
+    {
+      "description": "Salesforce issued quarterly results that we think the market would have liked in a vacuum.",
+      "published_at": "2022-12-01T00:03:43+00:00",
+      "source": "cnbc.com",
+      "tags": [
+        "Breaking News: Markets",
+        "Business",
+        "Computing",
+        "Consumer Discretionary",
+        "Earnings",
+        "Internet",
+        "Investment Strategy",
+        "Markets",
+        "Software",
+        "Stock",
+        "Technology",
+        "Tiingo Top",
+        "Unknown Sector",
+        "Wireless"
+      ],
+      "tickers": [
+        "dell",
+        "dell",
+        "sdc",
+        "snow",
+        "snow"
+      ],
+      "title": "Wall Street mistakenly overlooking Salesforce's solid quarter by focusing too much on co-CEO exit",
+      "url": "https://www.cnbc.com/2022/11/30/wall-street-overlooking-salesforce-solid-quarter-by-focusing-on-co-ceo-exit.html"
+    },
+    {
+      "description": "BURNABY, Colombie-Britannique,  30 nov. 2022  (GLOBE NEWSWIRE) -- INTERFOR CORPORATION (\u00ab\u00a0Interfor\u00a0\u00bb ou la \u00ab\u00a0Soci\u00e9t\u00e9\u00a0\u00bb) (TSX\u00a0: IFP) a annonc\u00e9 aujourd\u2019hui...",
+      "published_at": "2022-12-01T01:00:31+00:00",
+      "source": "globenewswire.com",
+      "tags": [
+        "Interfor Corporation",
+        "Toronto Stock Exchange:Ifp"
+      ],
+      "tickers": [],
+      "title": "Interfor conclut l\u2019acquisition de Chaleur Forest Products et annonce un financement par emprunt  long terme supplmentaire",
+      "url": "https://www.globenewswire.com/news-release/2022/12/01/2565513/0/fr/Interfor-conclut-l-acquisition-de-Chaleur-Forest-Products-et-annonce-un-financement-par-emprunt-%C3%A0-long-terme-suppl%C3%A9mentaire.html?f=22&fvtc=1&fvtv=Mergers+And+Acquisitions"
+    },
+    {
+      "description": "Orthofix Medical (OFIX)\u00a0rose 7.3%\u00a0after disclosing it received an unsolicited takeover interest from two private equity firms for $23/share in cash.Orthofix (OFIX) said it received...",
+      "published_at": "2022-12-01T01:05:26+00:00",
+      "source": "seekingalpha.com",
+      "tags": [
+        "Business",
+        "Healthcare",
+        "Ofix",
+        "Spne",
+        "Stock"
+      ],
+      "tickers": [
+        "ofix",
+        "spne"
+      ],
+      "title": "Orthofix Medical gains after receiving $23/share takeover offer from PE firms",
+      "url": "https://seekingalpha.com/news/3912775-orthofix-medical-gains-after-receiving-23share-takeover-offer-from-pe-firms"
+    },
+    {
+      "description": "/PRNewswire/ -- Maestro Dobel Tequila, creator of the world's first Cristalino from 11th-generation tequila maker Juan Dobel, in partnership with El Museo del...",
+      "published_at": "2022-12-01T01:13:00+00:00",
+      "source": "prnewswire.com",
+      "tags": [
+        "Art",
+        "Beers",
+        "Beverages",
+        "Corporate Social Responsibility",
+        "Entertainment",
+        "Hispanic",
+        "Licensing",
+        "Retail",
+        "Wines And Spirits"
+      ],
+      "tickers": [],
+      "title": "MAESTRO DOBEL TEQUILA ANNOUNCES BI-ANNUAL 'MAESTRO DOBEL LATINX ART PRIZE' IN PARTNERSHIP WITH EL MUSEO DEL BARRIO",
+      "url": "https://www.prnewswire.com/news-releases/maestro-dobel-tequila-announces-bi-annual-maestro-dobel-latinx-art-prize-in-partnership-with-el-museo-del-barrio-301690891.html"
+    },
+    {
+      "description": "Ooma, Inc. (NYSE:NYSE:OOMA) Q3 2023 Results Conference Call November 30, 2022 05:00 PM ET Company Participants Matthew Robison - Director of IR and Corporate Development Eric Stang -...",
+      "published_at": "2022-12-01T01:12:02+00:00",
+      "source": "seekingalpha.com",
+      "tags": [
+        "Business",
+        "Communication Services",
+        "Ooma",
+        "Stock"
+      ],
+      "tickers": [
+        "ooma"
+      ],
+      "title": "Ooma, Inc. (OOMA) Q3 2023 Earnings Call Transcript",
+      "url": "https://seekingalpha.com/article/4561578-ooma-inc-ooma-q3-2023-earnings-call-transcript"
+    },
+    {
+      "description": "Cohn Evans, 22, died at the scene after the driver of the car he was in lost control and crashed into a tree.",
+      "published_at": "2022-12-01T01:09:30+00:00",
+      "source": "smh.com.au",
+      "tags": [
+        "National",
+        "Queensland"
+      ],
+      "tickers": [],
+      "title": "Motocross rider dies in crash south of Brisbane",
+      "url": "https://www.smh.com.au/national/queensland/motocross-rider-dies-in-crash-south-of-brisbane-20221201-p5c2t4.html?ref=rss&utm_medium=rss&utm_source=rss_feed"
+    },
+    {
+      "description": "The Fed chief didn\u2019t answer the key question but Wall Street didn\u2019t seem to care.",
+      "published_at": "2022-12-01T01:00:04+00:00",
+      "source": "smh.com.au",
+      "tags": [
+        "Business",
+        "Markets"
+      ],
+      "tickers": [],
+      "title": "How Jerome Powell ignited the markets by saying nothing new",
+      "url": "https://www.smh.com.au/business/markets/how-jerome-powell-shook-the-markets-by-saying-nothing-new-about-interest-rates-20221201-p5c2qa.html?ref=rss&utm_medium=rss&utm_source=rss_feed"
+    },
+    {
+      "description": "Australian star Hannah Green raced to an early lead on day one of the Australian Open, but three bogeys on her final six holes saw finish close her opening round at 5-under par.",
+      "published_at": "2022-12-01T01:16:09+00:00",
+      "source": "smh.com.au",
+      "tags": [
+        "Australia",
+        "Golf",
+        "Sport",
+        "Stock",
+        "Unknown Sector"
+      ],
+      "tickers": [
+        "bgnn"
+      ],
+      "title": "Green starts fast at Australian Open, Smith to tee off after lunch",
+      "url": "https://www.smh.com.au/sport/golf/green-starts-fast-at-australian-open-smith-to-tee-off-after-lunch-20221201-p5c2ss.html?ref=rss&utm_medium=rss&utm_source=rss_feed"
+    },
+    {
+      "description": "IVH's decision to merge with ACP has now been approved. See why investors looking for exposure in the HY CEF space and contemplating ACP should buy IVH now.",
+      "published_at": "2022-12-01T01:22:39+00:00",
+      "source": "seekingalpha.com",
+      "tags": [
+        "Acp",
+        "Business",
+        "ETF",
+        "Ivh"
+      ],
+      "tickers": [
+        "acp",
+        "ivh"
+      ],
+      "title": "IVH:Get A Free 5% Merger Arbitrage Spread",
+      "url": "https://seekingalpha.com/article/4561570-ivh-get-free-5-percent-merger-arbitrage-spread"
+    },
+    {
+      "description": "Australia's biggest health insurer, Medibank Private Ltd, , said on Thursday that hackers had released more of its stolen medical records, as media reported that the complete set of data on millions of customers was now public.",
+      "published_at": "2022-12-01T01:13:37+00:00",
+      "source": "reuters.com",
+      "tags": [
+        "2022:Ml_Kbn2Sl2Iy",
+        "2022:Ml_Kbn2Sl2Iy:1",
+        "2022:Ml_Kbn2Sl2Iz",
+        "2022:Ml_Kbn2Sl2Iz:1",
+        "2022:Ml_L4N32Q4H8",
+        "2022:Ml_L4N32Q4N9",
+        "2022:Ml_L4N32Q4N9:1304214788",
+        "2022:Ml_M1L4N32Q4N9",
+        "2022:Ml_M1L4N32Q4N9:1304214788",
+        "Australia",
+        "Financial Services",
+        "Guid:Tag:Reuters.Com",
+        "Stock",
+        "Unknown Sector",
+        "Usn:Kbn2Sl2Iy",
+        "Usn:Kbn2Sl2Iz",
+        "Usn:L4N32Q4H8",
+        "Usn:L4N32Q4N9",
+        "Usn:M1L4N32Q4N9",
+        "Vguid:Tag:Reuters.Com"
+      ],
+      "tickers": [
+        "mpl",
+        "stel",
+        "stel"
+      ],
+      "title": "Hackers dump more customer data from Australian insurer Medibank",
+      "url": "https://www.reuters.com/business/finance/hackers-dump-more-customer-data-australian-insurer-medibank-2022-12-01/"
+    },
+    {
+      "description": "'Tis the season for coquito\u2014eggnog's delicious Puerto Rican cousin. Here's where you can get it. ",
+      "published_at": "2022-12-01T01:27:50+00:00",
+      "source": "forbes.com",
+      "tags": [
+        "Best Coquito",
+        "Best Coquito Recipe",
+        "Best Rum For Coquito",
+        "Coquito Nyc",
+        "Coquito Shop New York",
+        "Easy Coquito Recipe",
+        "How To Make Coquito",
+        "Where To Get Coquito"
+      ],
+      "tickers": [],
+      "title": "A Go-To Coquito For The Holidays",
+      "url": "https://www.forbes.com/sites/karlaalindahao/2022/11/30/where-to-get-best-coquito-new-york-city-2022/"
+    },
+    {
+      "description": "Saudi Arabia's defence ministry signed a memorandum of understanding (MOU) with Spanish state-owned Navantia company on Wednesday to build combat ships for the Saudi Navy, the Saudi state news agency said in statement.",
+      "published_at": "2022-12-01T01:23:51+00:00",
+      "source": "reuters.com",
+      "tags": [
+        "2022:Ml_C6N325020",
+        "2022:Ml_C6N325020:1603518285",
+        "2022:Ml_Kbn2Sl2Jc",
+        "2022:Ml_Kbn2Sl2Jc:1",
+        "2022:Ml_Kbn2Sl2Jd",
+        "2022:Ml_Kbn2Sl2Jd:1",
+        "2022:Ml_M1C6N325020",
+        "2022:Ml_M1C6N325020:1603518285",
+        "Guid:Tag:Reuters.Com",
+        "Saudi Arabia",
+        "Usn:C6N325020",
+        "Usn:Kbn2Sl2Jc",
+        "Usn:Kbn2Sl2Jd",
+        "Usn:M1C6N325020",
+        "Vguid:Tag:Reuters.Com"
+      ],
+      "tickers": [],
+      "title": "Saudi Arabia signs MOU with Spanish company to build combat ships -news agency statement",
+      "url": "https://www.reuters.com/world/middle-east/saudi-arabia-signs-mou-with-spanish-company-build-combat-ships-news-agency-2022-12-01/"
+    },
+    {
+      "description": "Australia hailed Graham Arnold's new \"golden generation\" on Thursday and fans demanded a national holiday as the country celebrated the Socceroos' unlikely advance to the World Cup knockout phase.",
+      "published_at": "2022-12-01T01:16:38+00:00",
+      "source": "reuters.com",
+      "tags": [
+        "2022:Ml_Kbn2Sl2J0",
+        "2022:Ml_Kbn2Sl2J0:1",
+        "2022:Ml_Kbn2Sl2J1",
+        "2022:Ml_Kbn2Sl2J1:1",
+        "2022:Ml_L4N32R07C",
+        "2022:Ml_L4N32R07C:797437628",
+        "Australia",
+        "Guid:Tag:Reuters.Com",
+        "Usn:Kbn2Sl2J0",
+        "Usn:Kbn2Sl2J1",
+        "Usn:L4N32R07C",
+        "Vguid:Tag:Reuters.Com"
+      ],
+      "tickers": [],
+      "title": "Australia in party mode as Socceroos reach World Cup knockouts",
+      "url": "https://www.reuters.com/lifestyle/sports/australia-party-mode-socceroos-reach-world-cup-knockouts-2022-12-01/"
+    },
+    {
+      "description": "BlackBerry Limited (NYSE:NYSE:BB) Barclays Global Automotive and Mobility Tech Conference Call November 30, 2022 14:00 ET Company Participants Tim Foote - Investor Relations Mattias...",
+      "published_at": "2022-12-01T01:24:04+00:00",
+      "source": "seekingalpha.com",
+      "tags": [
+        "Bb",
+        "Bb:Ca",
+        "Business",
+        "Stock",
+        "Technology"
+      ],
+      "tickers": [
+        "bb"
+      ],
+      "title": "BlackBerry Limited (BB) Barclays Global Automotive and Mobility Tech Conference (Transcript)",
+      "url": "https://seekingalpha.com/article/4561581-blackberry-limited-bb-barclays-global-automotive-and-mobility-tech-conference-transcript"
+    },
+    {
+      "description": "Credo Technology Group Holding Ltd (NASDAQ:NASDAQ:CRDO) Q2 2023 Earnings Conference Call November 30, 2022 5:00 PM ET Company Participants Dan O\u2019Neil - Vice President of Corporate...",
+      "published_at": "2022-12-01T01:24:14+00:00",
+      "source": "seekingalpha.com",
+      "tags": [
+        "Business",
+        "Crdo",
+        "Stock",
+        "Unknown Sector"
+      ],
+      "tickers": [
+        "crdo"
+      ],
+      "title": "Credo Technology Group Holding Ltd (CRDO) Q2 2023 Earnings Call Transcript",
+      "url": "https://seekingalpha.com/article/4561582-credo-technology-group-holding-ltd-crdo-q2-2023-earnings-call-transcript"
+    },
+    {
+      "description": "Cineplex, with 75% of the Canadian movie theater market, has reported two consecutive profitable quarters. Read why I think Cineplex stock is a Strong Buy.",
+      "published_at": "2022-12-01T01:31:08+00:00",
+      "source": "seekingalpha.com",
+      "tags": [
+        "Amc",
+        "Business",
+        "Cgx:Ca",
+        "Consumer Cyclical",
+        "Cpxgf",
+        "Play",
+        "Stock",
+        "Unknown Sector"
+      ],
+      "tickers": [
+        "amc",
+        "cpxgf",
+        "play"
+      ],
+      "title": "Cineplex Appears Undervalued Despite Dominant Market Share And Recent Profitable Performance",
+      "url": "https://seekingalpha.com/article/4561571-cineplex-stock-undervalued-despite-dominant-market-share"
+    },
+    {
+      "description": "01 Dec 2022 - The ASX has reacted positively to overnight news from the Federal Reserve. Chair Jerome Powell has confirmed the central bank will slow the pace of interest rate rises from December.",
+      "published_at": "2022-12-01T01:29:00+00:00",
+      "source": "finnewsnetwork.com.au",
+      "tags": [
+        "Australia",
+        "Business",
+        "Companies (Business)",
+        "Economy (Business)",
+        "Industrials",
+        "Markets (Business)",
+        "Stock",
+        "Tiingo Top",
+        "Unknown Sector"
+      ],
+      "tickers": [
+        "apx",
+        "avav",
+        "cml",
+        "dow",
+        "gsr",
+        "hmc",
+        "kza",
+        "rms",
+        "sya",
+        "wgo",
+        "xte"
+      ],
+      "title": "ASX opens to 7-month high after Powells positive news: Aus shares up 0.8%",
+      "url": "https://www.finnewsnetwork.com.au/archives/finance_news_network393757.html"
+    },
+    {
+      "description": "Art collective MSCHF's latest project dares the annual fair's wealthiest attendees to reveal themselves.",
+      "published_at": "2022-12-01T01:33:53+00:00",
+      "source": "cnn.com",
+      "tags": [
+        "Arts",
+        "This Atm At Art Basel Miami Beach Is Displaying Users' Bank Balances - Cnn"
+      ],
+      "tickers": [],
+      "title": "Who is the wealthiest person at Art Basel? This ATM machine is displaying users' bank balances for all to see",
+      "url": "https://www.cnn.com/style/article/mschf-art-basel-miami-beach-2022-atm/index.html"
+    },
+    {
+      "description": "Australia resume day two of the Perth Test in a favourable position with Marnus Labuschagne and Steve Smith at the crease.",
+      "published_at": "2022-12-01T01:41:40+00:00",
+      "source": "smh.com.au",
+      "tags": [
+        "Australia",
+        "Cricket",
+        "Sport"
+      ],
+      "tickers": [],
+      "title": "First Test LIVE updates: Australia look to pile on more runs against West Indies",
+      "url": "https://www.smh.com.au/sport/cricket/first-test-live-updates-australia-look-to-pile-on-more-runs-against-west-indies-20221201-p5c2ub.html?ref=rss&utm_medium=rss&utm_source=rss_feed"
+    },
+    {
+      "description": "The pairing of Walker and the Mavericks appears to be a perfect match, on paper at least.",
+      "published_at": "2022-12-01T01:45:46+00:00",
+      "source": "forbes.com",
+      "tags": [
+        "Dallas Mavericks",
+        "Golden State Warriors",
+        "Jason Kidd",
+        "Kemba Walker",
+        "Luka Doncic"
+      ],
+      "tickers": [],
+      "title": "How Newly Signed Kemba Walker Sees Himself Fitting In With The Dallas Mavericks",
+      "url": "https://www.forbes.com/sites/doylerader/2022/11/30/how-newly-signed-kemba-walker-sees-himself-fitting-in-with-the-dallas-mavericks/"
+    },
+    {
+      "description": "EWC is exclusively focused on Canadian equities, with a bias towards large and medium-sized companies. See why I reiterate my buy rating on this fund.",
+      "published_at": "2022-12-01T01:52:54+00:00",
+      "source": "seekingalpha.com",
+      "tags": [
+        "Business",
+        "Canada",
+        "ETF",
+        "Ewc"
+      ],
+      "tickers": [
+        "ewc"
+      ],
+      "title": "EWC: The Reasons I Still Like Canada In 2023",
+      "url": "https://seekingalpha.com/article/4561575-ewc-etf-reasons-i-still-like-canada-in-2023"
+    },
+    {
+      "description": "Did you know that, just like with startup investing, real estate investing has different investment layers with different risks and returns",
+      "published_at": "2022-12-01T01:44:42+00:00",
+      "source": "stockhead.com.au",
+      "tags": [],
+      "tickers": [],
+      "title": "How to make sense of the Property Capital Stack",
+      "url": "https://stockhead.com.au/tech/how-to-make-sense-of-the-property-capital-stack/"
+    },
+    {
+      "description": "Pershing Square Capital Management, L.P. (\u201cPSCM\u201d) today announced the final results of the cash tender offer (the \u201cOffer\u201d) by Pershing Square, L.P. (\u201c",
+      "published_at": "2022-12-01T01:48:00+00:00",
+      "source": "businesswire.com",
+      "tags": [
+        "Real Estate",
+        "Stock"
+      ],
+      "tickers": [
+        "hhc"
+      ],
+      "title": "The Pershing Square Funds Announce the Final Results of Their Tender Offer for Common Shares of The Howard Hughes Corporation",
+      "url": "https://www.businesswire.com/news/home/20221130006152/en/The-Pershing-Square-Funds-Announce-the-Final-Results-of-Their-Tender-Offer-for-Common-Shares-of-The-Howard-Hughes-Corporation/?feedref=JjAwJuNHiystnCoBq_hl-elTRh3JloBfTg7OYus2mQezINnmFN7smC87fEkHk5Rge3KWq9s9jif-UkBjBsFRyYAbRTSLTc1mgvhPlnaBA55M-oupQnbXnhKsYk8RmHF_GzOmvxTr5eUXwxf8mZGJIA%3D%3D"
+    },
+    {
+      "description": "The Schall Law Firm Announces it is Investigating Claims Against Avaya Holdings Corp. and Encourages Investors with Losses to Contact the Firm",
+      "published_at": "2022-12-01T01:50:00+00:00",
+      "source": "businesswire.com",
+      "tags": [
+        "Industrials",
+        "Stock"
+      ],
+      "tickers": [
+        "avya"
+      ],
+      "title": "INVESTIGATION ALERT: The Schall Law Firm Announces it is Investigating Claims Against Avaya Holdings Corp. and Encourages Investors with Losses to Contact the Firm",
+      "url": "https://www.businesswire.com/news/home/20221130006197/en/INVESTIGATION-ALERT-The-Schall-Law-Firm-Announces-it-is-Investigating-Claims-Against-Avaya-Holdings-Corp.-and-Encourages-Investors-with-Losses-to-Contact-the-Firm/?feedref=JjAwJuNHiystnCoBq_hl-adS5VAKkf1zsgyV8tTPInVcgiwDl5F89IquLVWUqfRVgLxDkSKfgoruKb9yWl5as-PbWreMWuYBefATrZ0EPTVXw2Oldt-3VQjUwU4Zj5HZBSvR87oUDgbHejiywQBpbg%3D%3D"
+    },
+    {
+      "description": "Yen, Won Lead Asia FX Surge as Traders Gird For Slower Fed Hikes",
+      "published_at": "2022-12-01T01:53:54+00:00",
+      "source": "bloomberg.com",
+      "tags": [
+        "Financial Services",
+        "Stock",
+        "Tiingo Top",
+        "Unknown Sector"
+      ],
+      "tickers": [
+        "bk",
+        "nab"
+      ],
+      "title": "Yen, Won Lead Asia FX Surge as Traders Gird For Slower Fed Hikes",
+      "url": "https://www.bloomberg.com/news/articles/2022-12-01/yen-rallies-as-prospects-for-slower-fed-hike-weigh-on-dollar"
+    },
+    {
+      "description": "Republicans are trying to figure out what went wrong in the midterms. How, for instance, did they end up with a guy like Blake Masters as their Senate candidate in Arizona? To get to the bottom of this, the RNC has assembled a team of experts\u2014including Masters.\u00a0\u00a0",
+      "published_at": "2022-12-01T02:01:30+00:00",
+      "source": "msnbc.com",
+      "tags": [],
+      "tickers": [],
+      "title": "Election loser Blake Masters recruited to figure out why GOP lost big",
+      "url": "https://www.msnbc.com/all-in/watch/election-loser-blake-masters-recruited-to-figure-out-why-gop-lost-big-155772485966"
+    },
+    {
+      "description": "Rambus\u5ba3\u5e03\uff0c\u63a8\u51fa\u7531PHY\u548c\u63a7\u5236\u5668IP\u7ec4\u6210\u7684PCI Express\u00ae\uff08PCIe\u00ae\uff096.0\u63a5\u53e3\u5b50\u7cfb\u7edf\u3002",
+      "published_at": "2022-12-01T02:00:00+00:00",
+      "source": "businesswire.com",
+      "tags": [
+        "Stock",
+        "Technology"
+      ],
+      "tickers": [
+        "rmbs"
+      ],
+      "title": "Rambus\u63a8\u51fa\u9762\u5411\u9ad8\u6027\u80fd\u6570\u636e\u4e2d\u5fc3\u548c\u4eba\u5de5\u667a\u80fdSoC\u7684PCIe 6.0\u63a5\u53e3\u5b50\u7cfb\u7edf",
+      "url": "https://www.businesswire.com/news/home/20221130005057/zh-CN/?feedref=JjAwJuNHiystnCoBq_hl-fqXyBvmekC3Xq1G1wQ7hjMFbZM1ntlKeK-8bUzJqFSVSfe41V1BKA-b6v2ZVrSSNs-dUYKiDvY7XniNSqv88QcY1Ge_vf9QIMZ4alzIf_0HlyE0C4hZhHVlTvKnn0d0vQ%3D%3D"
+    },
+    {
+      "description": "Autel\u2019s MaxiCharger line-up includes both AC chargers suitable for homes and businesses and DC fast chargers.",
+      "published_at": "2022-12-01T02:00:00+00:00",
+      "source": "businesswire.com",
+      "tags": [
+        "Australia",
+        "Stock",
+        "Technology"
+      ],
+      "tickers": [
+        "aapl"
+      ],
+      "title": "Autel Launches MaxiCharger Series EV Chargers in Australia",
+      "url": "https://www.businesswire.com/news/home/20221130005489/en/Autel-Launches-MaxiCharger-Series-EV-Chargers-in-Australia/?feedref=JjAwJuNHiystnCoBq_hl-d0q77hRjGWvCunvqSsMC5PkKuEqWGdtYcKRejd3o8qMqnKfqP6Z7nZVMLG-WqUNUuIFBOuQU34x9_qUrqnb9IFt3G9xeKEyIFKgj2nxZILuWb2_mZzaa2HVGkrPJ34F1Q%3D%3D"
+    },
+    {
+      "description": "/PRNewswire/ -- Emerged themselves in VR classrooms created by Surreal, a Taiwan-based startup supported by National Development Council, focusing on digital...",
+      "published_at": "2022-12-01T02:00:00+00:00",
+      "source": "prnewswire.com",
+      "tags": [
+        "Education",
+        "Internet Technology",
+        "New Products & Services",
+        "Taiwan",
+        "Telecommunications Industry"
+      ],
+      "tickers": [],
+      "title": "Surreal Builds Virtual Campus for Future Online Learning",
+      "url": "https://www.prnewswire.com/news-releases/surreal-builds-virtual-campus-for-future-online-learning-301690906.html"
+    },
+    {
+      "description": "Aussies have two weeks left to avoid a hefty fine from the Australian Taxation Office. Here\u2019s what you need to do.",
+      "published_at": "2022-12-01T01:15:26+00:00",
+      "source": "au.finance.yahoo.com",
+      "tags": [
+        "Abrs",
+        "Aussies",
+        "Australia",
+        "Australian Business Registry Services",
+        "Australian Taxation Office",
+        "Chris Jordan",
+        "Company Directors",
+        "Director Id",
+        "Hefty Fine",
+        "Stock",
+        "Technology"
+      ],
+      "tickers": [
+        "lnkd"
+      ],
+      "title": "Two weeks to avoid $13,000 tax fine",
+      "url": "https://au.finance.yahoo.com/news/two-weeks-to-avoid-13000-tax-fine-011526071.html"
+    },
+    {
+      "description": "Vandaag heeft NielsenIQ 'The Changing Climate of Sustainability' uitgebracht, een nieuw rapport gericht op de impact van klimaatverandering op de sect",
+      "published_at": "2022-12-01T01:45:00+00:00",
+      "source": "businesswire.com",
+      "tags": [],
+      "tickers": [],
+      "title": "NielsenIQ publiceert nieuw rapport over impact van duurzaamheid op sector van verpakte consumentengoederen",
+      "url": "https://www.businesswire.com/news/home/20221129006183/nl/?feedref=JjAwJuNHiystnCoBq_hl-fqXyBvmekC3Xq1G1wQ7hjMFbZM1ntlKeK-8bUzJqFSVSfe41V1BKA-b6v2ZVrSSNs-dUYKiDvY7XniNSqv88QcY1Ge_vf9QIMZ4alzIf_0HlyE0C4hZhHVlTvKnn0d0vQ%3D%3D"
+    },
+    {
+      "description": "Heute ver\u00f6ffentlichte NielsenIQ einen neuen Bericht mit dem Titel \u201eThe Changing Climate of Sustainability\u201c (Das wechselnde Klima der Nachhaltigkeit). ",
+      "published_at": "2022-12-01T01:45:00+00:00",
+      "source": "businesswire.com",
+      "tags": [],
+      "tickers": [],
+      "title": "NielsenIQ verffentlicht neuen Bericht zum Thema Nachhaltigkeit und dessen Auswirkungen auf verpackte Verbrauchsgter",
+      "url": "https://www.businesswire.com/news/home/20221129006181/de/?feedref=JjAwJuNHiystnCoBq_hl-fqXyBvmekC3Xq1G1wQ7hjMFbZM1ntlKeK-8bUzJqFSVSfe41V1BKA-b6v2ZVrSSNs-dUYKiDvY7XniNSqv88QcY1Ge_vf9QIMZ4alzIf_0HlyE0C4hZhHVlTvKnn0d0vQ%3D%3D"
+    },
+    {
+      "description": "The UK\u2019s happiest places to live have been revealed",
+      "published_at": "2022-12-01T00:01:27+00:00",
+      "source": "au.finance.yahoo.com",
+      "tags": [
+        "Galashiels",
+        "Market Town",
+        "Rightmove",
+        "Sense Of Belonging",
+        "St Ives"
+      ],
+      "tickers": [],
+      "title": "Top 20 happiest places to live in the UK: Is your town on the list?",
+      "url": "https://au.finance.yahoo.com/news/happiest-places-to-live-in-the-uk-000127311.html"
+    },
+    {
+      "description": "Being under-challenged can lead to its own kind of workplace dissatisfaction, not burnout but rather bored-out. Opposite cause; similar sense of weariness. If your job demands too little, take steps to avoid being bored-out.",
+      "published_at": "2022-12-01T02:03:58+00:00",
+      "source": "forbes.com",
+      "tags": [
+        "Boredom",
+        "Burnout",
+        "Career",
+        "Career Development",
+        "Challenge",
+        "Engagement",
+        "Job Satisfaction",
+        "Quiet Quit",
+        "Satisfaction",
+        "Stress"
+      ],
+      "tickers": [],
+      "title": "Burned Out Or Bored Out? Why Doing More Can Lead To Greater Satisfaction",
+      "url": "https://www.forbes.com/sites/alizaknox/2022/11/30/burned-out-or-bored-out-why-doing-more-can-lead-to-greater-satisfaction/"
+    },
+    {
+      "description": "/PRNewswire/ -- EV Mobility, LLC., the leading all-electric vehicle car-sharing platform and Hotel 1000 Seattle, announced today that they have signed an...",
+      "published_at": "2022-12-01T02:10:00+00:00",
+      "source": "prnewswire.com",
+      "tags": [
+        "Automotive",
+        "Environmental Products & Services",
+        "Hotels And Resorts",
+        "Licensing",
+        "Transportation",
+        "Travel",
+        "Trucking & Railroad"
+      ],
+      "tickers": [],
+      "title": "EV Mobility and Hotel 1000 Seattle sign an agreement to deploy electric vehicles as an amenity",
+      "url": "https://www.prnewswire.com/news-releases/ev-mobility-and-hotel-1000-seattle-sign-an-agreement-to-deploy-electric-vehicles-as-an-amenity-301690909.html"
+    },
+    {
+      "description": "How long before the bottle or glasses we are drinking from carry a health warning?",
+      "published_at": "2022-12-01T00:00:00+00:00",
+      "source": "smh.com.au",
+      "tags": [
+        "Consumer Defensive",
+        "Federal",
+        "Politics",
+        "Stock",
+        "Tiingo Top"
+      ],
+      "tickers": [
+        "pm"
+      ],
+      "title": "Is a warning on every single cigarette overkill?",
+      "url": "https://www.smh.com.au/politics/federal/is-a-warning-on-every-single-cigarette-overkill-20221130-p5c2mm.html?ref=rss&utm_medium=rss&utm_source=rss_feed"
+    },
+    {
+      "description": "The U.S. Environmental Protection Agency will propose increases in the amount of ethanol and other biofuels that oil refiners must blend into their fuel over the next three years, two sources familiar with the matter said.",
+      "published_at": "2022-12-01T00:01:50+00:00",
+      "source": "reuters.com",
+      "tags": [
+        "2022:Ml_Kbn2Sk2G8",
+        "2022:Ml_Kbn2Sk2G8:1",
+        "2022:Ml_Kbn2Sk2G9",
+        "2022:Ml_Kbn2Sk2G9:1",
+        "2022:Ml_L1N32Q3Ld",
+        "2022:Ml_L1N32Q3Se",
+        "2022:Ml_L1N32Q3Se:1586009102",
+        "Guid:Tag:Reuters.Com",
+        "Usn:Kbn2Sk2G8",
+        "Usn:Kbn2Sk2G9",
+        "Usn:L1N32Q3Ld",
+        "Usn:L1N32Q3Se",
+        "Vguid:Tag:Reuters.Com"
+      ],
+      "tickers": [],
+      "title": "U.S. EPA to propose boost in biofuel blending volumes -sources",
+      "url": "https://www.reuters.com/business/energy/us-epa-propose-boost-biofuel-blending-volumes-sources-2022-12-01/"
+    },
+    {
+      "description": "Reader: You just cannot vacuum cat dander out of existence!",
+      "published_at": "2022-12-01T00:00:01+00:00",
+      "source": "oregonlive.com",
+      "tags": [],
+      "tickers": [],
+      "title": "Dear Annie: Readers share stories of coping with cat allergies during the holidays",
+      "url": "https://www.oregonlive.com/advice/2022/12/dear-annie-readers-share-stories-of-coping-with-cat-allergies-during-the-holidays.html"
+    },
+    {
+      "description": "Cognigy has achieved the Amazon Web Services Conversational AI Competency distinction.",
+      "published_at": "2022-12-01T00:00:00+00:00",
+      "source": "businesswire.com",
+      "tags": [
+        "Consumer Cyclical",
+        "Stock"
+      ],
+      "tickers": [
+        "tm"
+      ],
+      "title": "Cognigy Achieves AWS Conversational AI Competency Distinction",
+      "url": "https://www.businesswire.com/news/home/20221130006014/en/Cognigy-Achieves-AWS-Conversational-AI-Competency-Distinction/?feedref=JjAwJuNHiystnCoBq_hl-YuSr57erpAIbLeyuQLuxVtJ97jVXUEoD5vq_ZlWtJI2z51RgqIO9jteeI1Kq_zxBxjUZ7-9_1AgxnhqXMh__QehJxdQLfq8lvnoBbJhjyX2"
+    },
+    {
+      "description": "Oregon now has 265 cases of the virus formerly called monkeypox.",
+      "published_at": "2022-12-01T00:07:47+00:00",
+      "source": "oregonlive.com",
+      "tags": [],
+      "tickers": [],
+      "title": "Mpox still spreading, Oregon officials warn as cases climb again",
+      "url": "https://www.oregonlive.com/health/2022/12/mpox-still-spreading-oregon-officials-warn-as-cases-climb-again.html"
+    },
+    {
+      "description": "SAN ANTONIO, Nov.  30, 2022  (GLOBE NEWSWIRE) -- Rackspace Technology\u00ae (NASDAQ: RXT)\u00a0\u2014 a leading end-to-end, multicloud technology solutions company, today...",
+      "published_at": "2022-12-01T00:10:00+00:00",
+      "source": "globenewswire.com",
+      "tags": [
+        "Amazon Partner Network",
+        "Aws",
+        "Aws Glue",
+        "Aws Partner",
+        "End-To-End Multicloud",
+        "Inc.",
+        "Nasdaq:Rxt",
+        "Onica",
+        "Rackspace Technology",
+        "Rackspace Technoloy",
+        "Rxt",
+        "Service Delivery Designation",
+        "Stock",
+        "Unknown Sector"
+      ],
+      "tickers": [
+        "aws",
+        "rxt"
+      ],
+      "title": "Onica by Rackspace Technology Achieves the AWS Service Delivery Designation for AWS Glue",
+      "url": "https://www.globenewswire.com/news-release/2022/12/01/2565502/0/en/Onica-by-Rackspace-Technology-Achieves-the-AWS-Service-Delivery-Designation-for-AWS-Glue.html?f=22&fvtc=2&fvtv=1"
+    },
+    {
+      "description": "NSW\u2019s latest COVID-19 wave continues to slow, but the swarm of new variants will keep spreading\u00a0through the community at increasing levels until we reach the wave\u2019s peak.\u00a0",
+      "published_at": "2022-12-01T02:38:43+00:00",
+      "source": "smh.com.au",
+      "tags": [
+        "National",
+        "Nsw"
+      ],
+      "tickers": [],
+      "title": "COVID cases rising in NSW, but wave is losing steam",
+      "url": "https://www.smh.com.au/national/nsw/covid-cases-rising-in-nsw-but-wave-is-losing-steam-20221201-p5c2uz.html?ref=rss&utm_medium=rss&utm_source=rss_feed"
+    },
+    {
+      "description": "Asian equities jumped on Thursday, while the dollar slid as investors poured into risky assets after Federal Reserve Chair Jerome Powell opened the door to a slowdown in the pace of monetary tightening.",
+      "published_at": "2022-12-01T02:34:29+00:00",
+      "source": "reuters.com",
+      "tags": [
+        "2022:Ml_Kbn2Sl2Lb",
+        "2022:Ml_Kbn2Sl2Lb:1",
+        "2022:Ml_Kbn2Sl2Lc",
+        "2022:Ml_Kbn2Sl2Lc:1",
+        "2022:Ml_L4N32R0Hv",
+        "2022:Ml_L4N32R0Hv:1397833312",
+        "Guid:Tag:Reuters.Com",
+        "Usn:Kbn2Sl2Lb",
+        "Usn:Kbn2Sl2Lc",
+        "Usn:L4N32R0Hv",
+        "Vguid:Tag:Reuters.Com"
+      ],
+      "tickers": [],
+      "title": "Asian stocks jump after Powell hints at rate hike slowdown",
+      "url": "https://www.reuters.com/markets/global-markets-wrapup-1-2022-12-01/"
+    },
+    {
+      "description": "/PRNewswire/ -- Faruqi & Faruqi, LLP, a leading national securities law firm, is investigating potential claims against Polished.com Inc. f/k/a 1847 Goedeker...",
+      "published_at": "2022-12-01T02:45:00+00:00",
+      "source": "prnewswire.com",
+      "tags": [
+        "Faruqi & Faruqi",
+        "Llp"
+      ],
+      "tickers": [],
+      "title": "Securities Litigation Partner James (Josh) Wilson Encourages Investors Who Suffered Losses Exceeding $100,000 In Polished To Contact Him Directly To Discuss Their Options",
+      "url": "https://www.prnewswire.com/news-releases/securities-litigation-partner-james-josh-wilson-encourages-investors-who-suffered-losses-exceeding-100-000-in-polished-to-contact-him-directly-to-discuss-their-options-301690854.html"
+    },
+    {
+      "description": "A video of a gathering of European royals has sparked confusion as to why Princess Mary was made to curtsy to Camilla, Queen Consort when others didn't.",
+      "published_at": "2022-12-01T02:53:40+00:00",
+      "source": "smh.com.au",
+      "tags": [
+        "Lifestyle"
+      ],
+      "tickers": [],
+      "title": "Simple explanation for why Princess Mary curtsied to Camilla but Queen Rania didn't",
+      "url": "https://www.smh.com.au/lifestyle/simple-explanation-for-why-princess-mary-curtsied-to-camilla-but-queen-rania-didnt-20221201-p5c2vo.html?ref=rss&utm_medium=rss&utm_source=rss_feed"
+    },
+    {
+      "description": "The local share market has started the month off with a bang, rallying after Federal Reserve chairman Jerome Powell declared that smaller interest rate hikes could begin this month.The benchmark S&P;/ASX200 index was on track for its best day in three weeks at noon AEDT on Thursday, up 62.",
+      "published_at": "2022-12-01T01:43:50+00:00",
+      "source": "au.finance.yahoo.com",
+      "tags": [
+        "Basic Materials",
+        "Federal Reserve Chairman",
+        "Financial Services",
+        "Jerome Powell",
+        "Materials",
+        "Stock",
+        "Unknown Sector"
+      ],
+      "tickers": [
+        "anz",
+        "fsumf",
+        "ncmgy",
+        "rio",
+        "rio",
+        "wbk",
+        "webnf"
+      ],
+      "title": "Aust shares rally as Fed turns more dovish",
+      "url": "https://au.finance.yahoo.com/news/aust-shares-rally-fed-turns-014350900.html"
+    },
+    {
+      "description": "Daily briefing on the latest developments around the world - Anadolu Agency",
+      "published_at": "2022-12-01T02:48:07+00:00",
+      "source": "aa.com",
+      "tags": [
+        "Anadolu Agency",
+        "Anadolu Agency\u2019S Morning Briefing"
+      ],
+      "tickers": [],
+      "title": "Anadolu Agency's Morning Briefing \u2013 Dec.1, 2022",
+      "url": "https://www.aa.com.tr/en/corporate-news/anadolu-agencys-morning-briefing-dec1-2022/2752552"
+    },
+    {
+      "description": "The former NFL linebacker listed the  Calabasas  house in 2021 for $29.995 million",
+      "published_at": "2022-12-01T02:50:00+00:00",
+      "source": "wsj.com",
+      "tags": [
+        "Mansion"
+      ],
+      "tickers": [],
+      "title": "Clay Matthews Sells California Estate For $20 Million",
+      "url": "https://www.wsj.com/articles/clay-matthews-sells-california-estate-for-20-million-11669863060"
+    },
+    {
+      "description": "/PRNewswire/ -- Faruqi & Faruqi, LLP, a leading national securities law firm, is investigating potential claims against Treace Medical Concepts, Inc. (\"Treace\"...",
+      "published_at": "2022-12-01T02:55:00+00:00",
+      "source": "prnewswire.com",
+      "tags": [
+        "Faruqi & Faruqi",
+        "Llp"
+      ],
+      "tickers": [],
+      "title": "TREACE SHAREHOLDER ACTION REMINDER",
+      "url": "https://www.prnewswire.com/news-releases/treace-shareholder-action-reminder-301690883.html"
+    },
+    {
+      "description": "A Los Angeles County Superior Court judge declared a mistrial in the rape trial of actor Danny Masterson on Wednesday after jurors remained deadlocked, the Los Angeles County District Attorney's office said.",
+      "published_at": "2022-12-01T03:03:44+00:00",
+      "source": "cnn.com",
+      "tags": [
+        "Brand Safety-Nsf Crime",
+        "Brand Safety-Nsf Mature",
+        "Brand Safety-Nsf Sensitive",
+        "Brand Safety-Nsf Violence",
+        "Celebrities",
+        "Consumer Cyclical",
+        "Court Trials",
+        "Crime",
+        "Crimes Against Persons",
+        "Criminal Offenses",
+        "Danny Masterson",
+        "Domestic Alerts",
+        "Domestic-Entertainment",
+        "Iab-Crime",
+        "Iab-Law",
+        "International Alerts",
+        "International-Entertainment",
+        "Law And Legal System",
+        "Law Enforcement And Corrections",
+        "Mistrial",
+        "Sex Crimes",
+        "Sexual Assault",
+        "Sexual Misconduct",
+        "Societal Issues",
+        "Society",
+        "Stock",
+        "Tiingo Top",
+        "Trial And Procedure",
+        "Violence In Society"
+      ],
+      "tickers": [
+        "nflx"
+      ],
+      "title": "Mistrial declared after jurors deadlocked in Danny Masterson rape trial",
+      "url": "https://www.cnn.com/2022/11/30/entertainment/danny-masterson-mistrial/index.html"
+    },
+    {
+      "description": "The short end of the treasury yield curve now yields over 4%. Read why investors should consider tilting their portfolio towards short duration opportunities.",
+      "published_at": "2022-12-01T03:05:38+00:00",
+      "source": "seekingalpha.com",
+      "tags": [
+        "Business",
+        "ETF",
+        "Tflo",
+        "Usfr"
+      ],
+      "tickers": [
+        "tflo",
+        "usfr"
+      ],
+      "title": "Floating Rate Treasury Notes Are Priced To Beat Inflation",
+      "url": "https://seekingalpha.com/article/4561590-floating-rate-treasury-notes-priced-beat-inflation"
+    },
+    {
+      "description": "A private gauge of activity in China's manufacturing sector remained in contractionary territory for a fourth straight month in November, as the government's...",
+      "published_at": "2022-12-01T01:52:00+00:00",
+      "source": "marketwatch.com",
+      "tags": [
+        "China",
+        "Pmintl"
+      ],
+      "tickers": [],
+      "title": "China Caixin Manufacturing PMI Marks Fourth Straight Month of Contraction",
+      "url": "https://www.marketwatch.com/story/china-caixin-manufacturing-pmi-marks-fourth-straight-month-of-contraction-271669859540"
+    },
+    {
+      "description": "Runway Growth Finance (RWAY) has priced an underwritten public offering of $45M aggregate principal amount of notes due 2027.The notes will be issued in denominations of $25 and...",
+      "published_at": "2022-12-01T03:10:31+00:00",
+      "source": "seekingalpha.com",
+      "tags": [
+        "Business",
+        "Rway",
+        "Stock",
+        "Unknown Sector"
+      ],
+      "tickers": [
+        "rway"
+      ],
+      "title": "Runway Growth Finance prices offering of 8.00% notes due 2027",
+      "url": "https://seekingalpha.com/news/3912780-runway-growth-finance-prices-offering-of-800-notes-due-2027"
+    },
+    {
+      "description": "Cai Jianyong's Lygend is a supplier to CATL, the world's largest maker of batteries for EVs",
+      "published_at": "2022-12-01T02:14:26+00:00",
+      "source": "forbes.com",
+      "tags": [
+        "Catl",
+        "China",
+        "China Billionaires",
+        "Electric Cars",
+        "Evs",
+        "International Commodity Trading",
+        "Ipos",
+        "Nickel",
+        "Ningbo",
+        "Robin Zeng",
+        "Tiingo Top"
+      ],
+      "tickers": [],
+      "title": "Nickel Products Trader Becomes China\u2019s Latest Billionaire",
+      "url": "https://www.forbes.com/sites/russellflannery/2022/11/30/nickel-products-trader-becomes-chinas-latest-billionaire/"
+    },
+    {
+      "description": "/PRNewswire/-- El l\u00edder en impresi\u00f3n 3D, XYZprinting, present\u00f3 sus nuevas soluciones de impresi\u00f3n 3D con Sinterizaci\u00f3n de ciclo r\u00e1pido de plataforma abierta...",
+      "published_at": "2022-12-01T02:23:00+00:00",
+      "source": "prnewswire.com",
+      "tags": [
+        "Computer & Electronics",
+        "New Products & Services",
+        "Peripherals"
+      ],
+      "tickers": [],
+      "title": "XYZprinting destaca el futuro de la impresin 3D",
+      "url": "https://www.prnewswire.com/news-releases/xyzprinting-destaca-el-futuro-de-la-impresion-3d-893644451.html"
+    },
+    {
+      "description": "Aujourd'hui, NielsenIQ a publi\u00e9 \u00ab The Changing Climate of Sustainability \u00bb, un nouveau rapport ax\u00e9 sur l'impact du changement climatique sur l'industr",
+      "published_at": "2022-12-01T01:45:00+00:00",
+      "source": "businesswire.com",
+      "tags": [],
+      "tickers": [],
+      "title": "NielsenIQ publie un nouveau rapport sur l'impact du dveloppement durable sur l'industrie des biens de consommation emballs",
+      "url": "http://www.businesswire.com/news/home/20221129006182/fr/"
+    },
+    {
+      "description": "NielsenIQ ha pubblicato oggi ",
+      "published_at": "2022-12-01T01:45:00+00:00",
+      "source": "businesswire.com",
+      "tags": [],
+      "tickers": [],
+      "title": "NielsenIQ pubblica un nuovo rapporto incentrato sull'impatto della sostenibilit nel settore dei prodotti confezionati",
+      "url": "http://www.businesswire.com/news/home/20221129006187/it/"
+    },
+    {
+      "description": "Masimo (NASDAQ : MASI) a annonc\u00e9 ce jour les r\u00e9sultats d'un essai contr\u00f4l\u00e9, randomis\u00e9, prospectif, en double aveugle publi\u00e9 dans le Journal of the Col",
+      "published_at": "2022-12-01T00:42:00+00:00",
+      "source": "businesswire.com",
+      "tags": [
+        "Healthcare",
+        "Stock"
+      ],
+      "tickers": [
+        "masi"
+      ],
+      "title": "Selon une nouvelle tude prospective, la solution de surveillance continue et non invasive de l'hmoglobine Masimo SpHb contribue  une gestion du sang efficace en cas d'intervention chirurgicale importante",
+      "url": "http://www.businesswire.com/news/home/20221129006161/fr/"
+    },
+    {
+      "description": "SoftServe, ein f\u00fchrendes Unternehmen im Bereich digitaler Dienstleistungen und Consulting, wurde als Aspirant des Life Sciences Digital Services PEAK ",
+      "published_at": "2022-12-01T00:40:00+00:00",
+      "source": "businesswire.com",
+      "tags": [
+        "Iran"
+      ],
+      "tickers": [],
+      "title": "Everest Group wrdigt SoftServe als Key Player bei digitalen Dienstleistungen fr die Life-Sciences-Branche",
+      "url": "http://www.businesswire.com/news/home/20221130005891/de/"
+    },
+    {
+      "description": "Five of the world\u2019s leading galleries are coming together to present 20 Flowers and Some Bigger Pictures, an unprecedented international exhibition by David Hockney.",
+      "published_at": "2022-12-01T02:18:23+00:00",
+      "source": "forbes.com",
+      "tags": [
+        "Art",
+        "David Hockney",
+        "Modern Art",
+        "Some Bigger Pictures",
+        "The World",
+        "The World'S Leading Galleries Come Together For International Exhibition",
+        "The World'S Leading Galleries Come Together To Present International Exhibition",
+        "Tiingo Top",
+        "Travel"
+      ],
+      "tickers": [],
+      "title": "Five Of The World\u2019s Top Galleries  Present David Hockney: \u201820 Flowers And Some Bigger Pictures\u2019",
+      "url": "https://www.forbes.com/sites/juliabrenner/2022/11/30/five-of-the-worlds-top-galleries--present-david-hockney-20-flowers-and-some-bigger-pictures/"
+    },
+    {
+      "description": "It could be more than two years before businesses devastated by Victoria\u2019s second lockdown have their case heard in court if the state government is successful in its application to halt the proceedings.",
+      "published_at": "2022-12-01T02:28:53+00:00",
+      "source": "smh.com.au",
+      "tags": [
+        "National",
+        "Victoria"
+      ],
+      "tickers": [],
+      "title": "Victorian government tries to halt lockdown class action as it battles separate COVID court case",
+      "url": "https://www.smh.com.au/national/victoria/victorian-government-tries-to-halt-lockdown-class-action-as-it-battles-separate-covid-court-case-20221130-p5c2n2.html?ref=rss&utm_medium=rss&utm_source=rss_feed"
+    },
+    {
+      "description": "HPE Expressed Interest in Cloud Provider Nutanix and Held Talks",
+      "published_at": "2022-12-01T01:25:35+00:00",
+      "source": "bloomberg.com",
+      "tags": [
+        "Stock",
+        "Technology",
+        "Tiingo Top"
+      ],
+      "tickers": [
+        "hpe",
+        "ntnx"
+      ],
+      "title": "HPE Expressed Interest in Cloud Provider Nutanix and Held Talks",
+      "url": "https://www.bloomberg.com/news/articles/2022-12-01/hpe-is-said-to-have-expressed-interest-in-cloud-provider-nutanix"
+    },
+    {
+      "description": "Oil prices nosed ahead in early Asian trade on Thursday, lifted by signs of tighter supply and by optimism over a Chinese demand recovery.",
+      "published_at": "2022-12-01T02:16:09+00:00",
+      "source": "reuters.com",
+      "tags": [
+        "2022:Ml_Kbn2Sl2Kl",
+        "2022:Ml_Kbn2Sl2Kl:1",
+        "2022:Ml_Kbn2Sl2Km",
+        "2022:Ml_Kbn2Sl2Km:1",
+        "2022:Ml_L1N32R03G",
+        "2022:Ml_L1N32R03G:537343409",
+        "China",
+        "Guid:Tag:Reuters.Com",
+        "Usn:Kbn2Sl2Kl",
+        "Usn:Kbn2Sl2Km",
+        "Usn:L1N32R03G",
+        "Vguid:Tag:Reuters.Com"
+      ],
+      "tickers": [],
+      "title": "Oil edges higher on tight supply, China demand recovery optimism",
+      "url": "https://www.reuters.com/markets/commodities/oil-edges-higher-tight-supply-china-demand-recovery-optimism-2022-12-01/"
+    },
+    {
+      "description": "Police and fire authorities investigating case that occurred before 4am on Thursday.",
+      "published_at": "2022-12-01T03:19:00+00:00",
+      "source": "scmp.com",
+      "tags": [
+        "Fatal Fire",
+        "Hong Kong",
+        "Lockhart Road",
+        "Wan Chai"
+      ],
+      "tickers": [],
+      "title": "2 men die in Hong Kong flat fire, 1 victim found with knife wound",
+      "url": "https://www.scmp.com/news/hong-kong/law-and-crime/article/3201631/2-men-die-flat-fire-hong-kongs-wan-chai-1-victim-found-knife-wound"
+    },
+    {
+      "description": "\u2018So you may see your follower count drop,\u2019 says Twitter owner - Anadolu Agency",
+      "published_at": "2022-12-01T04:21:25+00:00",
+      "source": "aa.com",
+      "tags": [
+        "Anadolu Agency",
+        "Bot Accounts",
+        "Elon Musk",
+        "Purge",
+        "Spam Accounts",
+        "Twitter"
+      ],
+      "tickers": [],
+      "title": "Twitter purging spam accounts \u2018right now,\u2019 says Elon Musk",
+      "url": "https://www.aa.com.tr/en/world/twitter-purging-spam-accounts-right-now-says-elon-musk/2752561"
+    },
+    {
+      "description": "Wisconsin Senator Tammy Baldwin, the first openly gay member of the Senate, joins MSNBC\u2019s Lawrence O\u2019Donnell to discuss the congressional effort to pass the Respect for Marriage Act and safeguard the right to same-sex and interracial marriage.",
+      "published_at": "2022-12-01T04:23:01+00:00",
+      "source": "msnbc.com",
+      "tags": [],
+      "tickers": [],
+      "title": "Sen. Baldwin: Dobbs decision \u2018without question\u2019 behind effort to codify marriage equality",
+      "url": "https://www.msnbc.com/the-last-word/watch/sen-baldwin-dobbs-decision-without-question-behind-effort-to-codify-marriage-equality-155783749928"
+    },
+    {
+      "description": "New research by Disney Research Studios, which focuses on technology innovations for filmmaking, shows off a new face aging network, named FRAN, that simplifies the aging process of actors in video. ",
+      "published_at": "2022-12-01T04:30:46+00:00",
+      "source": "forbes.com",
+      "tags": [
+        "Ai",
+        "Consumer Cyclical",
+        "Disney",
+        "Disney Research Studios",
+        "Financial Services",
+        "Fran",
+        "Stock",
+        "U-Net",
+        "Unknown Sector",
+        "Video Ai",
+        "Zurich"
+      ],
+      "tickers": [
+        "aaic",
+        "ai",
+        "dis",
+        "franq"
+      ],
+      "title": "Disney Developed An AI Tool That Can Make Actors Look Younger On Video With Just One Click",
+      "url": "https://www.forbes.com/sites/johanmoreno/2022/11/30/disney-developed-an-ai-tool-that-can-make-actors-look-younger-on-video-with-just-one-click/"
+    },
+    {
+      "description": "I\ufeffranian authorities shot and killed a man for celebrating the nation's elimination from the 2022 World Cup, human rights activists say.",
+      "published_at": "2022-12-01T04:34:29+00:00",
+      "source": "smh.com.au",
+      "tags": [
+        "Iran",
+        "Tiingo Top",
+        "World"
+      ],
+      "tickers": [],
+      "title": "Man shot and killed in Iran for publicly celebrating nation's elimination in World Cup",
+      "url": "https://www.smh.com.au/world/man-shot-and-killed-in-iran-for-publicly-celebrating-nations-elimination-in-world-cup-20221201-p5c2xe.html?ref=rss&utm_medium=rss&utm_source=rss_feed"
+    },
+    {
+      "description": "From activewear made from recycled plastic bottles to reusable plant-based water bottles and LeBron James-approved protein powder, there's something for everyone.",
+      "published_at": "2022-12-01T04:32:19+00:00",
+      "source": "forbes.com",
+      "tags": [
+        "Holiday Gift Guide",
+        "Juice Beauty Spf 30 Sport Sunscreen"
+      ],
+      "tickers": [],
+      "title": "Holiday Gift Guide 2022: The Best Vegan Gifts For Fitness Lovers",
+      "url": "https://www.forbes.com/sites/nomanazish/2022/11/30/holiday-gift-guide-2022-the-best-vegan-gifts-for-fitness-lovers/"
     }
-  }
+  ]
+}

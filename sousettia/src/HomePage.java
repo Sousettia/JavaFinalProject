@@ -20,14 +20,15 @@ import javax.swing.Timer;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
 import BACKEND.Customer;
 import BACKEND.CustomerwithAccount;
 import BACKEND.DataFinanceNews;
+import BACKEND.DataStockMarket;
 import BACKEND.FinanceNews;
 import BACKEND.accountlist;
 import BACKEND.transaction;
 import BACKEND.PersonalAccountData;
+import BACKEND.StockMarket;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -39,6 +40,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Map;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
@@ -115,13 +117,14 @@ public class HomePage {
 
 	private final JPanel panel1 = new JPanel();
     private final JLabel lblphoto2 = new JLabel("");
-    private final JLabel lblOpen = new JLabel("Open:");
-    private final JLabel lblHigh = new JLabel("High:");
-    private final JLabel lblLow = new JLabel("Low:");
-    private final JLabel lblClose = new JLabel("Close:");
-    private final JLabel lblVolume = new JLabel("Volume:");
-    private final JLabel lblSymbol = new JLabel("Symbol:");
-    private final JLabel lblDate = new JLabel("Date:");
+    private JLabel lblOpen = new JLabel("Open:");
+    private JLabel lblHigh = new JLabel("High:");
+    private JLabel lblLow = new JLabel("Low:");
+    private JLabel lblClose = new JLabel("Close:");
+    private JLabel lblVolume = new JLabel("Volume:");
+    private JLabel lblSymbol = new JLabel("Symbol:");
+    private JLabel lblDate = new JLabel("Date:");
+
     private final JLabel lblTitle = new JLabel("Title:");
     private final JLabel lblUrl = new JLabel("Url:");
     private final JLabel lblDescription = new JLabel("Description:");
@@ -129,12 +132,15 @@ public class HomePage {
 	private final JTextArea textAreaTitle = new JTextArea("");
 	private final JTextArea textAreaDescription = new JTextArea("");
     private final JLabel lblphoto1 = new JLabel("");
+	private final JLabel lblChkTransfer = new JLabel("", SwingConstants.CENTER);
 
+	JComboBox<String> comboBox_1 = new JComboBox<String>();
 	private JTextField tfBaht;
     private final JLabel lblbaht = new JLabel("THB - Thai Baht");
     private final JPanel panelTh_1 = new JPanel();
-    private final JPanel panel_1 = new JPanel();
+	private JTextField tfresult;
     private final JLabel lblBird = new JLabel("");
+	private double exchangerate;
 	
 	private JTextArea textAreaProperties(JTextArea textArea) {
 		textArea.setRows(2);
@@ -739,27 +745,37 @@ public class HomePage {
 		panelTh_1.setBounds(692, 234, 383, 115);
 		
 		jp4.add(panelTh_1);
-		panel_1.setBackground(new Color(255, 255, 255));
-		panel_1.setBounds(10, 37, 366, 69);
-		panelTh_1.add(panel_1);
 		
-		JComboBox<String> comboBox_1 = new JComboBox<String>();
-		comboBox_1.setBackground(new Color(192, 192, 192));
-		comboBox_1.setBounds(10, 10, 366, 28);
-		panelTh_1.add(comboBox_1);
-		
-		JButton btnExchange = new JButton("Exchange");
-		btnExchange.addMouseListener(new MouseAdapter() {
+		tfresult = new JTextField();
+		tfresult.addFocusListener(new FocusAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent e) {
+			public void focusGained(FocusEvent e) {
+				if(tfresult.getText().equals("Result Here")) {
+					tfresult.setText(null);
+					tfresult.requestFocus();
+					tfresult.setFont(new Font("Alice", Font.PLAIN, 42));
+					tfresult.setForeground(Color.black);	
+				}
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				if(tfresult.getText().length()==0) {
+					tfresult.setFont(new Font("Alice", Font.PLAIN, 42));
+					tfresult.setForeground(Color.gray);
+					tfresult.setText("Result Here");
+				}
 			}
 		});
-		btnExchange.setForeground(new Color(0, 0, 0));
-		btnExchange.setFont(new Font("Alice", Font.BOLD, 25));
-		btnExchange.setFocusable(false);
-		btnExchange.setBackground(new Color(255, 196, 225));
-		btnExchange.setBounds(530, 502, 182, 51);
-		jp4.add(btnExchange);
+		tfresult.setBounds(10, 37, 366, 69);
+		panelTh_1.add(tfresult);
+		tfresult.setText("Result Here");
+		tfresult.setForeground(Color.GRAY);
+		tfresult.setFont(new Font("Alice", Font.PLAIN, 42));
+		tfresult.setColumns(10);
+		tfresult.setBackground(new Color(255, 255, 255));
+
+		ShowCurrencyExchange();
+		
 		lblBird.setIcon(new ImageIcon("icon/ProjectFinal_1.png"));
 		lblBird.setBounds(540, 268, 608, 435);
 		
@@ -882,9 +898,8 @@ public class HomePage {
 		
 		jp1.add(panel1);
 		panel1.setLayout(null);
-		ShowFinanceNews();
 		lblTitle.setFont(new Font("Alice", Font.BOLD, 19));
-		lblTitle.setBounds(52, 31, 169, 27);
+		lblTitle.setBounds(42, 31, 169, 27);
 		panel1.add(lblTitle);
 
 		textAreaTitle.setFont(new Font("Alice", Font.BOLD, 19));
@@ -892,18 +907,18 @@ public class HomePage {
 		panel1.add(textAreaTitle);
 		
 		lblUrl.setFont(new Font("Alice", Font.BOLD, 19));
-		lblUrl.setBounds(52, 88, 1100, 27);
+		lblUrl.setBounds(42, 88, 1200, 27);
 		
 		panel1.add(lblUrl);
 		lblDescription.setFont(new Font("Alice", Font.BOLD, 19));
-		lblDescription.setBounds(52, 145, 169, 27);
+		lblDescription.setBounds(42, 145, 169, 27);
 		textAreaDescription.setFont(new Font("Alice", Font.BOLD, 19));
 		textAreaDescription.setBounds(200, 145, 800, 80);
 		panel1.add(textAreaDescription);
 		
 		panel1.add(lblDescription);
 		lblPublished.setFont(new Font("Alice", Font.BOLD, 19));
-		lblPublished.setBounds(52, 202, 800, 27);
+		lblPublished.setBounds(42, 250, 800, 27);
 		
 		panel1.add(lblPublished);
 		lblphoto2.setBounds(576, 28, 608, 279);
@@ -914,41 +929,45 @@ public class HomePage {
 		panel2.setBounds(20, 327, 1212, 289);
 		
 		jp1.add(panel2);
-		cb2.setBackground(new Color(128, 128, 192));
-		cb2.setBounds(0, 0, 1212, 21);
-		panel2.add(cb2);
 		lblOpen.setFont(new Font("Alice", Font.BOLD, 19));
-		lblOpen.setBounds(52, 31, 169, 27);
+		lblOpen.setBounds(52, 31, 250, 27);
 		
 		panel2.add(lblOpen);
 		lblHigh.setFont(new Font("Alice", Font.BOLD, 19));
-		lblHigh.setBounds(52, 63, 169, 27);
+		lblHigh.setBounds(52, 63, 250, 27);
 		
 		panel2.add(lblHigh);
 		lblLow.setFont(new Font("Alice", Font.BOLD, 19));
-		lblLow.setBounds(52, 95, 169, 27);
+		lblLow.setBounds(52, 95, 250, 27);
 		
 		panel2.add(lblLow);
 		lblClose.setFont(new Font("Alice", Font.BOLD, 19));
-		lblClose.setBounds(52, 127, 169, 27);
+		lblClose.setBounds(52, 127, 250, 27);
 		
 		panel2.add(lblClose);
 		lblVolume.setFont(new Font("Alice", Font.BOLD, 19));
-		lblVolume.setBounds(52, 159, 169, 27);
+		lblVolume.setBounds(52, 159, 300, 27);
 		
 		panel2.add(lblVolume);
 		lblSymbol.setFont(new Font("Alice", Font.BOLD, 19));
-		lblSymbol.setBounds(52, 191, 169, 27);
+		lblSymbol.setBounds(52, 191, 250, 27);
 		
 		panel2.add(lblSymbol);
 		lblDate.setFont(new Font("Alice", Font.BOLD, 19));
-		lblDate.setBounds(52, 223, 169, 27);
+		lblDate.setBounds(52, 223, 400, 27);
 		
 		panel2.add(lblDate);
 		lblphoto1.setBounds(594, -51, 798, 411);
 		panel2.add(lblphoto1);
 		lblphoto1.setIcon(new ImageIcon("icon/photo2_2_1.png"));
 
+		ShowFinanceNews();
+		ShowStockMarket();
+
+		lblChkTransfer.setForeground(Color.RED);
+        lblChkTransfer.setFont(new Font("Alice", Font.BOLD, 17));
+        lblChkTransfer.setBounds(281, 247, 515, 30);
+		jp3.add(lblChkTransfer);
 		btnMenu.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -1043,7 +1062,7 @@ public class HomePage {
 						transfer.TransferPage();
 						frame.dispose();
 					}else{
-						System.out.println(cus.transfercheck(tfAccount.getText(),tfAmount.getText(),tfComment.getText()));
+						lblChkTransfer.setText(cus.transfercheck(tfAccount.getText(),tfAmount.getText(),tfComment.getText()));
 					}
 				} catch (IOException e1) {
 					e1.printStackTrace();
@@ -1059,6 +1078,21 @@ public class HomePage {
         panelTranfer_1.add(btnTransferBank);
 
 		changeAccountComboBox();
+
+		JButton btnExchange = new JButton("Exchange");
+		btnExchange.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				double tranfered = Double.parseDouble(tfBaht.getText()) * exchangerate;
+				tfresult.setText(String.format("%.2f", tranfered));
+			}
+		});
+		btnExchange.setForeground(new Color(0, 0, 0));
+		btnExchange.setFont(new Font("Alice", Font.BOLD, 25));
+		btnExchange.setFocusable(false);
+		btnExchange.setBackground(new Color(255, 196, 225));
+		btnExchange.setBounds(530, 502, 182, 51);
+		jp4.add(btnExchange);
 	}
 	public void ShowTransaction() throws IOException{
 		//#region getAccountNumber
@@ -1117,6 +1151,7 @@ public class HomePage {
 			for(DataFinanceNews dfn : fn.getData()){
 				titleArrayList.add(dfn.getTitle());
 			}
+			
 			cb1.setModel(new DefaultComboBoxModel<String>(titleArrayList.toArray(new String[0])));
 			cb1.setFont(new Font("Alice", Font.BOLD, 22));
 			cb1.addActionListener(new ActionListener() {
@@ -1128,7 +1163,7 @@ public class HomePage {
 								textAreaProperties(textAreaDescription);
 								textAreaTitle.setText(dfn.getTitle());
 								textAreaDescription.setText(dfn.getDescription());
-								lblUrl.setText("URL : " + dfn.getUrl());
+								lblUrl.setText("URL :  " + dfn.getUrl());
 								lblUrl.setForeground(Color.BLUE.darker());
 								lblUrl.setCursor(new Cursor(Cursor.HAND_CURSOR));
 						
@@ -1150,7 +1185,7 @@ public class HomePage {
 						
 									@Override
 									public void mouseEntered(MouseEvent e) {
-										lblUrl.setText("<html><a href=''>" + "URL : " + dfn.getUrl() + "</a></html>");
+										lblUrl.setText("<html><a href=''>" + "URL :  " + dfn.getUrl() + "</a></html>");
 									}
 						
 								});
@@ -1164,6 +1199,66 @@ public class HomePage {
 			cb1.setBackground(new Color(128, 128, 192));
 			cb1.setBounds(0, 0, 1212, 30);
 			panel1.add(cb1);
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	public void ShowStockMarket() throws IOException{
+		try {
+			Gson gson = new Gson();
+			FileReader fileReader = new FileReader(new File("DataStorage/StockMarket.json"));
+			StockMarket sm = gson.fromJson(fileReader, StockMarket.class);
+
+			String companyname = "";
+			ArrayList<String> titleArrayList = new ArrayList<>();
+			for(DataStockMarket dsm : sm.getData()){
+				switch(dsm.getSymbol()){
+					case "AAPL":
+						companyname	= "Apple Inc";
+						break;
+					case "AMZN":
+						companyname	= "Amazon.com, Inc.";
+						break;
+					case "META":
+						companyname	= "Meta Platforms Inc";
+						break;
+					case "MSFT":
+						companyname	= "Microsoft Corp";
+						break;
+					case "GOOGL":
+						companyname	= "Alphabet Inc Class A";
+						break;
+					default:
+						companyname = "NONE";
+						break;
+				}
+				titleArrayList.add(companyname + "(" + dsm.getSymbol() + ")" + "   Date : " + dsm.getDate());
+			}
+			
+			cb2.setModel(new DefaultComboBoxModel<String>(titleArrayList.toArray(new String[0])));
+			cb2.setFont(new Font("Alice", Font.BOLD, 22));
+			cb2.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					if(e.getSource()==cb2) {
+						for(DataStockMarket dsm : sm.getData()){
+							if(String.valueOf(cb2.getSelectedItem()).contains(dsm.getDate()) 
+								&& String.valueOf(cb2.getSelectedItem()).contains(dsm.getSymbol())){
+								lblOpen.setText("Open : " + dsm.getOpen());
+								lblHigh.setText("High : "+ dsm.getHigh());
+								lblLow.setText("Low : " + dsm.getLow());
+								lblClose.setText("Close : " + dsm.getClose());
+								lblVolume.setText("Volume : " + dsm.getVolume());
+								lblSymbol.setText("Symbol : " + dsm.getSymbol());
+								lblDate.setText("Date : " + dsm.getDate());
+							}
+						}
+					}
+				}
+			});
+			cb2.setBackground(new Color(128, 128, 192));
+			cb2.setBounds(0, 0, 1212, 30);
+			panel2.add(cb2);
 
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -1234,6 +1329,36 @@ public class HomePage {
 			}
 			if(account_no.size()==1){setAccount_no(account_no.get(0));}
 		}catch(IOException e){
+			e.printStackTrace();
+		}
+	}
+	public void ShowCurrencyExchange(){
+		try {
+			Gson gson = new Gson();
+			FileReader fileReader = new FileReader(new File("DataStorage/ExchangeRate.json"));
+			Map<?, ?> map = gson.fromJson(fileReader, Map.class);
+			ArrayList<String> titleArrayList = new ArrayList<>();
+			for (Map.Entry<?, ?> entry : map.entrySet()) {
+				titleArrayList.add(String.valueOf(entry.getKey()));
+			}
+			fileReader.close();
+			comboBox_1.setModel(new DefaultComboBoxModel<String>(titleArrayList.toArray(new String[0])));
+			comboBox_1.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					if(e.getSource()==comboBox_1) {
+						for (Map.Entry<?, ?> entry : map.entrySet()) {
+							if(entry.getKey().equals(comboBox_1.getSelectedItem())){
+								exchangerate = Double.parseDouble(String.valueOf(entry.getValue()));
+							}
+						}
+					}
+				}
+			});
+			comboBox_1.setFont(new Font("Alice", Font.BOLD, 22));
+			comboBox_1.setBackground(new Color(192, 192, 192));
+			comboBox_1.setBounds(10, 10, 366, 28);
+			panelTh_1.add(comboBox_1);
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
